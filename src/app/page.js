@@ -383,16 +383,16 @@ function LogoTicker() {
     <div style={{
       background: 'var(--color-bg-white)',
       borderBottom: '1px solid var(--color-border)',
-      padding: '16px 0',
+      padding: '24px 0',
       overflow: 'hidden',
       whiteSpace: 'nowrap',
       width: '100%',
       position: 'relative',
       zIndex: 10
     }}>
-      <div className="logo-ticker-scroll-container" style={{ display: 'inline-flex', gap: '100px', alignItems: 'center', width: 'max-content' }}>
+      <div className="logo-ticker-scroll-container" style={{ display: 'inline-flex', gap: '120px', alignItems: 'center', width: 'max-content' }}>
         {[...logos, ...logos].map((logo, i) => (
-          <div key={i} className="logo-ticker-card" style={{ position: 'relative', height: '32px', width: '160px' }}>
+          <div key={i} className="logo-ticker-card" style={{ position: 'relative', height: '48px', width: '200px' }}>
             <Image
               src={logo.src}
               alt={logo.alt}
