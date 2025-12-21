@@ -138,7 +138,7 @@ export default async function BlogPost({ params }) {
             {/* Impressive Hero Section */}
             <div style={{
                 background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-                padding: '160px 0 120px',
+                padding: '100px 0 80px',
                 position: 'relative',
                 overflow: 'hidden'
             }}>
