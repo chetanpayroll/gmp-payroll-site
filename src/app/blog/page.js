@@ -56,7 +56,7 @@ export default function Blog() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
                     {posts.map((post, i) => (
                         <div key={i} className="hover:translate-y-[-8px] transition-all duration-300 group" style={{
                             background: 'white',
@@ -65,7 +65,8 @@ export default function Blog() {
                             boxShadow: '0 20px 40px -8px rgba(0, 0, 0, 0.08)',
                             display: 'flex',
                             flexDirection: 'column',
-                            border: '1px solid #F1F5F9'
+                            border: '1px solid #F1F5F9',
+                            height: '100%'
                         }}>
                             <div style={{
                                 height: '240px',
