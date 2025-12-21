@@ -24,10 +24,10 @@ export default function Navbar() {
     }, [pathname]);
 
     const links = [
+        { href: '/about', label: 'About' },
         { href: '/services', label: 'Services' },
         { href: '/expertise', label: 'Expertise' },
         { href: '/case-studies', label: 'Case Studies' },
-        { href: '/about', label: 'About' },
     ];
 
     return (
@@ -42,7 +42,7 @@ export default function Navbar() {
                 borderBottom: (scrolled || mobileMenuOpen) ? '1px solid var(--color-border)' : '1px solid transparent',
                 boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.05)' : 'none'
             }}>
-                <div className="container flex justify-between items-center">
+                <div className="container flex justify-between items-center" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
                     <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                         <Image
                             src="/logo.svg"
@@ -55,8 +55,8 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Links */}
-                    <div className="nav-links-desktop flex items-center gap-8">
-                        <div className="flex gap-6">
+                    <div className="nav-links-desktop flex items-center" style={{ display: 'flex', alignItems: 'center', gap: '40px' }}>
+                        <div style={{ display: 'flex', gap: '32px' }}>
                             {links.map((link) => (
                                 <Link
                                     key={link.href}
