@@ -129,7 +129,7 @@ function ServicesPreviewSection() {
           <p style={{ color: '#94A3B8', fontSize: '18px', marginTop: '16px' }}>Comprehensive implementation support from planning to post-go-live stabilization</p>
         </div>
 
-        <div className="grid grid-cols-3 gap-8 mb-10">
+        <div className="grid grid-cols-3 gap-8" style={{ marginBottom: '64px' }}>
           {services.map((s, i) => (
             <div key={i} style={{
               background: 'rgba(255,255,255,0.05)',
