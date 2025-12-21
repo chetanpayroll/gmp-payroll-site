@@ -46,7 +46,7 @@ export default function Navbar() {
                     <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
                         <Image
                             src="/logo.svg"
-                            width={200}
+                            width={240}
                             height={40}
                             alt="GMP Payroll"
                             style={{ height: '40px', width: 'auto' }}
