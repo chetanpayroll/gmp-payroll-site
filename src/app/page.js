@@ -39,7 +39,7 @@ function HeroSection() {
       </div>
 
       <div className="container text-center" style={{ position: 'relative', zIndex: 1 }}>
-        <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 56px)', marginBottom: '24px' }}>
+        <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 56px)', marginBottom: '24px', color: '#0F172A' }}>
           Global Payroll Implementation<br />Excellence
         </h1>
         <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(18px, 4vw, 22px)', color: 'var(--color-text-secondary)', marginBottom: '40px', maxWidth: '800px', margin: '0 auto 40px' }}>
@@ -55,7 +55,7 @@ function HeroSection() {
         </div>
 
         <div className="flex flex-mobile-col justify-center gap-4 animate-fade-in delay-300">
-          <a href="/contact" className="btn btn-primary btn-large">Schedule Free Consultation</a>
+          <a href="/contact" className="btn btn-primary btn-large" style={{ backgroundColor: '#0891B2', color: 'white' }}>Schedule Free Consultation</a>
           <a href="/services" className="btn btn-secondary btn-large">Explore Services</a>
         </div>
       </div>

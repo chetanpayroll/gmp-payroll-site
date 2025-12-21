@@ -42,8 +42,9 @@ export default function Navbar() {
                 boxShadow: scrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.05)' : 'none'
             }}>
                 <div className="container flex justify-between items-center">
-                    <Link href="/" style={{ fontSize: '24px', fontWeight: '700', color: 'var(--color-navy)', letterSpacing: '-0.5px' }}>
-                        GMP Payroll
+                    <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+                        <span style={{ fontFamily: 'var(--font-inter)', fontWeight: '700', color: '#0F172A', fontSize: '24px', borderBottom: '3px solid #0891B2', lineHeight: '1.2' }}>GMP</span>
+                        <span style={{ fontFamily: 'var(--font-inter)', fontWeight: '400', color: '#0F172A', fontSize: '24px', marginLeft: '6px', lineHeight: '1.2' }}>PAYROLL</span>
                     </Link>
 
                     {/* Desktop Links */}
