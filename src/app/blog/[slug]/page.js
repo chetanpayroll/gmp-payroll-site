@@ -92,8 +92,9 @@ const blogData = {
     }
 };
 
-export default function BlogPost({ params }) {
-    const post = blogData[params.slug];
+export default async function BlogPost({ params }) {
+    const { slug } = await params;
+    const post = blogData[slug];
 
     if (!post) {
         notFound();
