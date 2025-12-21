@@ -43,10 +43,10 @@ export default function CaseStudiesPage() {
 
     return (
         <>
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '100px 0 80px', textAlign: 'center' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
                 <div className="container">
-                    <h1 className="animate-fade-in" style={{ fontSize: '48px', marginBottom: '24px' }}>Proven Results</h1>
-                    <p className="animate-fade-in delay-100" style={{ fontSize: '20px', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
+                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>Proven Results</h1>
+                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
                         We don't just give advice. We deliver tangible outcomes. Here are a few examples of our work in the wild.
                     </p>
                 </div>
@@ -54,7 +54,7 @@ export default function CaseStudiesPage() {
 
             <section style={{ padding: '80px 0' }}>
                 <div className="container">
-                    <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '48px' }}>
+                    <div className="grid grid-cols-2 gap-8">
                         {cases.map((project, index) => (
                             <Link key={index} href={`/case-studies/${project.slug}`} style={{ display: 'block' }}>
                                 <div className="hover:translate-y-1" style={{

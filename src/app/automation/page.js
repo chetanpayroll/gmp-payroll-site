@@ -6,10 +6,10 @@ export const metadata = {
 export default function AutomationToolsPage() {
     return (
         <>
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '100px 0 80px', textAlign: 'center' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
                 <div className="container">
-                    <h1 className="animate-fade-in" style={{ fontSize: '48px', marginBottom: '24px' }}>Proprietary Tool Suite</h1>
-                    <p className="animate-fade-in delay-100" style={{ fontSize: '20px', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
+                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>Proprietary Tool Suite</h1>
+                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
                         We don't just bring expertise; we bring the software. Our custom-built tools accelerate every phase of the project.
                     </p>
                 </div>
@@ -18,10 +18,10 @@ export default function AutomationToolsPage() {
             {/* Tool 1: Validation Engine */}
             <section style={{ padding: '80px 0' }} id="validation-engine">
                 <div className="container">
-                    <div className="grid gap-4" style={{ gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+                    <div className="grid grid-cols-2 gap-8 items-center" style={{ gap: 'clamp(32px, 8vw, 64px)' }}>
                         <div>
                             <div style={{ color: 'var(--color-teal)', fontWeight: '700', marginBottom: '8px', textTransform: 'uppercase' }}>Available Tool</div>
-                            <h2 style={{ fontSize: '36px', marginBottom: '24px', color: 'var(--color-navy)' }}>Two-Way Validation Engine</h2>
+                            <h2 style={{ fontSize: 'clamp(28px, 5vw, 36px)', marginBottom: '24px', color: 'var(--color-navy)' }}>Two-Way Validation Engine</h2>
                             <p style={{ fontSize: '18px', color: '#475569', marginBottom: '32px' }}>
                                 A Python-based engine that compares your HRIS source of truth against the Payroll Vendor’s output files.
                                 It highlights discrepancies in minutes, not days.
@@ -35,7 +35,7 @@ export default function AutomationToolsPage() {
                         </div>
                         <div style={{
                             background: 'linear-gradient(135deg, #F1F5F9 0%, #E2E8F0 100%)',
-                            height: '400px',
+                            height: 'clamp(250px, 40vw, 400px)',
                             borderRadius: '12px',
                             overflow: 'hidden',
                             display: 'flex',
@@ -53,10 +53,10 @@ export default function AutomationToolsPage() {
             {/* Tool 2: Comparison Dashboard */}
             <section style={{ padding: '80px 0', backgroundColor: '#F8FAFC' }} id="comparison-tool">
                 <div className="container">
-                    <div className="grid gap-4" style={{ gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
-                        <div style={{ order: 2 }}>
+                    <div className="grid grid-cols-2 gap-8 items-center" style={{ gap: 'clamp(32px, 8vw, 64px)' }}>
+                        <div className="flex-mobile-order-1">
                             <div style={{ color: 'var(--color-teal)', fontWeight: '700', marginBottom: '8px', textTransform: 'uppercase' }}>Available Tool</div>
-                            <h2 style={{ fontSize: '36px', marginBottom: '24px', color: 'var(--color-navy)' }}>Vendor Comparison Matrix</h2>
+                            <h2 style={{ fontSize: 'clamp(28px, 5vw, 36px)', marginBottom: '24px', color: 'var(--color-navy)' }}>Vendor Comparison Matrix</h2>
                             <p style={{ fontSize: '18px', color: '#475569', marginBottom: '32px' }}>
                                 Stop guessing which vendor is best. Ours is a weighted scoring model based on 150+ criteria specific to global payroll needs.
                             </p>
@@ -67,10 +67,9 @@ export default function AutomationToolsPage() {
                             </ul>
                             <a href="/contact" className="btn btn-secondary">See an Example</a>
                         </div>
-                        <div style={{
-                            order: 1,
+                        <div className="flex-mobile-order-2" style={{
                             background: 'white',
-                            height: '400px',
+                            height: 'clamp(250px, 40vw, 400px)',
                             borderRadius: '12px',
                             display: 'flex',
                             alignItems: 'center',
@@ -85,7 +84,7 @@ export default function AutomationToolsPage() {
 
             <section style={{ padding: '100px 0', textAlign: 'center' }}>
                 <div className="container">
-                    <h2 style={{ fontSize: '36px', marginBottom: '24px' }}>Want to see them in action?</h2>
+                    <h2 style={{ fontSize: 'clamp(24px, 5vw, 36px)', marginBottom: '24px' }}>Want to see them in action?</h2>
                     <p style={{ fontSize: '18px', color: '#475569', marginBottom: '40px' }}>
                         These tools are included free of charge in all our implementation engagements.
                     </p>

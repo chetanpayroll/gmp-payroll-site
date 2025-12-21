@@ -16,7 +16,7 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section style={{ height: 'calc(100vh - 80px)', minHeight: '700px', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+    <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
       {/* Background World Map Animation Placeholder */}
       <div style={{
         position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1,
@@ -39,22 +39,22 @@ function HeroSection() {
       </div>
 
       <div className="container text-center" style={{ position: 'relative', zIndex: 1 }}>
-        <h1 className="animate-fade-in" style={{ fontSize: '56px', marginBottom: '24px' }}>
+        <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 56px)', marginBottom: '24px' }}>
           Global Payroll Implementation<br />Excellence
         </h1>
-        <p className="animate-fade-in delay-100" style={{ fontSize: '22px', color: 'var(--color-text-secondary)', marginBottom: '40px', maxWidth: '800px', margin: '0 auto 40px' }}>
+        <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(18px, 4vw, 22px)', color: 'var(--color-text-secondary)', marginBottom: '40px', maxWidth: '800px', margin: '0 auto 40px' }}>
           Zero-Error Cutover Management | Multi-Country Compliance | Automated Validation Frameworks
         </p>
 
         {/* Trust Badges */}
-        <div className="flex justify-center gap-8 mb-10 animate-fade-in delay-200">
+        <div className="flex flex-wrap justify-center gap-6 mb-10 animate-fade-in delay-200">
           <TrustBadge number="13+" label="YEARS" />
           <TrustBadge number="122+" label="PROJECTS" />
           <TrustBadge number="99.8%" label="ACCURACY" />
           <TrustBadge number="50+" label="COUNTRIES" />
         </div>
 
-        <div className="flex justify-center gap-4 animate-fade-in delay-300">
+        <div className="flex flex-mobile-col justify-center gap-4 animate-fade-in delay-300">
           <a href="/contact" className="btn btn-primary btn-large">Schedule Free Consultation</a>
           <a href="/services" className="btn btn-secondary btn-large">Explore Services</a>
         </div>
@@ -85,8 +85,8 @@ function ValuePropositionSection() {
   return (
     <section style={{ padding: '80px 0' }}>
       <div className="container">
-        <h2 className="text-center" style={{ fontSize: '36px', marginBottom: '60px' }}>Why Choose GMP Payroll?</h2>
-        <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px' }}>
+        <h2 className="text-center" style={{ fontSize: 'clamp(28px, 5vw, 36px)', marginBottom: '60px' }}>Why Choose GMP Payroll?</h2>
+        <div className="grid grid-cols-3 gap-8">
           {cards.map((card, i) => (
             <div key={i} style={{ padding: '32px', background: 'white', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.06)', transition: 'transform 0.2s' }} className="hover:translate-y-1">
               <div style={{ fontSize: '48px', marginBottom: '16px' }}>{card.icon}</div>
@@ -114,11 +114,11 @@ function ServicesPreviewSection() {
     <section style={{ backgroundColor: 'var(--color-navy)', padding: '80px 0', color: 'white' }}>
       <div className="container">
         <div className="text-center mb-10">
-          <h2 style={{ color: 'white', fontSize: '36px' }}>Core Services</h2>
+          <h2 style={{ color: 'white', fontSize: 'clamp(28px, 5vw, 36px)' }}>Core Services</h2>
           <p style={{ color: '#94A3B8', fontSize: '18px', marginTop: '16px' }}>Comprehensive implementation support from planning to post-go-live stabilization</p>
         </div>
 
-        <div className="grid gap-4 mb-10" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '24px' }}>
+        <div className="grid grid-cols-3 gap-8 mb-10">
           {services.map((s, i) => (
             <div key={i} style={{
               background: 'rgba(255,255,255,0.05)',

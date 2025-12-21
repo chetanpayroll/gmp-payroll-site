@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { metadata as rootMetadata } from '../layout';
 
 export const metadata = {
     title: 'Global Payroll Services | Chetan Sharma',
@@ -49,10 +48,10 @@ export default function ServicesPage() {
     return (
         <>
             {/* Hero Section */}
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '100px 0 80px', textAlign: 'center' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
                 <div className="container">
-                    <h1 className="animate-fade-in" style={{ fontSize: '48px', marginBottom: '24px' }}>Services</h1>
-                    <p className="animate-fade-in delay-100" style={{ fontSize: '20px', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
+                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>Services</h1>
+                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
                         Specialized implementation support tailored for multinational enterprises. From strategic planning to technical execution.
                     </p>
                 </div>
@@ -61,7 +60,7 @@ export default function ServicesPage() {
             {/* Services Grid */}
             <section style={{ padding: '80px 0' }}>
                 <div className="container">
-                    <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
+                    <div className="grid grid-cols-2 gap-8">
                         {services.map((service, index) => (
                             <Link key={index} href={`/services/${service.slug}`} style={{ display: 'block' }}>
                                 <div className="hover:translate-y-1" style={{
@@ -88,7 +87,7 @@ export default function ServicesPage() {
             {/* CTA Section */}
             <section style={{ backgroundColor: '#F8FAFC', padding: '80px 0', textAlign: 'center' }}>
                 <div className="container">
-                    <h2 style={{ fontSize: '32px', marginBottom: '24px' }}>Not sure what you need?</h2>
+                    <h2 style={{ fontSize: 'clamp(24px, 5vw, 32px)', marginBottom: '24px' }}>Not sure what you need?</h2>
                     <p style={{ fontSize: '18px', color: 'var(--color-text-secondary)', marginBottom: '40px' }}>
                         Let's discuss your current challenges and design a custom engagement package.
                     </p>

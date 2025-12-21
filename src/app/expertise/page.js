@@ -6,10 +6,10 @@ export const metadata = {
 export default function ExpertisePage() {
     return (
         <>
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '100px 0 80px', textAlign: 'center' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
                 <div className="container">
-                    <h1 className="animate-fade-in" style={{ fontSize: '48px', marginBottom: '24px' }}>Deep Domain Expertise</h1>
-                    <p className="animate-fade-in delay-100" style={{ fontSize: '20px', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
+                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>Deep Domain Expertise</h1>
+                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
                         A unique blend of strategic HR knowledge, technical data skills, and multi-country regulatory mastery.
                     </p>
                 </div>
@@ -17,31 +17,31 @@ export default function ExpertisePage() {
 
             {/* Stats Bar */}
             <div style={{ backgroundColor: 'var(--color-teal)', color: 'white', padding: '40px 0' }}>
-                <div className="container flex justify-between text-center">
-                    <div>
-                        <div style={{ fontSize: '32px', fontWeight: '700' }}>13+</div>
-                        <div style={{ fontSize: '14px', opacity: 0.9 }}>YEARS EXPERIENCE</div>
+                <div className="container flex flex-wrap justify-center gap-8 text-center">
+                    <div style={{ minWidth: '150px' }}>
+                        <div style={{ fontSize: 'clamp(24px, 5vw, 32px)', fontWeight: '700' }}>13+</div>
+                        <div style={{ fontSize: '12px', opacity: 0.9 }}>YEARS EXPERIENCE</div>
                     </div>
-                    <div>
-                        <div style={{ fontSize: '32px', fontWeight: '700' }}>50+</div>
-                        <div style={{ fontSize: '14px', opacity: 0.9 }}>COUNTRIES</div>
+                    <div style={{ minWidth: '150px' }}>
+                        <div style={{ fontSize: 'clamp(24px, 5vw, 32px)', fontWeight: '700' }}>50+</div>
+                        <div style={{ fontSize: '12px', opacity: 0.9 }}>COUNTRIES</div>
                     </div>
-                    <div>
-                        <div style={{ fontSize: '32px', fontWeight: '700' }}>20+</div>
-                        <div style={{ fontSize: '14px', opacity: 0.9 }}>PLATFORMS</div>
+                    <div style={{ minWidth: '150px' }}>
+                        <div style={{ fontSize: 'clamp(24px, 5vw, 32px)', fontWeight: '700' }}>20+</div>
+                        <div style={{ fontSize: '12px', opacity: 0.9 }}>PLATFORMS</div>
                     </div>
-                    <div>
-                        <div style={{ fontSize: '32px', fontWeight: '700' }}>$200M+</div>
-                        <div style={{ fontSize: '14px', opacity: 0.9 }}>PAYROLL PROCESSED</div>
+                    <div style={{ minWidth: '150px' }}>
+                        <div style={{ fontSize: 'clamp(24px, 5vw, 32px)', fontWeight: '700' }}>$200M+</div>
+                        <div style={{ fontSize: '12px', opacity: 0.9 }}>PAYROLL PROCESSED</div>
                     </div>
                 </div>
             </div>
 
-            <section style={{ padding: '100px 0' }}>
+            <section style={{ padding: '80px 0' }}>
                 <div className="container">
-                    <h2 className="text-center" style={{ fontSize: '36px', marginBottom: '60px' }}>Technology Stack</h2>
+                    <h2 className="text-center" style={{ fontSize: 'clamp(28px, 5vw, 36px)', marginBottom: '60px' }}>Technology Stack</h2>
 
-                    <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '32px' }}>
+                    <div className="grid grid-cols-3 gap-8">
                         <div style={{ padding: '32px', border: '1px solid var(--color-border)', borderRadius: '8px' }}>
                             <h3 style={{ fontSize: '20px', marginBottom: '16px', color: 'var(--color-navy)' }}>HCM Platforms</h3>
                             <ul style={{ listStyle: 'none', color: '#475569', lineHeight: '2' }}>
@@ -78,14 +78,14 @@ export default function ExpertisePage() {
                 </div>
             </section>
 
-            <section style={{ backgroundColor: '#F8FAFC', padding: '100px 0' }}>
+            <section style={{ backgroundColor: '#F8FAFC', padding: '80px 0' }}>
                 <div className="container">
-                    <h2 className="text-center" style={{ fontSize: '36px', marginBottom: '60px' }}>Geographic Coverage</h2>
+                    <h2 className="text-center" style={{ fontSize: 'clamp(28px, 5vw, 36px)', marginBottom: '40px' }}>Geographic Coverage</h2>
                     <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', color: '#475569', fontSize: '18px', lineHeight: '1.8' }}>
-                        <p>
-                            <strong>North America:</strong> USA (50 States), Canada, Mexico. <br />
-                            <strong>EMEA:</strong> UK, Ireland, France, Germany, Netherlands, Nordic Region, UAE, Saudi Arabia, South Africa, Nigeria, Kenya. <br />
-                            <strong>APAC:</strong> India, Singapore, China, Hong Kong, Japan, South Korea, Australia, New Zealand, Philippines, Vietnam, Thailand, Malaysia, Indonesia. <br />
+                        <p style={{ fontSize: 'clamp(14px, 4vw, 18px)' }}>
+                            <strong>North America:</strong> USA (50 States), Canada, Mexico. <br /><br className="mobile-only" />
+                            <strong>EMEA:</strong> UK, Ireland, France, Germany, Netherlands, Nordic Region, UAE, Saudi Arabia, South Africa. <br /><br className="mobile-only" />
+                            <strong>APAC:</strong> India, Singapore, China, Hong Kong, Japan, Australia, New Zealand, Philippines, Thailand, Malaysia. <br /><br className="mobile-only" />
                             <strong>LATAM:</strong> Brazil, Argentina, Colombia, Chile.
                         </p>
                     </div>
