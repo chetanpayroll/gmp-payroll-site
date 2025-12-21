@@ -101,31 +101,88 @@ export default async function BlogPost({ params }) {
     }
 
     return (
-        <main style={{ padding: '120px 0 80px', background: '#F8FAFC', minHeight: '100vh' }}>
-            <div className="container" style={{ maxWidth: '800px' }}>
-                <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#64748B', fontWeight: '600', marginBottom: '40px', fontSize: '14px' }} className="hover:text-teal-600">
-                    ← Back to Blog
-                </Link>
+        <main className="blog-post-root" style={{ background: '#F8FAFC', minHeight: '100vh', paddingBottom: '80px' }}>
+            {/* Styles for article content */}
+            <style dangerouslySetInnerHTML={{
+                __html: `
+                .blog-article-content h3 {
+                    font-size: 28px;
+                    color: var(--color-navy);
+                    font-weight: 700;
+                    margin-top: 48px;
+                    margin-bottom: 24px;
+                    letter-spacing: -0.01em;
+                }
+                .blog-article-content p {
+                    font-size: 18px;
+                    line-height: 1.8;
+                    color: #334155;
+                    margin-bottom: 24px;
+                }
+                .blog-article-content strong {
+                    color: var(--color-teal);
+                    font-weight: 700;
+                }
+                .blog-article-content ul {
+                    margin-bottom: 24px;
+                    padding-left: 24px;
+                }
+                .blog-article-content li {
+                    margin-bottom: 12px;
+                    font-size: 18px;
+                    line-height: 1.8;
+                    color: #334155;
+                }
+            `}} />
 
-                <div style={{ background: 'white', padding: '64px', borderRadius: '16px', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)', border: '1px solid #E2E8F0' }}>
-                    <div style={{ marginBottom: '32px', textAlign: 'center' }}>
-                        <div style={{ fontSize: '64px', marginBottom: '24px' }}>{post.image}</div>
-                        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginBottom: '16px', fontSize: '14px', fontWeight: '600' }}>
-                            <span style={{ color: 'var(--color-teal)' }}>{post.category}</span>
-                            <span style={{ color: '#94A3B8' }}>•</span>
-                            <span style={{ color: '#64748B' }}>{post.readTime}</span>
-                        </div>
-                        <h1 style={{ fontSize: '36px', lineHeight: '1.2', color: '#0F172A', marginBottom: '16px' }}>{post.title}</h1>
-                        <div style={{ color: '#64748B' }}>Published on {post.date}</div>
+            {/* Impressive Hero Section */}
+            <div style={{
+                background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
+                padding: '160px 0 120px',
+                position: 'relative',
+                overflow: 'hidden'
+            }}>
+                {/* Decorative Background Elements */}
+                <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(94, 234, 212, 0.1) 0%, rgba(15, 23, 42, 0) 70%)', borderRadius: '50%' }}></div>
+                <div style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0) 70%)', borderRadius: '50%' }}></div>
+
+                <div className="container" style={{ position: 'relative', zIndex: 10, maxWidth: '900px', textAlign: 'center' }}>
+                    <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#94A3B8', fontWeight: '600', marginBottom: '40px', fontSize: '14px', background: 'rgba(255,255,255,0.1)', padding: '8px 16px', borderRadius: '100px', backdropFilter: 'blur(4px)' }} className="hover:text-white transition-colors">
+                        ← Back to Blog
+                    </Link>
+
+                    <div className="animate-fade-in-up" style={{ fontSize: '96px', marginBottom: '32px', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))' }}>
+                        {post.image}
                     </div>
 
-                    <div style={{ fontSize: '18px', lineHeight: '1.8', color: '#334155' }} dangerouslySetInnerHTML={{ __html: post.content }} />
+                    <h1 className="animate-fade-in-up delay-100" style={{ fontSize: 'clamp(32px, 5vw, 48px)', lineHeight: '1.1', color: 'white', marginBottom: '24px', fontWeight: '800', letterSpacing: '-0.02em' }}>
+                        {post.title}
+                    </h1>
 
-                    <div style={{ marginTop: '64px', paddingTop: '32px', borderTop: '1px solid #E2E8F0', textAlign: 'center' }}>
-                        <h3 style={{ fontSize: '24px', marginBottom: '16px' }}>Need help with this?</h3>
-                        <p style={{ marginBottom: '24px', color: '#64748B' }}>Book a free consultation to discuss your specific payroll challenges.</p>
-                        <Link href="/contact" className="btn btn-primary">
-                            Schedule Consultation
+                    <div className="animate-fade-in-up delay-200" style={{ display: 'flex', gap: '24px', justifyContent: 'center', alignItems: 'center', fontSize: '16px', color: '#94A3B8' }}>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <span style={{ width: '8px', height: '8px', background: 'var(--color-teal)', borderRadius: '50%' }}></span>
+                            {post.category}
+                        </span>
+                        <span>•</span>
+                        <span>{post.readTime}</span>
+                        <span>•</span>
+                        <span>{post.date}</span>
+                    </div>
+                </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="container" style={{ maxWidth: '800px', marginTop: '-80px', position: 'relative', zIndex: 20 }}>
+                <div style={{ background: 'white', padding: '64px', borderRadius: '24px', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.1)' }}>
+                    <div className="blog-article-content" dangerouslySetInnerHTML={{ __html: post.content }} />
+
+                    {/* Footer CTA */}
+                    <div style={{ marginTop: '80px', padding: '48px', background: '#F8FAFC', borderRadius: '16px', border: '1px solid #E2E8F0', textAlign: 'center' }}>
+                        <h3 style={{ fontSize: '24px', marginBottom: '16px', color: '#0F172A', fontWeight: 'bold' }}>Facing similar challenges?</h3>
+                        <p style={{ marginBottom: '32px', color: '#64748B', fontSize: '18px' }}>I help global enterprises navigate these pitfalls every day.</p>
+                        <Link href="/contact" className="btn btn-primary" style={{ padding: '16px 32px', fontSize: '16px' }}>
+                            Book a Strategy Call
                         </Link>
                     </div>
                 </div>
