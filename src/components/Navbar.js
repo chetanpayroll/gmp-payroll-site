@@ -49,7 +49,8 @@ export default function Navbar() {
                             width={240}
                             height={40}
                             alt="GMP Payroll"
-                            style={{ height: '40px', width: 'auto' }}
+                            className="logo-responsive"
+                            style={{ width: 'auto' }}
                             priority
                         />
                     </Link>

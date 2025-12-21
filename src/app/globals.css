@@ -139,6 +139,20 @@ button {
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* Responsive Logo */
+.logo-responsive {
+  height: 40px;
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .logo-responsive {
+    height: 32px;
+    /* Smaller for mobile */
+  }
+}
+
 /* Responsive Typography */
 @media (max-width: 768px) {
   h1 {
