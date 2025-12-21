@@ -31,7 +31,13 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed w-full z-50 transition-all duration-300" style={{
+            <nav style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                width: '100%',
+                zIndex: 100,
+                transition: 'all 0.3s ease',
                 height: '80px',
                 display: 'flex',
                 alignItems: 'center',
