@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
   return (
@@ -180,6 +183,8 @@ function SuccessMetricsSection() {
 }
 
 function TestimonialsSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const testimonials = [
     {
       quote: "Chetan's systematic approach to our 12-country payroll consolidation was exceptional. Every parallel run achieved <0.5% variance, and we went live with zero errors.",
@@ -223,31 +228,62 @@ function TestimonialsSection() {
     <section style={{ padding: '80px 0', background: 'white' }}>
       <div className="container">
         <h2 className="text-center" style={{ fontSize: '36px', marginBottom: '60px' }}>Client Success Stories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
-            <div key={i} style={{
-              padding: '32px',
-              background: 'white',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
-              borderRadius: '12px',
-              display: 'flex',
-              flexDirection: 'column',
-              height: '100%',
-              border: '1px solid #F1F5F9'
-            }}>
-              <div style={{ fontSize: '48px', color: 'var(--color-teal)', lineHeight: '1', fontFamily: 'serif', marginBottom: '16px' }}>“</div>
-              <p style={{ fontSize: '16px', fontStyle: 'italic', color: '#475569', marginBottom: '24px', flexGrow: 1, lineHeight: '1.6' }}>
-                {t.quote}
-              </p>
-              <div style={{ borderTop: '1px solid #F1F5F9', paddingTop: '16px' }}>
-                <div style={{ fontWeight: '700', fontSize: '16px', color: '#0F172A' }}>{t.role}</div>
-                <div style={{ color: '#64748B', fontSize: '14px', marginBottom: '8px' }}>{t.company}</div>
-                <div style={{ color: '#FBBF24', fontSize: '16px' }}>
-                  {'★'.repeat(t.stars)}
-                </div>
+
+        {/* Carousel Container */}
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+
+          {/* Active Slide Card */}
+          <div className="animate-fade-in" key={activeIndex} style={{
+            padding: '48px',
+            background: 'white',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+            borderRadius: '12px',
+            border: '1px solid #F1F5F9',
+            minHeight: '340px',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center'
+          }}>
+            <div style={{ fontSize: '64px', color: 'var(--color-teal)', lineHeight: '1', fontFamily: 'serif' }}>“</div>
+            <p style={{ fontSize: '20px', fontStyle: 'italic', color: '#475569', margin: '16px 0 32px', lineHeight: '1.6' }}>
+              {testimonials[activeIndex].quote}
+            </p>
+            <div>
+              <div style={{ fontWeight: '700', fontSize: '18px', color: '#0F172A' }}>{testimonials[activeIndex].role}</div>
+              <div style={{ color: '#64748B', fontSize: '15px' }}>{testimonials[activeIndex].company}</div>
+              <div style={{ color: '#FBBF24', fontSize: '20px', marginTop: '8px' }}>
+                {'★'.repeat(testimonials[activeIndex].stars)}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Navigation Dots/Numbers */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginTop: '40px' }}>
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveIndex(i)}
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '50%',
+                  border: activeIndex === i ? '2px solid var(--color-teal)' : '2px solid transparent',
+                  background: activeIndex === i ? 'var(--color-teal)' : '#F1F5F9',
+                  color: activeIndex === i ? 'white' : '#64748B',
+                  fontWeight: '600',
+                  fontSize: '16px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
