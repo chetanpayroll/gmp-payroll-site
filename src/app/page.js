@@ -233,8 +233,7 @@ function TestimonialsSection() {
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
 
           {/* Active Slide Card */}
-          <div className="animate-fade-in" key={activeIndex} style={{
-            padding: '48px',
+          <div className="animate-fade-in p-responsive" key={activeIndex} style={{
             background: 'white',
             boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
             borderRadius: '12px',

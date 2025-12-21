@@ -80,6 +80,7 @@ button {
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--spacing-3);
+    /* 24px padding on mobile */
   }
 }
 
@@ -150,6 +151,17 @@ button {
   .logo-responsive {
     height: 32px;
     /* Smaller for mobile */
+  }
+}
+
+/* Responsive Padding Utility */
+.p-responsive {
+  padding: 48px;
+}
+
+@media (max-width: 768px) {
+  .p-responsive {
+    padding: 24px;
   }
 }
 
@@ -242,6 +254,11 @@ button {
 
   .flex-mobile-col {
     flex-direction: column !important;
+  }
+
+  .gap-8 {
+    gap: 32px;
+    /* Slightly reduced gap on mobile */
   }
 }
 
