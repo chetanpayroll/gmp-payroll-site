@@ -4,8 +4,8 @@ export default function Footer() {
     return (
         <footer style={{ backgroundColor: '#0F172A', color: '#F8FAFC', padding: '80px 0 40px', borderTop: '1px solid #1E293B' }}>
             <div className="container">
-                <div className="grid gap-4" style={{ gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '48px', marginBottom: '64px' }}>
-                    <div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '48px', marginBottom: '64px' }}>
+                    <div style={{ flex: '2 1 300px' }}>
                         <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: '24px' }}>
                             <img src="/logo-white.svg" alt="GMP Payroll" style={{ height: '40px', width: 'auto' }} />
                         </Link>
@@ -19,7 +19,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div style={{ flex: '1 1 150px' }}>
                         <h4 style={{ color: '#F8FAFC', marginBottom: '24px', fontSize: '18px', fontWeight: 'bold' }}>Services</h4>
                         <div className="flex flex-col gap-3" style={{ color: '#94A3B8' }}>
                             <Link href="/services/readiness-assessment" className="hover:text-teal-400 transition-colors">Readiness Assessment</Link>
@@ -29,7 +29,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div style={{ flex: '1 1 150px' }}>
                         <h4 style={{ color: '#F8FAFC', marginBottom: '24px', fontSize: '18px', fontWeight: 'bold' }}>Company</h4>
                         <div className="flex flex-col gap-3" style={{ color: '#94A3B8' }}>
                             <Link href="/about" className="hover:text-teal-400 transition-colors">About Me</Link>
@@ -39,7 +39,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div>
+                    <div style={{ flex: '1 1 150px' }}>
                         <h4 style={{ color: '#F8FAFC', marginBottom: '24px', fontSize: '18px', fontWeight: 'bold' }}>Resources</h4>
                         <div className="flex flex-col gap-3" style={{ color: '#94A3B8' }}>
                             <Link href="/blog" className="hover:text-teal-400 transition-colors">Blog (Coming Soon)</Link>
@@ -48,9 +48,9 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div style={{ borderTop: '1px solid #1E293B', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', color: '#94A3B8', fontSize: '14px' }}>
-                    <div>© {new Date().getFullYear()} Chetan Sharma. All rights reserved.</div>
-                    <div className="flex gap-6">
+                <div className="flex flex-mobile-col" style={{ borderTop: '1px solid #1E293B', paddingTop: '32px', justifyContent: 'space-between', color: '#94A3B8', fontSize: '14px', gap: '24px' }}>
+                    <div className="text-center">© {new Date().getFullYear()} Chetan Sharma. All rights reserved.</div>
+                    <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
                         <Link href="/privacy" className="hover:text-teal-400 transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-teal-400 transition-colors">Terms of Service</Link>
                         <Link href="/cookies" className="hover:text-teal-400 transition-colors">Cookie Policy</Link>
