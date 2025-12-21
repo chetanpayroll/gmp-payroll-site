@@ -203,16 +203,6 @@ button {
 
 /* Grid Adjustments */
 @media (max-width: 1024px) {
-  .grid-cols-4 {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  .grid-cols-3 {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 640px) {
 
   .grid-cols-4,
   .grid-cols-3,
