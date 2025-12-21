@@ -56,36 +56,43 @@ export default function Blog() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                     {posts.map((post, i) => (
-                        <div key={i} className="hover:translate-y-1 transition-transform" style={{
+                        <div key={i} className="hover:translate-y-[-8px] transition-all duration-300 group" style={{
                             background: 'white',
-                            borderRadius: '12px',
+                            borderRadius: '24px',
                             overflow: 'hidden',
-                            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)',
+                            boxShadow: '0 20px 40px -8px rgba(0, 0, 0, 0.08)',
                             display: 'flex',
                             flexDirection: 'column',
-                            border: '1px solid #E2E8F0'
+                            border: '1px solid #F1F5F9'
                         }}>
-                            <div style={{ height: '240px', background: 'linear-gradient(135deg, #0F172A 0%, #334155 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '64px' }}>
-                                {post.image}
+                            <div style={{
+                                height: '240px',
+                                background: `linear-gradient(135deg, ${i % 2 === 0 ? '#0F172A' : '#1E293B'} 0%, ${i % 2 === 0 ? '#334155' : '#475569'} 100%)`,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '80px',
+                                position: 'relative'
+                            }}>
+                                <span className="group-hover:scale-110 transition-transform duration-300 drop-shadow-2xl">{post.image}</span>
                             </div>
-                            <div style={{ padding: '32px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                                <div style={{ display: 'flex', gap: '16px', marginBottom: '16px', fontSize: '14px', fontWeight: '600' }}>
-                                    <span style={{ color: 'var(--color-teal)' }}>{post.category}</span>
-                                    <span style={{ color: '#94A3B8' }}>•</span>
-                                    <span style={{ color: '#64748B' }}>{post.readTime}</span>
+                            <div style={{ padding: '40px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                                <div style={{ display: 'flex', gap: '16px', marginBottom: '20px', fontSize: '13px', fontWeight: '700', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                                    <span style={{ color: '#0F172A', background: '#F1F5F9', padding: '6px 16px', borderRadius: '100px' }}>{post.category}</span>
+                                    <span style={{ color: '#94A3B8', display: 'flex', alignItems: 'center' }}>{post.readTime}</span>
                                 </div>
-                                <h2 style={{ fontSize: '24px', marginBottom: '16px', lineHeight: '1.4' }}>
+                                <h2 style={{ fontSize: '26px', marginBottom: '20px', lineHeight: '1.3', fontWeight: '800', letterSpacing: '-0.02em', color: '#1E293B' }}>
                                     <Link href={`/blog/${post.slug}`} className="hover:text-teal-600 transition-colors">{post.title}</Link>
                                 </h2>
-                                <p style={{ color: '#64748B', lineHeight: '1.6', marginBottom: '24px', flexGrow: 1 }}>
+                                <p style={{ color: '#64748B', lineHeight: '1.7', marginBottom: '32px', flexGrow: 1, fontSize: '17px' }}>
                                     {post.excerpt}
                                 </p>
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '24px', borderTop: '1px solid #F1F5F9' }}>
-                                    <span style={{ color: '#94A3B8', fontSize: '14px' }}>{post.date}</span>
-                                    <Link href={`/blog/${post.slug}`} style={{ color: 'var(--color-teal)', fontWeight: '600', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                        Read Article →
+                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '32px', borderTop: '1px solid #F1F5F9' }}>
+                                    <span style={{ color: '#94A3B8', fontSize: '14px', fontWeight: '500' }}>{post.date}</span>
+                                    <Link href={`/blog/${post.slug}`} style={{ color: 'var(--color-teal)', fontWeight: '700', fontSize: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                        Read Article <span className="group-hover:translate-x-1 transition-transform">→</span>
                                     </Link>
                                 </div>
                             </div>
