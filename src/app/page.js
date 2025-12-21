@@ -180,20 +180,74 @@ function SuccessMetricsSection() {
 }
 
 function TestimonialsSection() {
+  const testimonials = [
+    {
+      quote: "Chetan's systematic approach to our 12-country payroll consolidation was exceptional. Every parallel run achieved <0.5% variance, and we went live with zero errors.",
+      role: "VP of Global HR",
+      company: "Technology Company (2,500 employees)",
+      stars: 5
+    },
+    {
+      quote: "The automated validation tools built by GMP Payroll reduced our monthly reconciliation time by 40%. A complete game changer for our 4-person payroll operations team.",
+      role: "Director of Payroll Ops",
+      company: "Mfg. Enterprise (5,000+ employees)",
+      stars: 5
+    },
+    {
+      quote: "Our Workday implementation was at risk of delay. Chetan stepped in, identified the critical data gaps, and guided us to a flawless go-live in just 3 months.",
+      role: "Global HRIS Lead",
+      company: "FinTech Scale-up",
+      stars: 5
+    },
+    {
+      quote: "Compliance risk was my top concern entering different LATAM markets. The audit revealed potential exposures we fixed before they became liabilities. Worth every penny.",
+      role: "CFO",
+      company: "Logistics Giant",
+      stars: 5
+    },
+    {
+      quote: "Managing expat shadow payrolls was a nightmare. The new process flow designed by GMP is elegant, compliant, and actually understandable for our local partners.",
+      role: "Head of Rewards",
+      company: "Pharma Multinational",
+      stars: 5
+    },
+    {
+      quote: "Legacy data migration is usually a disaster. With the custom scripts provided, we achieved 100% data integrity match for 15,000 employee records.",
+      role: "IT Project Manager",
+      company: "Retail Group",
+      stars: 5
+    }
+  ];
+
   return (
     <section style={{ padding: '80px 0', background: 'white' }}>
       <div className="container">
         <h2 className="text-center" style={{ fontSize: '36px', marginBottom: '60px' }}>Client Success Stories</h2>
-        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '48px', background: 'white', boxShadow: '0 20px 40px rgba(0,0,0,0.1)', borderRadius: '12px' }}>
-          <div style={{ fontSize: '64px', color: 'var(--color-teal)', lineHeight: '1', fontFamily: 'serif' }}>“</div>
-          <p style={{ fontSize: '20px', fontStyle: 'italic', color: '#475569', margin: '16px 0 32px' }}>
-            Chetan's systematic approach to our 12-country payroll consolidation was exceptional. Every parallel run achieved &lt;0.5% variance, and we went live with zero errors.
-          </p>
-          <div>
-            <div style={{ fontWeight: '700', fontSize: '18px' }}>VP of Global HR</div>
-            <div style={{ color: '#64748B' }}>Technology Company (2,500 employees)</div>
-            <div style={{ color: '#FBBF24', fontSize: '20px', marginTop: '8px' }}>★★★★★</div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((t, i) => (
+            <div key={i} style={{
+              padding: '32px',
+              background: 'white',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.08)',
+              borderRadius: '12px',
+              display: 'flex',
+              flexDirection: 'column',
+              height: '100%',
+              border: '1px solid #F1F5F9'
+            }}>
+              <div style={{ fontSize: '48px', color: 'var(--color-teal)', lineHeight: '1', fontFamily: 'serif', marginBottom: '16px' }}>“</div>
+              <p style={{ fontSize: '16px', fontStyle: 'italic', color: '#475569', marginBottom: '24px', flexGrow: 1, lineHeight: '1.6' }}>
+                {t.quote}
+              </p>
+              <div style={{ borderTop: '1px solid #F1F5F9', paddingTop: '16px' }}>
+                <div style={{ fontWeight: '700', fontSize: '16px', color: '#0F172A' }}>{t.role}</div>
+                <div style={{ color: '#64748B', fontSize: '14px', marginBottom: '8px' }}>{t.company}</div>
+                <div style={{ color: '#FBBF24', fontSize: '16px' }}>
+                  {'★'.repeat(t.stars)}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
