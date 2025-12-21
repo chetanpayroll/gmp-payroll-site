@@ -42,7 +42,7 @@ export default function Footer() {
                     <div style={{ flex: '1 1 150px' }}>
                         <h4 style={{ color: '#F8FAFC', marginBottom: '24px', fontSize: '18px', fontWeight: 'bold' }}>Resources</h4>
                         <div className="flex flex-col gap-3" style={{ color: '#94A3B8' }}>
-                            <Link href="/blog" className="hover:text-teal-400 transition-colors">Blog (Coming Soon)</Link>
+                            <Link href="/blog" className="hover:text-teal-400 transition-colors">Blog</Link>
                             <Link href="/newsletter" className="hover:text-teal-400 transition-colors">Newsletter</Link>
                         </div>
                     </div>
