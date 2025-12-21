@@ -376,17 +376,8 @@ function FinalCTASection() {
 }
 
 function LogoTicker() {
-  const logos = [
-    { type: 'image', src: '/gmp-logo.png', alt: 'GMP Payroll' },
-    { type: 'text', text: "Workday" },
-    { type: 'text', text: "SAP SuccessFactors" },
-    { type: 'text', text: "Oracle HCM" },
-    { type: 'text', text: "ADP GlobalView" },
-    { type: 'text', text: "Ceridian Dayforce" },
-    { type: 'text', text: "UKG Pro" },
-    { type: 'text', text: "BambooHR" },
-    { type: 'text', text: "Rippling" }
-  ];
+  // Create an array of 12 identical logo items to create a seamless loop
+  const logos = Array(12).fill({ src: '/gmp-logo.png', alt: 'GMP Payroll' });
 
   return (
     <div style={{
@@ -399,30 +390,17 @@ function LogoTicker() {
       position: 'relative',
       zIndex: 10
     }}>
-      <div className="logo-ticker-scroll-container" style={{ display: 'inline-flex', gap: '80px', alignItems: 'center', width: 'max-content' }}>
-        {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
-          logo.type === 'image' ? (
-            <div key={i} className="logo-ticker-card" style={{ position: 'relative', height: '24px', width: '120px' }}>
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                fill
-                style={{ objectFit: 'contain', filter: 'grayscale(100%) opacity(0.7)' }}
-              />
-            </div>
-          ) : (
-            <span key={i} className="logo-ticker-card" style={{
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#94A3B8',
-              cursor: 'default',
-              userSelect: 'none',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              {logo.text}
-            </span>
-          )
+      <div className="logo-ticker-scroll-container" style={{ display: 'inline-flex', gap: '100px', alignItems: 'center', width: 'max-content' }}>
+        {[...logos, ...logos].map((logo, i) => (
+          <div key={i} className="logo-ticker-card" style={{ position: 'relative', height: '32px', width: '160px' }}>
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              fill
+              style={{ objectFit: 'contain' }}
+              className="hover:opacity-80 transition-opacity"
+            />
+          </div>
         ))}
       </div>
     </div>
