@@ -138,7 +138,7 @@ export default async function BlogPost({ params }) {
             {/* Impressive Hero Section */}
             <div style={{
                 background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)',
-                padding: '100px 0 80px',
+                padding: '60px 0 80px',
                 position: 'relative',
                 overflow: 'hidden'
             }}>
@@ -146,10 +146,14 @@ export default async function BlogPost({ params }) {
                 <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(94, 234, 212, 0.1) 0%, rgba(15, 23, 42, 0) 70%)', borderRadius: '50%' }}></div>
                 <div style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(15, 23, 42, 0) 70%)', borderRadius: '50%' }}></div>
 
-                <div className="container" style={{ position: 'relative', zIndex: 10, maxWidth: '900px', textAlign: 'center' }}>
-                    <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#94A3B8', fontWeight: '600', marginBottom: '40px', fontSize: '14px', background: 'rgba(255,255,255,0.1)', padding: '8px 16px', borderRadius: '100px', backdropFilter: 'blur(4px)' }} className="hover:text-white transition-colors">
+                {/* Back Button - Top Left */}
+                <div className="container" style={{ position: 'relative', zIndex: 20, marginBottom: '40px' }}>
+                    <Link href="/blog" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'white', fontWeight: '600', fontSize: '14px', background: 'rgba(255,255,255,0.1)', padding: '12px 24px', borderRadius: '100px', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)' }} className="hover:bg-white/20 transition-all">
                         ← Back to Blog
                     </Link>
+                </div>
+
+                <div className="container" style={{ position: 'relative', zIndex: 10, maxWidth: '900px', textAlign: 'center' }}>
 
                     <div className="animate-fade-in-up" style={{ fontSize: '96px', marginBottom: '32px', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))' }}>
                         {post.image}
