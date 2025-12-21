@@ -28,6 +28,7 @@ export default function Navbar() {
         { href: '/services', label: 'Services' },
         { href: '/expertise', label: 'Expertise' },
         { href: '/case-studies', label: 'Case Studies' },
+        { href: '/contact', label: 'Contact' },
     ];
 
     return (
