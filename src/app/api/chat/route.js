@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-const GL_API_KEY = process.env.GEMINI_API_KEY;
+const GL_API_KEY = process.env.GOOGLE_GENERATIVE_AI_API_KEY || process.env.GEMINI_API_KEY;
 const SYSTEM_INSTRUCTION = `You are the GMP Payroll AI Specialist. You are professional, accurate, and helpful. You specialize in global payroll implementation, tax compliance (including MPF/CPF), and workflow automation. If you don't know an answer, politely ask the user to contact support@gmppayroll.org. Keep your answers concise and business-focused.`;
 
 export async function POST(req) {
