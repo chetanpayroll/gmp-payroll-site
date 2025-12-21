@@ -291,26 +291,54 @@ function TestimonialsSection() {
 }
 
 function ProcessSection() {
+  const steps = [
+    {
+      num: "01",
+      title: "Discovery Call",
+      duration: "30 min",
+      desc: "We analyze your current landscape, identify pain points, and assess if our expertise is the right fit for your needs.",
+      borderColor: "var(--color-teal)"
+    },
+    {
+      num: "02",
+      title: "Scoping & Proposal",
+      duration: "2-3 Days",
+      desc: "You receive a detailed roadmap, timeline, and investment proposal tailored to your specific implementation goals.",
+      borderColor: "var(--color-navy)"
+    },
+    {
+      num: "03",
+      title: "Execution Phase",
+      duration: "Ongoing",
+      desc: "We embed with your team to drive the project forward, providing weekly status reports and proactive risk management.",
+      borderColor: "var(--color-teal)"
+    }
+  ];
+
   return (
-    <section style={{ padding: '80px 0' }}>
+    <section style={{ padding: '80px 0', backgroundColor: '#F8FAFC' }}>
       <div className="container">
         <h2 className="text-center" style={{ fontSize: '36px', marginBottom: '16px' }}>How We Work Together</h2>
         <p className="text-center" style={{ fontSize: '18px', color: '#64748B', marginBottom: '60px' }}>Transparent, structured, results-focused engagement</p>
 
-        <div className="flex flex-col gap-4">
-          {/* Steps would go here */}
-          <div style={{ padding: '32px', background: 'white', borderLeft: '4px solid var(--color-teal)' }}>
-            <h3 style={{ fontSize: '24px' }}>1. Discovery Call (30 min)</h3>
-            <p>Understand challenges • Assess scope • Determine fit</p>
-          </div>
-          <div style={{ padding: '32px', background: '#F8FAFC', borderLeft: '4px solid var(--color-navy)' }}>
-            <h3 style={{ fontSize: '24px' }}>2. Scoping & Proposal</h3>
-            <p>Deliverables • Timeline • Investment</p>
-          </div>
-          <div style={{ padding: '32px', background: 'white', borderLeft: '4px solid var(--color-teal)' }}>
-            <h3 style={{ fontSize: '24px' }}>3. Execution</h3>
-            <p>Weekly updates • Progress tracking • Risk management</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {steps.map((step, i) => (
+            <div key={i} style={{
+              padding: '32px',
+              background: 'white',
+              borderTop: `4px solid ${step.borderColor}`,
+              borderRadius: '8px',
+              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column'
+            }}>
+              <div style={{ fontSize: '48px', fontWeight: '800', color: '#E2E8F0', marginBottom: '16px', lineHeight: '1' }}>{step.num}</div>
+              <h3 style={{ fontSize: '24px', marginBottom: '4px' }}>{step.title}</h3>
+              <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--color-teal)', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{step.duration}</div>
+              <p style={{ color: '#64748B', lineHeight: '1.6' }}>{step.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
