@@ -90,8 +90,7 @@ export default function ChatWidget() {
                 style={{
                     position: "fixed",
                     bottom: "32px",
-                    left: "50%",
-                    transform: "translateX(-50%)",
+                    right: "32px",
                     backgroundColor: "#003366",
                     color: "white",
                     borderRadius: "50px",
@@ -118,9 +117,9 @@ export default function ChatWidget() {
                 style={{
                     position: "fixed",
                     bottom: "32px",
-                    left: "50%",
-                    transform: `translateX(-50%) scale(${isOpen ? 1 : 0.8})`,
-                    transformOrigin: "bottom center",
+                    right: "32px",
+                    transform: `scale(${isOpen ? 1 : 0.8})`,
+                    transformOrigin: "bottom right",
                     width: "90%",
                     maxWidth: "400px",
                     height: "600px",
