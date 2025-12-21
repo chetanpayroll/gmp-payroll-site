@@ -47,16 +47,19 @@ export default function ContactPage() {
                             </form>
                         </div>
 
-                        {/* Calendly Embed Placeholder */}
+                        {/* Google Calendar Embed */}
                         <div>
-                            <div style={{ backgroundColor: '#F8FAFC', padding: '40px', borderRadius: '8px', border: '1px solid #E2E8F0', minHeight: '500px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-                                <div style={{ fontSize: '48px', marginBottom: '24px' }}>📅</div>
-                                <h3 style={{ fontSize: '24px', marginBottom: '16px' }}>Book Directly</h3>
-                                <p style={{ color: '#64748B', marginBottom: '32px' }}> Skip the email tag. Choose a time that works for you.</p>
+                            <div style={{ backgroundColor: '#F8FAFC', padding: '24px', borderRadius: '8px', border: '1px solid #E2E8F0', minHeight: '600px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+                                <div style={{ fontSize: '48px', marginBottom: '16px' }}>📅</div>
+                                <h3 style={{ fontSize: '24px', marginBottom: '8px' }}>Book Directly</h3>
+                                <p style={{ color: '#64748B', marginBottom: '24px' }}>Secure your 30-minute discovery call instantly.</p>
 
-                                {/* In a real app, this would be a Calendly iframe */}
-                                <div style={{ width: '100%', height: '350px', background: 'white', borderRadius: '8px', border: '1px dashed #CBD5E1', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#94A3B8' }}>
-                                    [Calendly Widget Would Load Here]
+                                <div style={{ width: '100%', height: '600px', background: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 4px 12px rgba(0,0,0,0.05)' }}>
+                                    <iframe
+                                        src="https://calendar.google.com/calendar/appointments/schedules/gifsu7c5abuqrpgp9b3mbv3tco_Y2hldGFuc2hhcm1hQGdtcHBheXJvbGwuY29t?gv=true"
+                                        style={{ border: 0, width: '100%', height: '100%' }}
+                                        frameBorder="0"
+                                    ></iframe>
                                 </div>
                             </div>
                         </div>
