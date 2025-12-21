@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function Home() {
   return (
     <>
+      <LogoTicker />
       <HeroSection />
       <ValuePropositionSection />
       <ServicesPreviewSection />
@@ -371,5 +372,40 @@ function FinalCTASection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function LogoTicker() {
+  const logos = [
+    "Workday", "SAP SuccessFactors", "Oracle HCM", "ADP GlobalView", "Ceridian Dayforce", "UKG Pro", "BambooHR", "Rippling"
+  ];
+
+  return (
+    <div style={{
+      background: 'var(--color-bg-white)',
+      borderBottom: '1px solid var(--color-border)',
+      padding: '16px 0',
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      width: '100%',
+      position: 'relative',
+      zIndex: 10
+    }}>
+      <div className="logo-ticker-scroll-container" style={{ display: 'inline-flex', gap: '80px', alignItems: 'center', width: 'max-content' }}>
+        {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
+          <span key={i} className="logo-ticker-card" style={{
+            fontSize: '16px',
+            fontWeight: '600',
+            color: '#94A3B8',
+            cursor: 'default',
+            userSelect: 'none',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
+          }}>
+            {logo}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }

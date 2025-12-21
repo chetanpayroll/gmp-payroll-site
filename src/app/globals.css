@@ -409,3 +409,31 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-navy);
 }
+
+/* Logo Ticker Animation */
+@keyframes logo-ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-ticker-scroll-container {
+  animation: logo-ticker-scroll 60s linear infinite;
+  padding-left: 40px;
+  /* Initial offset */
+  width: max-content;
+  /* Ensure it takes full width of content */
+  will-change: transform;
+}
+
+.logo-ticker-card {
+  transition: color 0.3s ease;
+}
+
+.logo-ticker-card:hover {
+  color: var(--color-navy) !important;
+}
