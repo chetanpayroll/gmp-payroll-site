@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const metadata = {
     title: 'About Chetan Sharma | Global Payroll Expert',
     description: '13+ years of experience leading complex payroll transformations for Fortune 500 companies.',
@@ -21,9 +23,14 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="grid grid-cols-2 gap-8 items-start">
                         <div>
-                            <div style={{ width: '100%', height: 'clamp(250px, 40vw, 400px)', backgroundColor: '#E2E8F0', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                {/* Placeholder for Headshot */}
-                                <span style={{ fontSize: '80px' }}>👨‍💼</span>
+                            <div style={{ width: '100%', height: 'clamp(250px, 40vw, 400px)', position: 'relative', borderRadius: '8px', overflow: 'hidden' }}>
+                                <Image
+                                    src="/chetan-sharma.png"
+                                    alt="Chetan Sharma - Global Payroll Consultant"
+                                    fill
+                                    style={{ objectFit: 'cover' }}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
                             </div>
                             <div style={{ marginTop: '32px' }}>
                                 <h3 style={{ fontSize: '20px', marginBottom: '16px' }}>Chetan Sharma</h3>
