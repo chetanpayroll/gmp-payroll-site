@@ -47,11 +47,18 @@ function HeroSection() {
         </p>
 
         {/* Trust Badges */}
-        <div className="flex justify-center gap-6 mb-10 animate-fade-in delay-200" style={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap' }}>
-          <TrustBadge number="13+" label="YEARS" />
-          <TrustBadge number="122+" label="PROJECTS" />
-          <TrustBadge number="99.8%" label="ACCURACY" />
-          <TrustBadge number="50+" label="COUNTRIES" />
+        <div className="animate-fade-in delay-200" style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '40px',
+          marginBottom: '48px',
+          marginTop: '24px'
+        }}>
+          <TrustBadge number="13+" label="Years Exp." icon="🗓️" />
+          <TrustBadge number="122+" label="Projects" icon="🚀" />
+          <TrustBadge number="99.8%" label="Accuracy" icon="🎯" />
+          <TrustBadge number="50+" label="Countries" icon="🌍" />
         </div>
 
         <div className="flex flex-mobile-col justify-center gap-4 animate-fade-in delay-300">
@@ -63,11 +70,12 @@ function HeroSection() {
   );
 }
 
-function TrustBadge({ number, label }) {
+function TrustBadge({ number, label, icon }) {
   return (
-    <div className="text-center">
-      <div style={{ fontSize: '32px', fontWeight: '700', color: 'var(--color-navy)' }}>{number}</div>
-      <div style={{ fontSize: '14px', letterSpacing: '1px', color: 'var(--color-text-secondary)', fontWeight: '600' }}>{label}</div>
+    <div className="text-center" style={{ minWidth: '120px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div style={{ fontSize: '28px', marginBottom: '12px', filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))' }}>{icon}</div>
+      <div style={{ fontSize: '36px', fontWeight: '800', color: '#0F172A', lineHeight: '1', marginBottom: '4px' }}>{number}</div>
+      <div style={{ fontSize: '13px', letterSpacing: '1px', color: '#64748B', fontWeight: '700', textTransform: 'uppercase' }}>{label}</div>
     </div>
   );
 }
