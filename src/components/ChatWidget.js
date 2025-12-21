@@ -151,7 +151,7 @@ export default function ChatWidget() {
                     <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                         <div style={{ width: "8px", height: "8px", backgroundColor: "#4ADE80", borderRadius: "50%" }}></div>
                         <div>
-                            <h3 style={{ margin: 0, fontSize: "16px", fontWeight: "700" }}>GMP AI Specialist</h3>
+                            <h3 style={{ margin: 0, fontSize: "16px", fontWeight: "700", color: "white" }}>GMP AI Specialist</h3>
                             <p style={{ margin: 0, fontSize: "12px", opacity: 0.8 }}>Online | Powered by Gemini 2.5</p>
                         </div>
                     </div>
