@@ -320,7 +320,7 @@ function ProcessSection() {
         <h2 className="text-center" style={{ fontSize: '36px', marginBottom: '16px' }}>How We Work Together</h2>
         <p className="text-center" style={{ fontSize: '18px', color: '#64748B', marginBottom: '60px' }}>Transparent, structured, results-focused engagement</p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="horizontal-scroll-mobile">
           {steps.map((step, i) => (
             <div key={i} style={{
               padding: '32px',
