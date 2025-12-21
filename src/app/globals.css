@@ -165,7 +165,18 @@ button {
   }
 }
 
-/* Horizontal Scroll for Mobile (Process Section) */
+/* Responsive Margin Bottom Utility */
+.mb-responsive {
+  margin-bottom: 64px;
+}
+
+@media (max-width: 768px) {
+  .mb-responsive {
+    margin-bottom: 40px;
+  }
+}
+
+/* Horizontal Scroll for Mobile (Process Section & Others) */
 .horizontal-scroll-mobile {
   display: flex !important;
   flex-wrap: nowrap !important;
