@@ -6,7 +6,7 @@ export const metadata = {
 export default function CaseStudy3() {
     return (
         <>
-            <section style={{ background: 'linear-gradient(135deg, var(--color-navy) 0%, #1e293b 100%)', color: 'white', padding: '100px 0' }}>
+            <section style={{ background: 'linear-gradient(135deg, var(--color-navy) 0%, #1e293b 100%)', color: 'white', padding: '40px 0' }}>
                 <div className="container">
                     <span style={{ color: 'var(--color-teal)', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>Case Study</span>
                     <h1 style={{ fontSize: '48px', marginTop: '16px', marginBottom: '32px' }}>Rapid Implementation Turnaround</h1>

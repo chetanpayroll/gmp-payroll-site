@@ -6,11 +6,11 @@ export const metadata = {
 export default function AboutPage() {
     return (
         <>
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '40px 0', textAlign: 'center' }}>
                 <div className="container">
-                    <div style={{ maxWidth: '800px' }}>
-                        <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>About Me</h1>
-                        <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(18px, 4vw, 24px)', color: '#94A3B8', fontWeight: '300', lineHeight: '1.6' }}>
+                    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        <h1 className="animate-fade-in" style={{ fontSize: 'clamp(24px, 6vw, 36px)', marginBottom: '16px' }}>About Me</h1>
+                        <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 3vw, 20px)', color: '#94A3B8', fontWeight: '300', lineHeight: '1.6' }}>
                             "I bridge the gap between complex technical payroll requirements and strategic business goals."
                         </p>
                     </div>

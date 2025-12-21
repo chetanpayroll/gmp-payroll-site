@@ -6,10 +6,10 @@ export const metadata = {
 export default function ExpertisePage() {
     return (
         <>
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '40px 0', textAlign: 'center' }}>
                 <div className="container">
-                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>Deep Domain Expertise</h1>
-                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
+                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(24px, 6vw, 36px)', marginBottom: '16px' }}>Deep Domain Expertise</h1>
+                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(14px, 3vw, 18px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
                         A unique blend of strategic HR knowledge, technical data skills, and multi-country regulatory mastery.
                     </p>
                 </div>

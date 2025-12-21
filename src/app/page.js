@@ -16,7 +16,7 @@ export default function Home() {
 
 function HeroSection() {
   return (
-    <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', padding: '100px 0' }}>
+    <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', padding: '40px 0' }}>
       {/* Background World Map Animation Placeholder */}
       <div style={{
         position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1,
@@ -47,7 +47,7 @@ function HeroSection() {
         </p>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap justify-center gap-6 mb-10 animate-fade-in delay-200">
+        <div className="flex justify-center gap-6 mb-10 animate-fade-in delay-200" style={{ overflowX: 'auto', whiteSpace: 'nowrap', flexWrap: 'nowrap' }}>
           <TrustBadge number="13+" label="YEARS" />
           <TrustBadge number="122+" label="PROJECTS" />
           <TrustBadge number="99.8%" label="ACCURACY" />
@@ -223,7 +223,7 @@ function FinalCTASection() {
   return (
     <section style={{
       background: 'linear-gradient(135deg, var(--color-navy) 0%, var(--color-teal) 100%)',
-      padding: '100px 0',
+      padding: '40px 0',
       textAlign: 'center',
       color: 'white'
     }}>

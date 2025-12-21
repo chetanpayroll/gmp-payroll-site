@@ -6,7 +6,7 @@ export const metadata = {
 export default function AutomationToolsPage() {
     return (
         <>
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '40px 0', textAlign: 'center' }}>
                 <div className="container">
                     <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>Proprietary Tool Suite</h1>
                     <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
@@ -82,7 +82,7 @@ export default function AutomationToolsPage() {
                 </div>
             </section>
 
-            <section style={{ padding: '100px 0', textAlign: 'center' }}>
+            <section style={{ padding: '40px 0', textAlign: 'center' }}>
                 <div className="container">
                     <h2 style={{ fontSize: 'clamp(24px, 5vw, 36px)', marginBottom: '24px' }}>Want to see them in action?</h2>
                     <p style={{ fontSize: '18px', color: '#475569', marginBottom: '40px' }}>

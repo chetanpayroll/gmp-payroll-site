@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
@@ -43,8 +44,14 @@ export default function Navbar() {
             }}>
                 <div className="container flex justify-between items-center">
                     <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-                        <span style={{ fontFamily: 'var(--font-inter)', fontWeight: '700', color: '#0F172A', fontSize: '24px', borderBottom: '3px solid #0891B2', lineHeight: '1.2' }}>GMP</span>
-                        <span style={{ fontFamily: 'var(--font-inter)', fontWeight: '400', color: '#0F172A', fontSize: '24px', marginLeft: '6px', lineHeight: '1.2' }}>PAYROLL</span>
+                        <Image
+                            src="/logo.svg"
+                            width={200}
+                            height={40}
+                            alt="GMP Payroll"
+                            style={{ height: '40px', width: 'auto' }}
+                            priority
+                        />
                     </Link>
 
                     {/* Desktop Links */}

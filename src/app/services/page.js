@@ -48,19 +48,19 @@ export default function ServicesPage() {
     return (
         <>
             {/* Hero Section */}
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '40px 0', textAlign: 'center' }}>
                 <div className="container">
-                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(32px, 8vw, 48px)', marginBottom: '24px' }}>Services</h1>
-                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(16px, 4vw, 20px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
+                    <h1 className="animate-fade-in" style={{ fontSize: 'clamp(24px, 6vw, 36px)', marginBottom: '16px' }}>Services</h1>
+                    <p className="animate-fade-in delay-100" style={{ fontSize: 'clamp(14px, 3vw, 18px)', color: '#94A3B8', maxWidth: '700px', margin: '0 auto' }}>
                         Specialized implementation support tailored for multinational enterprises. From strategic planning to technical execution.
                     </p>
                 </div>
             </section>
 
             {/* Services Grid */}
-            <section style={{ padding: '80px 0' }}>
+            <section style={{ padding: '60px 0' }}>
                 <div className="container">
-                    <div className="grid grid-cols-2 gap-8">
+                    <div className="grid grid-cols-3 gap-8">
                         {services.map((service, index) => (
                             <Link key={index} href={`/services/${service.slug}`} style={{ display: 'block' }}>
                                 <div className="hover:translate-y-1" style={{

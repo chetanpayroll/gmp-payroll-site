@@ -6,7 +6,7 @@ export const metadata = {
 export default function AutomationPage() {
     return (
         <>
-            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '100px 0 80px' }}>
+            <section style={{ backgroundColor: 'var(--color-navy)', color: 'white', padding: '40px 0' }}>
                 <div className="container">
                     <div style={{ maxWidth: '800px' }}>
                         <div style={{ color: 'var(--color-teal)', fontWeight: '600', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '1px' }}>

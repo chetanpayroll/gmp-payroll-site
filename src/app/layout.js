@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"] }
 export const metadata = {
    title: "Global Payroll Implementation Excellence | Chetan Sharma",
    description: "Zero-Error Payroll Transformations. Independent payroll implementation consultant for mid-to-large multinationals.",
+   icons: {
+      icon: '/favicon.svg',
+   },
 };
 
 export default function RootLayout({ children }) {
