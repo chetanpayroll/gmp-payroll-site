@@ -377,7 +377,15 @@ function FinalCTASection() {
 
 function LogoTicker() {
   const logos = [
-    "Workday", "SAP SuccessFactors", "Oracle HCM", "ADP GlobalView", "Ceridian Dayforce", "UKG Pro", "BambooHR", "Rippling"
+    { type: 'image', src: '/gmp-logo.png', alt: 'GMP Payroll' },
+    { type: 'text', text: "Workday" },
+    { type: 'text', text: "SAP SuccessFactors" },
+    { type: 'text', text: "Oracle HCM" },
+    { type: 'text', text: "ADP GlobalView" },
+    { type: 'text', text: "Ceridian Dayforce" },
+    { type: 'text', text: "UKG Pro" },
+    { type: 'text', text: "BambooHR" },
+    { type: 'text', text: "Rippling" }
   ];
 
   return (
@@ -393,17 +401,28 @@ function LogoTicker() {
     }}>
       <div className="logo-ticker-scroll-container" style={{ display: 'inline-flex', gap: '80px', alignItems: 'center', width: 'max-content' }}>
         {[...logos, ...logos, ...logos, ...logos].map((logo, i) => (
-          <span key={i} className="logo-ticker-card" style={{
-            fontSize: '16px',
-            fontWeight: '600',
-            color: '#94A3B8',
-            cursor: 'default',
-            userSelect: 'none',
-            textTransform: 'uppercase',
-            letterSpacing: '0.05em'
-          }}>
-            {logo}
-          </span>
+          logo.type === 'image' ? (
+            <div key={i} className="logo-ticker-card" style={{ position: 'relative', height: '24px', width: '120px' }}>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                fill
+                style={{ objectFit: 'contain', filter: 'grayscale(100%) opacity(0.7)' }}
+              />
+            </div>
+          ) : (
+            <span key={i} className="logo-ticker-card" style={{
+              fontSize: '16px',
+              fontWeight: '600',
+              color: '#94A3B8',
+              cursor: 'default',
+              userSelect: 'none',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}>
+              {logo.text}
+            </span>
+          )
         ))}
       </div>
     </div>
