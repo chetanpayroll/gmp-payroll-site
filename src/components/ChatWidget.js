@@ -156,19 +156,44 @@ export default function ChatWidget() {
                             <p style={{ margin: 0, fontSize: "12px", opacity: 0.8 }}>Online | Powered by Gemini 3 Flash</p>
                         </div>
                     </div>
-                    <button
-                        onClick={() => setIsOpen(false)}
-                        style={{
-                            background: "transparent",
-                            border: "none",
-                            color: "white",
-                            fontSize: "24px",
-                            cursor: "pointer",
-                            padding: "4px",
-                        }}
-                    >
-                        ×
-                    </button>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                        <button
+                            onClick={() => {
+                                setMessages([{
+                                    role: "assistant",
+                                    content: "Hello! I'm the GMP Payroll AI Specialist. How can I help you with global payroll or compliance today?",
+                                }]);
+                                setIsError429(false);
+                            }}
+                            title="New Chat"
+                            style={{
+                                background: "rgba(255,255,255,0.1)",
+                                border: "none",
+                                color: "white",
+                                fontSize: "12px",
+                                cursor: "pointer",
+                                padding: "4px 8px",
+                                borderRadius: "4px",
+                                transition: "background 0.2s"
+                            }}
+                            className="hover:bg-white/20"
+                        >
+                            New Chat
+                        </button>
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            style={{
+                                background: "transparent",
+                                border: "none",
+                                color: "white",
+                                fontSize: "24px",
+                                cursor: "pointer",
+                                padding: "4px",
+                            }}
+                        >
+                            ×
+                        </button>
+                    </div>
                 </div>
 
                 {/* Messages Area */}
