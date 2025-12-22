@@ -52,9 +52,10 @@ export default function ChatWidget() {
                 ]);
             } else {
                 const data = await response.json();
+                const replyContent = data.reply || data.error || "I apologize, but I'm having trouble connecting right now.";
                 setMessages((prev) => [
                     ...prev,
-                    { role: "assistant", content: data.reply },
+                    { role: "assistant", content: replyContent },
                 ]);
             }
         } catch (error) {
