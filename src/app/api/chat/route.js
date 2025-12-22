@@ -21,7 +21,7 @@ export async function POST(req) {
             }]
         };
 
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${GL_API_KEY}`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${GL_API_KEY}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
