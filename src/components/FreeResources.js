@@ -11,11 +11,12 @@ const FreeResources = () => {
                     <h2 className="mb-4">Start Your AI Journey Today <br /> <span className="text-gray text-2xl font-normal block mt-2">No Credit Card Required</span></h2>
                 </div>
 
-                <div className="flex flex-col gap-8 max-w-5xl mx-auto">
+                <div className="max-w-5xl mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                     {/* Resource 1 */}
                     <TiltCard className="group glass-card-enhanced relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl font-black text-white select-none">01</div>
                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-blue-700"></div>
-                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10">
+                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10 relative z-10">
                             {/* Icon Section */}
                             <div className="flex-shrink-0">
                                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-900/50 to-slate-900/50 border border-blue-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -50,8 +51,9 @@ const FreeResources = () => {
 
                     {/* Resource 2 */}
                     <TiltCard className="group glass-card-enhanced relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl font-black text-white select-none">02</div>
                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-purple-700"></div>
-                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10">
+                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10 relative z-10">
                             {/* Icon Section */}
                             <div className="flex-shrink-0">
                                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-900/50 to-slate-900/50 border border-purple-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -86,8 +88,9 @@ const FreeResources = () => {
 
                     {/* Resource 3 */}
                     <TiltCard className="group glass-card-enhanced relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl font-black text-white select-none">03</div>
                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 to-cyan-700"></div>
-                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10">
+                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10 relative z-10">
                             {/* Icon Section */}
                             <div className="flex-shrink-0">
                                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-900/50 to-slate-900/50 border border-cyan-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
