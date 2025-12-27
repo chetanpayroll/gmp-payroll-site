@@ -11,64 +11,112 @@ const FreeResources = () => {
                     <h2 className="mb-4">Start Your AI Journey Today <br /> <span className="text-gray text-2xl font-normal block mt-2">No Credit Card Required</span></h2>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="flex flex-col gap-8 max-w-5xl mx-auto">
                     {/* Resource 1 */}
-                    <TiltCard className="resource-card group glass-card-enhanced">
-                        <div className="h-40 bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center">
-                            <span className="text-4xl group-hover:scale-110 transition-transform">📚</span>
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-lg font-bold mb-2">Free AI Starter Course</h3>
-                            <p className="text-sm text-gray mb-4">5 video lessons covering AI fundamentals & prompt engineering basics.</p>
-                            <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="mt-4 space-y-2">
-                                <input type="hidden" name="_subject" value="New Request: Free AI Starter Course" />
-                                <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <input type="hidden" name="Resource" value="Free AI Starter Course" />
+                    <TiltCard className="group glass-card-enhanced relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-blue-700"></div>
+                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10">
+                            {/* Icon Section */}
+                            <div className="flex-shrink-0">
+                                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-900/50 to-slate-900/50 border border-blue-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <span className="text-4xl">📚</span>
+                                </div>
+                            </div>
 
-                                <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
-                                <button type="submit" className="btn btn-primary btn-hover-effect w-full text-sm py-2">Get Free Access →</button>
-                            </form>
+                            {/* Text Section */}
+                            <div className="flex-grow text-center md:text-left">
+                                <h3 className="text-xl font-bold mb-2 text-white">Free AI Starter Course</h3>
+                                <p className="text-gray-400 text-sm max-w-md">5 video lessons covering AI fundamentals & prompt engineering basics. Start learning immediately.</p>
+                            </div>
+
+                            {/* Form Section */}
+                            <div className="flex-shrink-0 w-full md:w-auto min-w-[300px]">
+                                <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="flex flex-col gap-3">
+                                    <input type="hidden" name="_subject" value="New Request: Free AI Starter Course" />
+                                    <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="Resource" value="Free AI Starter Course" />
+
+                                    <div className="relative">
+                                        <input type="email" name="Email" placeholder="Enter your email" required className="w-full bg-black/30 border border-gray-700 rounded-lg px-4 py-3 text-sm text-white focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all outline-none" />
+                                    </div>
+                                    <button type="submit" className="btn btn-primary btn-hover-effect w-full text-sm py-3 font-semibold shadow-lg shadow-blue-900/20">
+                                        Get Free Access →
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </TiltCard>
 
                     {/* Resource 2 */}
-                    <TiltCard className="resource-card group glass-card-enhanced">
-                        <div className="h-40 bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center">
-                            <span className="text-4xl group-hover:scale-110 transition-transform">📋</span>
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-lg font-bold mb-2">100+ Prompt Templates</h3>
-                            <p className="text-sm text-gray mb-4">Battle-tested prompts for marketing, sales, HR operations.</p>
-                            <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="mt-4 space-y-2">
-                                <input type="hidden" name="_subject" value="New Request: 100+ Prompt Templates" />
-                                <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <input type="hidden" name="Resource" value="100+ Prompt Templates" />
+                    <TiltCard className="group glass-card-enhanced relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-purple-700"></div>
+                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10">
+                            {/* Icon Section */}
+                            <div className="flex-shrink-0">
+                                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-900/50 to-slate-900/50 border border-purple-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <span className="text-4xl">📋</span>
+                                </div>
+                            </div>
 
-                                <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
-                                <button type="submit" className="btn btn-secondary btn-hover-effect w-full text-sm py-2">Download PDF →</button>
-                            </form>
+                            {/* Text Section */}
+                            <div className="flex-grow text-center md:text-left">
+                                <h3 className="text-xl font-bold mb-2 text-white">100+ Prompt Templates</h3>
+                                <p className="text-gray-400 text-sm max-w-md">Battle-tested prompts for marketing, sales, and HR operations. Copy-paste ready.</p>
+                            </div>
+
+                            {/* Form Section */}
+                            <div className="flex-shrink-0 w-full md:w-auto min-w-[300px]">
+                                <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="flex flex-col gap-3">
+                                    <input type="hidden" name="_subject" value="New Request: 100+ Prompt Templates" />
+                                    <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="Resource" value="100+ Prompt Templates" />
+
+                                    <div className="relative">
+                                        <input type="email" name="Email" placeholder="Enter your email" required className="w-full bg-black/30 border border-gray-700 rounded-lg px-4 py-3 text-sm text-white focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all outline-none" />
+                                    </div>
+                                    <button type="submit" className="btn btn-secondary btn-hover-effect w-full text-sm py-3 font-semibold hover:bg-purple-500/10">
+                                        Download PDF →
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </TiltCard>
 
                     {/* Resource 3 */}
-                    <TiltCard className="resource-card group glass-card-enhanced">
-                        <div className="h-40 bg-gradient-to-br from-cyan-900 to-slate-900 flex items-center justify-center">
-                            <span className="text-4xl group-hover:scale-110 transition-transform">🔧</span>
-                        </div>
-                        <div className="p-6">
-                            <h3 className="text-lg font-bold mb-2">Automation Starter Kit</h3>
-                            <p className="text-sm text-gray mb-4">5 ready-to-use automation workflows for Make/Zapier.</p>
-                            <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="mt-4 space-y-2">
-                                <input type="hidden" name="_subject" value="New Request: Automation Starter Kit" />
-                                <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
-                                <input type="hidden" name="_captcha" value="false" />
-                                <input type="hidden" name="Resource" value="Automation Starter Kit" />
+                    <TiltCard className="group glass-card-enhanced relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 to-cyan-700"></div>
+                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10">
+                            {/* Icon Section */}
+                            <div className="flex-shrink-0">
+                                <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-900/50 to-slate-900/50 border border-cyan-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                                    <span className="text-4xl">🔧</span>
+                                </div>
+                            </div>
 
-                                <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
-                                <button type="submit" className="btn btn-primary btn-hover-effect w-full text-sm py-2">Get Starter Kit →</button>
-                            </form>
+                            {/* Text Section */}
+                            <div className="flex-grow text-center md:text-left">
+                                <h3 className="text-xl font-bold mb-2 text-white">Automation Starter Kit</h3>
+                                <p className="text-gray-400 text-sm max-w-md">5 ready-to-use automation workflows for Make & Zapier. Plug and play.</p>
+                            </div>
+
+                            {/* Form Section */}
+                            <div className="flex-shrink-0 w-full md:w-auto min-w-[300px]">
+                                <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="flex flex-col gap-3">
+                                    <input type="hidden" name="_subject" value="New Request: Automation Starter Kit" />
+                                    <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="Resource" value="Automation Starter Kit" />
+
+                                    <div className="relative">
+                                        <input type="email" name="Email" placeholder="Enter your email" required className="w-full bg-black/30 border border-gray-700 rounded-lg px-4 py-3 text-sm text-white focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all outline-none" />
+                                    </div>
+                                    <button type="submit" className="btn btn-primary btn-hover-effect w-full text-sm py-3 font-semibold shadow-lg shadow-cyan-900/20">
+                                        Get Starter Kit →
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     </TiltCard>
                 </div>
