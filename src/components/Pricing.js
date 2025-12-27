@@ -5,84 +5,192 @@ const Pricing = () => {
     const [annual, setAnnual] = useState(true);
 
     return (
-        <section className="section bg-dark" id="pricing">
-            <div className="container">
-                <div className="text-center mb-12">
-                    <div className="badge badge-green mb-4">PRICING</div>
-                    <h2 className="mb-4">Invest in Your <span className="text-gradient">AI Future</span></h2>
-                    <p className="text-gray">All plans include our 30-day money-back guarantee.</p>
+        <section className="section bg-dark" id="pricing" style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Background Effects */}
+            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '120%', height: '120%', background: 'radial-gradient(circle at center, rgba(124, 58, 237, 0.05) 0%, transparent 60%)', pointerEvents: 'none' }}></div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+                <div className="text-center mb-16">
+                    <div style={{ display: 'inline-block', padding: '6px 16px', borderRadius: '50px', background: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34, 197, 94, 0.3)', color: '#86efac', fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '1rem', letterSpacing: '1px' }}>PRICING</div>
+                    <h2 className="mb-4" style={{ fontSize: '3rem', fontWeight: 'bold' }}>Invest in Your <span className="text-gradient">AI Future</span></h2>
+                    <p className="text-gray" style={{ fontSize: '1.2rem' }}>Choose the plan that fits your career goals.</p>
                 </div>
 
-                <div className="pricing-toggle">
-                    <span className={`cursor-pointer ${!annual ? 'text-white font-bold' : 'text-gray'}`} onClick={() => setAnnual(false)}>Monthly</span>
+                {/* Toggle */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '4rem' }}>
+                    <span
+                        onClick={() => setAnnual(false)}
+                        style={{ cursor: 'pointer', color: !annual ? 'white' : '#64748b', fontWeight: !annual ? 'bold' : 'normal', transition: '0.3s' }}
+                    >Monthly</span>
+
                     <div
-                        className="w-14 h-8 rounded-full bg-white/10 relative cursor-pointer transition-colors hover:bg-white/20"
                         onClick={() => setAnnual(!annual)}
+                        style={{
+                            width: '60px',
+                            height: '32px',
+                            background: annual ? '#7c3aed' : 'rgba(255,255,255,0.1)',
+                            borderRadius: '30px',
+                            position: 'relative',
+                            cursor: 'pointer',
+                            transition: '0.3s'
+                        }}
                     >
-                        <div className={`w-6 h-6 rounded-full bg-white absolute top-1 transition-all ${annual ? 'right-1' : 'left-1'}`}></div>
+                        <div style={{
+                            width: '24px',
+                            height: '24px',
+                            background: 'white',
+                            borderRadius: '50%',
+                            position: 'absolute',
+                            top: '4px',
+                            left: annual ? '32px' : '4px',
+                            transition: '0.3s',
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                        }}></div>
                     </div>
-                    <span className={`cursor-pointer ${annual ? 'text-white font-bold' : 'text-gray'}`} onClick={() => setAnnual(true)}>
-                        Annual <span className="text-xs text-green-400 font-normal ml-1">(Save 30%)</span>
+
+                    <span
+                        onClick={() => setAnnual(true)}
+                        style={{ cursor: 'pointer', color: annual ? 'white' : '#64748b', fontWeight: annual ? 'bold' : 'normal', transition: '0.3s' }}
+                    >
+                        Annual <span style={{ color: '#4ade80', fontSize: '0.8rem', marginLeft: '4px' }}> (Save 30%)</span>
                     </span>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8 items-center">
-                    {/* Starter */}
-                    <div className="pricing-card">
+                <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                    gap: '2rem',
+                    alignItems: 'stretch'
+                }}>
+                    {/* Starter Plan */}
+                    <div style={{
+                        background: 'rgba(15, 23, 42, 0.6)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        borderRadius: '24px',
+                        padding: '2.5rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        transition: 'transform 0.3s',
+                    }}
+                        onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.2)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)'; }}
+                    >
                         <h3 className="text-xl font-bold mb-2">Starter</h3>
-                        <p className="text-sm text-gray mb-6">Perfect for AI-curious beginners</p>
+                        <p className="text-sm text-gray mb-6 h-10">Perfect for AI-curious beginners starting their journey.</p>
                         <div className="mb-6">
-                            <span className="text-4xl font-bold">{annual ? '$397' : '$47'}</span>
+                            <span className="text-4xl font-bold text-white">{annual ? '₹4,000' : '₹500'}</span>
                             <span className="text-gray text-sm">{annual ? '/year' : '/mo'}</span>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-gray-300">
-                            <li className="flex gap-2"><span>✓</span> Access to Foundations Course</li>
-                            <li className="flex gap-2"><span>✓</span> 20+ Prompt Templates</li>
-                            <li className="flex gap-2"><span>✓</span> Community Access (Read-only)</li>
+                        <ul className="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                            <li className="flex gap-3">
+                                <span style={{ color: '#4ade80' }}>✓</span> Access to Foundations Course
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#4ade80' }}>✓</span> 20+ Prompt Templates
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#4ade80' }}>✓</span> Community Access (Read-only)
+                            </li>
                         </ul>
-                        <button className="btn btn-secondary w-full">Start Learning</button>
+                        <button className="btn btn-secondary w-full" style={{ borderRadius: '12px', padding: '14px' }}>Start Learning</button>
                     </div>
 
-                    {/* Professional */}
-                    <div className="pricing-card featured">
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase">
-                            Most Popular
+                    {/* Professional Plan (Featured) */}
+                    <div style={{
+                        background: '#0f172a',
+                        border: '1px solid #7c3aed',
+                        borderRadius: '24px',
+                        padding: '2.5rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        position: 'relative',
+                        boxShadow: '0 0 40px rgba(124, 58, 237, 0.15)',
+                        transform: 'scale(1.05)',
+                        zIndex: 10
+                    }}>
+                        <div style={{
+                            position: 'absolute',
+                            top: '-14px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            background: 'linear-gradient(90deg, #7c3aed, #06b6d4)',
+                            color: 'white',
+                            fontSize: '0.75rem',
+                            fontWeight: 'bold',
+                            padding: '6px 16px',
+                            borderRadius: '50px',
+                            whiteSpace: 'nowrap',
+                            boxShadow: '0 4px 10px rgba(124, 58, 237, 0.4)'
+                        }}>
+                            MOST POPULAR
                         </div>
-                        <h3 className="text-xl font-bold mb-2">Professional</h3>
-                        <p className="text-sm text-gray mb-6">For serious career advancement</p>
+
+                        <h3 className="text-xl font-bold mb-2 text-white">Professional</h3>
+                        <p className="text-sm text-gray mb-6 h-10">For serious career advancement and mastery.</p>
                         <div className="mb-6">
-                            <span className="text-4xl font-bold text-gradient">{annual ? '$797' : '$97'}</span>
+                            <span className="text-4xl font-bold text-gradient">{annual ? '₹8,000' : '₹1,000'}</span>
                             <span className="text-gray text-sm">{annual ? '/year' : '/mo'}</span>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-gray-300">
-                            <li className="flex gap-2 text-white font-semibold"><span>✓</span> Everything in Starter</li>
-                            <li className="flex gap-2"><span>✓</span> All Courses & Learning Paths</li>
-                            <li className="flex gap-2"><span>✓</span> 100+ Automation Templates</li>
-                            <li className="flex gap-2"><span>✓</span> Weekly Live Workshops</li>
-                            <li className="flex gap-2"><span>✓</span> Blockchain-Verified Certificates</li>
+                        <ul className="space-y-4 mb-8 text-sm text-white flex-grow">
+                            <li className="flex gap-3 font-semibold">
+                                <span style={{ color: '#7c3aed' }}>✓</span> Everything in Starter
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#7c3aed' }}>✓</span> All Courses & Learning Paths
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#7c3aed' }}>✓</span> 100+ Automation Templates
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#7c3aed' }}>✓</span> Weekly Live Workshops
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#7c3aed' }}>✓</span> Blockchain-Verified Certificates
+                            </li>
                         </ul>
-                        <button className="btn btn-primary btn-glow w-full">Go Professional</button>
+                        <button className="btn btn-primary btn-glow w-full" style={{ borderRadius: '12px', padding: '14px' }}>Go Professional</button>
                     </div>
 
-                    {/* Enterprise */}
-                    <div className="pricing-card">
+                    {/* Enterprise Plan */}
+                    <div style={{
+                        background: 'rgba(15, 23, 42, 0.6)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        borderRadius: '24px',
+                        padding: '2.5rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        transition: 'transform 0.3s',
+                    }}
+                        onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.2)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)'; }}
+                    >
                         <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-                        <p className="text-sm text-gray mb-6">Team & corporate training</p>
+                        <p className="text-sm text-gray mb-6 h-10">Team & corporate training for organizations.</p>
                         <div className="mb-6">
-                            <span className="text-4xl font-bold">Custom</span>
+                            <span className="text-4xl font-bold text-white">Custom</span>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-gray-300">
-                            <li className="flex gap-2"><span>✓</span> Custom Training Programs</li>
-                            <li className="flex gap-2"><span>✓</span> Dedicated Account Manager</li>
-                            <li className="flex gap-2"><span>✓</span> Onsite/Virtual Workshops</li>
-                            <li className="flex gap-2"><span>✓</span> Volume Licensing</li>
+                        <ul className="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                            <li className="flex gap-3">
+                                <span style={{ color: '#06b6d4' }}>✓</span> Custom Training Programs
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#06b6d4' }}>✓</span> Dedicated Account Manager
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#06b6d4' }}>✓</span> Onsite/Virtual Workshops
+                            </li>
+                            <li className="flex gap-3">
+                                <span style={{ color: '#06b6d4' }}>✓</span> Volume Licensing
+                            </li>
                         </ul>
-                        <button className="btn btn-secondary w-full">Contact Sales</button>
+                        <button className="btn btn-secondary w-full" style={{ borderRadius: '12px', padding: '14px' }}>Contact Sales</button>
                     </div>
                 </div>
 
                 <div className="text-center mt-12 text-sm text-gray">
-                    🛡️ 30-Day Money-Back Guarantee • Try risk-free.
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.05)', padding: '8px 16px', borderRadius: '50px' }}>
+                        🛡️ 30-Day Money-Back Guarantee • Try risk-free.
+                    </span>
                 </div>
             </div>
         </section>
