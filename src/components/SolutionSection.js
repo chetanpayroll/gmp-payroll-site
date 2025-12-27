@@ -10,75 +10,94 @@ const stats = [
 
 const SolutionSection = () => {
     return (
-        <section className="section bg-animated">
-            <div className="container">
-                <div className="text-center mb-12">
-                    <div className="badge badge-cyan mb-4">THE SOLUTION</div>
-                    <h2 className="mb-4">Become the AI Expert <span className="text-gradient">Everyone Needs</span></h2>
-                    <p className="text-gray max-w-2xl mx-auto">Our hands-on, project-based training system takes you from confused to confident in weeks, not years.</p>
+        <section className="section bg-animated" style={{ position: 'relative', overflow: 'hidden' }}>
+            {/* Background Decor */}
+            <div style={{ position: 'absolute', top: '20%', left: '-10%', width: '400px', height: '400px', background: 'rgba(124, 58, 237, 0.1)', borderRadius: '50%', filter: 'blur(100px)' }}></div>
+            <div style={{ position: 'absolute', bottom: '10%', right: '-5%', width: '300px', height: '300px', background: 'rgba(6, 182, 212, 0.1)', borderRadius: '50%', filter: 'blur(80px)' }}></div>
+
+            <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                <div className="text-center mb-16">
+                    <div className="badge badge-cyan mb-6" style={{ boxShadow: '0 0 20px rgba(6, 182, 212, 0.4)' }}>THE SOLUTION</div>
+                    <h2 className="mb-6" style={{ fontSize: '3rem' }}>Become the AI Expert <span className="text-gradient">Everyone Needs</span></h2>
+                    <p className="text-gray max-w-2xl mx-auto" style={{ fontSize: '1.2rem' }}>Our hands-on, project-based training system takes you from confused to confident in weeks, not years.</p>
                 </div>
 
-                <div className="comparison-grid">
-                    {/* BEFORE */}
-                    <div className="compare-col" style={{ borderColor: 'rgba(239, 68, 68, 0.3)' }}>
-                        <h3 className="text-xl font-bold mb-6 text-center text-red-400" style={{ color: '#f87171' }}>BEFORE</h3>
-                        <div className="compare-item">
-                            <span>❌</span>
-                            <p className="text-gray text-sm">Confused by AI terminology and rapid changes</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>❌</span>
-                            <p className="text-gray text-sm">Hours wasted on manual repetitive tasks</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>❌</span>
-                            <p className="text-gray text-sm">Watching from the sidelines with anxiety</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>❌</span>
-                            <p className="text-gray text-sm">Imposter syndrome about technology skills</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>❌</span>
-                            <p className="text-gray text-sm">Falling behind competitors who use AI</p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'stretch' }}>
+
+                    {/* BEFORE CARD */}
+                    <div style={{
+                        background: 'rgba(15, 23, 42, 0.6)',
+                        border: '1px solid rgba(239, 68, 68, 0.2)',
+                        borderRadius: '24px',
+                        padding: '3rem',
+                        position: 'relative'
+                    }}>
+                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'rgba(239, 68, 68, 0.5)', borderRadius: '24px 24px 0 0' }}></div>
+                        <h3 className="text-xl font-bold mb-8 text-center" style={{ color: '#fca5a5', letterSpacing: '2px' }}>THE OLD WAY</h3>
+
+                        <div className="space-y-6">
+                            {[
+                                "Confused by endless AI terminology",
+                                "Wasting hours on manual data entry",
+                                "Fear of being replaced by tech",
+                                "Feeling stuck in your current role",
+                                "Watching competitors get ahead"
+                            ].map((item, i) => (
+                                <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                                    <div style={{ minWidth: '32px', height: '32px', borderRadius: '50%', background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem' }}>✕</div>
+                                    <p style={{ color: '#94a3b8', fontSize: '1rem', margin: 0 }}>{item}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
-                    {/* AFTER */}
-                    <div className="compare-col" style={{ borderColor: 'var(--color-secondary)', background: 'rgba(124, 58, 237, 0.05)' }}>
-                        <h3 className="text-xl font-bold mb-6 text-center" style={{ color: '#a78bfa' }}>AFTER</h3>
-                        <div className="compare-item">
-                            <span>✅</span>
-                            <p className="text-white text-sm">Speaking AI fluently with confidence</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>✅</span>
-                            <p className="text-white text-sm">Automated workflows saving 10+ hours weekly</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>✅</span>
-                            <p className="text-white text-sm">Leading AI initiatives at your company</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>✅</span>
-                            <p className="text-white text-sm">Building and selling AI-powered services</p>
-                        </div>
-                        <div className="compare-item">
-                            <span>✅</span>
-                            <p className="text-white text-sm">Commanding premium rates for AI skills</p>
+                    {/* AFTER CARD */}
+                    <div style={{
+                        background: 'linear-gradient(145deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%)',
+                        border: '1px solid rgba(124, 58, 237, 0.4)',
+                        borderRadius: '24px',
+                        padding: '3rem',
+                        position: 'relative',
+                        boxShadow: '0 20px 50px -10px rgba(124, 58, 237, 0.15)'
+                    }}>
+                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '4px', background: 'linear-gradient(90deg, #7c3aed, #06b6d4)', borderRadius: '24px 24px 0 0' }}></div>
+                        <h3 className="text-xl font-bold mb-8 text-center" style={{ color: '#c4b5fd', letterSpacing: '2px' }}>THE AI GRAVITY WAY</h3>
+
+                        <div className="space-y-6">
+                            {[
+                                "Speaking AI fluently with confidence",
+                                "Automating 90% of boring tasks",
+                                "Leading AI strategy at your company",
+                                "Building & selling automation services",
+                                "Commanding premium rates for skills"
+                            ].map((item, i) => (
+                                <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                                    <div style={{ minWidth: '32px', height: '32px', borderRadius: '50%', background: 'linear-gradient(135deg, #7c3aed, #06b6d4)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem', boxShadow: '0 4px 10px rgba(124, 58, 237, 0.3)' }}>✓</div>
+                                    <p style={{ color: 'white', fontSize: '1.05rem', margin: 0, fontWeight: '500' }}>{item}</p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
 
-                <div className="text-center mt-12">
-                    <Link href="#courses" className="btn btn-primary btn-glow">See How It Works →</Link>
+                <div className="text-center mt-16">
+                    <Link href="/enroll" className="btn btn-primary btn-glow" style={{ padding: '1.2rem 3rem', fontSize: '1.2rem' }}>See How It Works →</Link>
                 </div>
 
-                <div className="stats-row">
+                {/* VISUALLY FORCED HORIZONTAL LAYOUT FOR STATS */}
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'center',
+                    gap: '4rem',
+                    marginTop: '6rem',
+                    borderTop: '1px solid rgba(255,255,255,0.05)',
+                    paddingTop: '3rem'
+                }}>
                     {stats.map((stat, index) => (
-                        <div key={index}>
-                            <div className="text-3xl font-bold text-gradient mb-2">{stat.value}</div>
-                            <div className="text-sm text-gray uppercase tracking-wider">{stat.label}</div>
+                        <div key={index} style={{ textAlign: 'center', minWidth: '150px' }}>
+                            <div className="text-gradient" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>{stat.value}</div>
+                            <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>{stat.label}</div>
                         </div>
                     ))}
                 </div>
