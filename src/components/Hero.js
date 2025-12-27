@@ -140,16 +140,52 @@ const Hero = () => {
                 </div>
             </section>
 
-            {/* Video Modal */}
-            <div className={`modal-overlay ${videoOpen ? 'open' : ''}`} onClick={() => setVideoOpen(false)}>
-                <div className="modal-content" onClick={e => e.stopPropagation()}>
-                    <span className="close-modal" onClick={() => setVideoOpen(false)}>&times;</span>
+            {/* Video Modal - Improved Styling & Working Video */}
+            <div
+                className={`modal-overlay ${videoOpen ? 'open' : ''}`}
+                onClick={() => setVideoOpen(false)}
+                style={{ backdropFilter: 'blur(20px)', background: 'rgba(0,0,0,0.85)' }}
+            >
+                <div
+                    className="modal-content"
+                    onClick={e => e.stopPropagation()}
+                    style={{
+                        border: '1px solid rgba(124, 58, 237, 0.3)',
+                        boxShadow: '0 0 50px rgba(124, 58, 237, 0.2)',
+                        borderRadius: '20px',
+                        overflow: 'hidden'
+                    }}
+                >
+                    <button
+                        className="close-modal"
+                        onClick={() => setVideoOpen(false)}
+                        style={{
+                            position: 'absolute',
+                            top: '1rem',
+                            right: '1rem',
+                            zIndex: 20,
+                            background: 'rgba(0,0,0,0.5)',
+                            border: 'none',
+                            color: 'white',
+                            width: '40px',
+                            height: '40px',
+                            borderRadius: '50%',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            fontSize: '1.5rem'
+                        }}
+                    >
+                        &times;
+                    </button>
+
                     <div className="aspect-video w-full bg-black">
                         {videoOpen && (
                             <iframe
                                 width="100%"
                                 height="100%"
-                                src="https://www.youtube.com/embed/Sby1uJ_N3rU?autoplay=1"
+                                src="https://www.youtube.com/embed/5iMh9hV9j3o?autoplay=1&rel=0&modestbranding=1"
                                 title="AI Automation Demo"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

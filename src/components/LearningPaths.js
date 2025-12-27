@@ -12,8 +12,8 @@ const courses = [
         levelBg: "rgba(34, 197, 94, 0.1)",
         desc: "Master ChatGPT, Claude, and prompt engineering. Build your first 5 AI-powered workflows.",
         includes: ["15 Video Lessons", "20 Templates", "Certificate"],
-        price: "$197",
-        oldPrice: "$397",
+        price: "₹2,000 INR",
+        oldPrice: "₹4,000 INR",
         cta: "Enroll Now",
         category: "beginners"
     },
@@ -26,8 +26,8 @@ const courses = [
         levelBg: "rgba(168, 85, 247, 0.1)",
         desc: "Build production-ready automations with Make, Zapier, and n8n. Integrate AI into real business processes.",
         includes: ["40 Video Lessons", "50+ Workflow Templates", "1:1 Coaching Call"],
-        price: "$497",
-        oldPrice: "$997",
+        price: "₹3,000 INR",
+        oldPrice: "₹6,000 INR",
         cta: "Enroll Now",
         featured: true,
         category: "builders"
@@ -41,8 +41,8 @@ const courses = [
         levelBg: "rgba(239, 68, 68, 0.1)",
         desc: "Launch AI consulting services. Build and sell automation solutions. Create passive income with AI products.",
         includes: ["60 Video Lessons", "Business Templates", "Weekly Group Coaching"],
-        price: "$997",
-        oldPrice: "$2,497",
+        price: "₹5,000 INR",
+        oldPrice: "₹10,000 INR",
         cta: "Apply Now",
         category: "creators"
     },
