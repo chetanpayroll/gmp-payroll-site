@@ -130,6 +130,11 @@ export default function Contact() {
                                     </div>
 
                                     <div>
+                                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>Phone Number</label>
+                                        <input type="tel" name="Phone" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem' }} placeholder="+1 (555) 000-0000" />
+                                    </div>
+
+                                    <div>
                                         <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>Topic</label>
                                         <div style={{ position: 'relative' }}>
                                             <select name="Subject" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem', appearance: 'none', cursor: 'pointer' }}>

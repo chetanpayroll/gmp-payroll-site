@@ -88,6 +88,11 @@ const Consulting = () => {
                             </div>
 
                             <div>
+                                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Phone Number</label>
+                                <input type="tel" name="Phone" placeholder="+1 (555) 000-0000" style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem' }} />
+                            </div>
+
+                            <div>
                                 <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '0.5px' }}>Company Name</label>
                                 <input type="text" name="Company" placeholder="Acme Inc." style={{ width: '100%', padding: '12px 16px', borderRadius: '8px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem' }} />
                             </div>
