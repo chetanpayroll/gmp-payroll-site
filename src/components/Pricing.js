@@ -58,7 +58,7 @@ const Pricing = () => {
                     </span>
                 </div>
 
-                <div className="flex flex-col gap-8 max-w-5xl mx-auto">
+                <div className="max-w-5xl mx-auto" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
                     {/* Starter Plan */}
                     <TiltCard className="group glass-card-enhanced relative overflow-hidden p-8">
                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-400 to-green-600"></div>
