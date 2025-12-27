@@ -18,9 +18,14 @@ const FreeResources = () => {
                         <div className="p-6">
                             <h3 className="text-lg font-bold mb-2">Free AI Starter Course</h3>
                             <p className="text-sm text-gray mb-4">5 video lessons covering AI fundamentals & prompt engineering basics.</p>
-                            <form className="mt-4 space-y-2">
-                                <input type="email" placeholder="Enter your email" className="form-input text-sm" />
-                                <button className="btn btn-primary w-full text-sm py-2">Get Free Access →</button>
+                            <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="mt-4 space-y-2">
+                                <input type="hidden" name="_subject" value="New Request: Free AI Starter Course" />
+                                <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
+                                <input type="hidden" name="_captcha" value="false" />
+                                <input type="hidden" name="Resource" value="Free AI Starter Course" />
+
+                                <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
+                                <button type="submit" className="btn btn-primary w-full text-sm py-2">Get Free Access →</button>
                             </form>
                         </div>
                     </div>
@@ -33,9 +38,14 @@ const FreeResources = () => {
                         <div className="p-6">
                             <h3 className="text-lg font-bold mb-2">100+ Prompt Templates</h3>
                             <p className="text-sm text-gray mb-4">Battle-tested prompts for marketing, sales, HR operations.</p>
-                            <form className="mt-4 space-y-2">
-                                <input type="email" placeholder="Enter your email" className="form-input text-sm" />
-                                <button className="btn btn-secondary w-full text-sm py-2">Download PDF →</button>
+                            <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="mt-4 space-y-2">
+                                <input type="hidden" name="_subject" value="New Request: 100+ Prompt Templates" />
+                                <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
+                                <input type="hidden" name="_captcha" value="false" />
+                                <input type="hidden" name="Resource" value="100+ Prompt Templates" />
+
+                                <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
+                                <button type="submit" className="btn btn-secondary w-full text-sm py-2">Download PDF →</button>
                             </form>
                         </div>
                     </div>
@@ -48,9 +58,14 @@ const FreeResources = () => {
                         <div className="p-6">
                             <h3 className="text-lg font-bold mb-2">Automation Starter Kit</h3>
                             <p className="text-sm text-gray mb-4">5 ready-to-use automation workflows for Make/Zapier.</p>
-                            <form className="mt-4 space-y-2">
-                                <input type="email" placeholder="Enter your email" className="form-input text-sm" />
-                                <button className="btn btn-primary w-full text-sm py-2">Get Starter Kit →</button>
+                            <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="mt-4 space-y-2">
+                                <input type="hidden" name="_subject" value="New Request: Automation Starter Kit" />
+                                <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
+                                <input type="hidden" name="_captcha" value="false" />
+                                <input type="hidden" name="Resource" value="Automation Starter Kit" />
+
+                                <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
+                                <button type="submit" className="btn btn-primary w-full text-sm py-2">Get Starter Kit →</button>
                             </form>
                         </div>
                     </div>
