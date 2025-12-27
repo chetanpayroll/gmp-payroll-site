@@ -1,15 +1,6 @@
 {
     "version": 2,
+    "outputDirectory": "dist",
     "framework": "nextjs",
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/next"
-        }
-    ],
-    "routes": [
-        {
-            "handle": "filesystem"
-        }
-    ]
+    "trailingSlash": true
 }
