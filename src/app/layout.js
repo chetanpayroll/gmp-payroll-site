@@ -1,5 +1,5 @@
 import './globals.css'
-import PageLoader from '../components/PageLoader';
+
 import ScrollToTop from '../components/ScrollToTop';
 
 export const metadata = {
@@ -11,7 +11,6 @@ export default function RootLayout({ children }) {
    return (
       <html lang="en">
          <body className="bg-grid">
-            <PageLoader />
             {children}
             <ScrollToTop />
          </body>
