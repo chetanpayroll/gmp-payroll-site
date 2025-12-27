@@ -85,50 +85,42 @@ export default function AboutPage() {
 
             {/* Section 4: Timeline */}
             <section className="section bg-animated">
-                <div className="container" style={{ maxWidth: '800px' }}>
+                <div className="container" style={{ maxWidth: '1000px' }}>
                     <div className="text-center mb-16">
                         <span className="badge badge-purple mb-4">OUR JOURNEY</span>
                         <h2 className="text-3xl font-bold">Key Milestones</h2>
                     </div>
 
-                    <div className="timeline space-y-8 relative border-l border-gray-800 ml-4 md:ml-0 md:border-none">
-                        {[
-                            { year: '2011', title: 'Started Enterprise Operations', desc: 'Began career managing complex payroll systems.' },
-                            { year: '2018', title: 'Discovered AI & Automation', desc: 'Built first automation workflow using early no-code tools.' },
-                            { year: '2020', title: '1,000th Automation Built', desc: 'Scaled operations to 25+ countries with 99.8% accuracy.' },
-                            { year: '2023', title: 'Launched AI Gravity Academy', desc: 'Started teaching others to replicate this success.' },
-                            { year: '2024', title: 'Global Impact', desc: 'Reached 5,000+ students across 40+ countries.' },
-                        ].map((item, i) => (
-                            <div key={i} className={`flex md:items-center flex-col md:flex-row gap-4 md:gap-8 ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`} style={{ marginBottom: '2rem' }}>
-                                <div className="hidden md:block w-1/2 text-right">
-                                    {i % 2 === 0 && (
-                                        <>
-                                            <div className="text-xl font-bold text-white">{item.year}</div>
-                                            <div className="text-purple-400 font-bold mb-1">{item.title}</div>
-                                            <div className="text-gray-400 text-sm">{item.desc}</div>
-                                        </>
-                                    )}
-                                </div>
-                                <div className="relative pl-8 md:pl-0 flex justify-center items-center">
-                                    <div className="w-4 h-4 rounded-full bg-purple-500 absolute left-[-9px] md:relative md:left-auto shadow-lg shadow-purple-500/50"></div>
-                                </div>
-                                <div className="w-full md:w-1/2 md:text-left pl-8 md:pl-0 border-l border-gray-800 md:border-none pb-8 md:pb-0">
-                                    {i % 2 !== 0 ? (
-                                        <>
-                                            <div className="text-xl font-bold text-white">{item.year}</div>
-                                            <div className="text-cyan-400 font-bold mb-1">{item.title}</div>
-                                            <div className="text-gray-400 text-sm">{item.desc}</div>
-                                        </>
-                                    ) : (
-                                        <div className="md:hidden">
-                                            <div className="text-xl font-bold text-white">{item.year}</div>
-                                            <div className="text-purple-400 font-bold mb-1">{item.title}</div>
-                                            <div className="text-gray-400 text-sm">{item.desc}</div>
+                    <div className="relative">
+                        {/* Central Line */}
+                        <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500 to-cyan-500 transform md:-translate-x-1/2"></div>
+
+                        <div className="space-y-12">
+                            {[
+                                { year: '2011', title: 'Started Enterprise Operations', desc: 'Began career managing complex payroll systems.' },
+                                { year: '2018', title: 'Discovered AI & Automation', desc: 'Built first automation workflow using early no-code tools.' },
+                                { year: '2020', title: '1,000th Automation Built', desc: 'Scaled operations to 25+ countries with 99.8% accuracy.' },
+                                { year: '2023', title: 'Launched AI Gravity Academy', desc: 'Started teaching others to replicate this success.' },
+                                { year: '2024', title: 'Global Impact', desc: 'Reached 5,000+ students across 40+ countries.' },
+                            ].map((item, i) => (
+                                <div key={i} className={`relative flex items-center md:justify-between ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                                    {/* Spacer for Desktop (keeps card on one side) */}
+                                    <div className="hidden md:block w-5/12"></div>
+
+                                    {/* Dot */}
+                                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-white border-4 border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.5)] transform -translate-x-1/2 z-10"></div>
+
+                                    {/* Content Card */}
+                                    <div className="w-full pl-12 md:pl-0 md:w-5/12">
+                                        <div className="glass-card-enhanced p-6 transform transition-all hover:scale-105 hover:border-purple-500/50">
+                                            <div className="text-2xl font-bold gradient-text-anim mb-2">{item.year}</div>
+                                            <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+                                            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
                                         </div>
-                                    )}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
