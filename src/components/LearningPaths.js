@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 const courses = [
     {
@@ -57,7 +58,7 @@ const LearningPaths = () => {
 
     const filteredCourses = filter === 'all'
         ? courses
-        : courses.filter(c => c.category === filter || c.category === 'business'); // Always show corporate mainly
+        : courses.filter(c => c.category === filter || c.category === 'business');
 
     return (
         <section className="section bg-dark" id="courses">
@@ -81,38 +82,46 @@ const LearningPaths = () => {
                     ))}
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Using the custom CSS class 'paths-grid' defined in globals.css instead of Tailwind classes */}
+                <div className="paths-grid">
                     {filteredCourses.map((course, index) => (
                         <div key={index} className={`path-card ${course.featured ? 'featured' : ''}`}>
                             {course.featured && (
-                                <div className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-center text-xs font-bold py-1 uppercase tracking-wider" style={{ background: 'var(--gradient-main)' }}>
+                                <div className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white text-center text-xs font-bold py-1 uppercase tracking-wider" style={{ background: 'var(--gradient-main)', padding: '5px' }}>
                                     Most Popular
                                 </div>
                             )}
-                            <div className="p-6 flex flex-col h-full">
-                                <div className="flex justify-between items-start mb-4">
+                            <div className="p-6 flex flex-col h-full" style={{ padding: '2rem' }}>
+                                <div className="flex justify-between items-start mb-4" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
                                     <span className={`badge ${course.levelColor}`}>{course.level}</span>
-                                    <span className="text-xs text-gray">{course.duration}</span>
+                                    <span className="text-xs text-gray" style={{ fontSize: '0.8rem', color: 'var(--text-gray)' }}>{course.duration}</span>
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">{course.title}</h3>
-                                <p className="text-gray text-sm mb-6 flex-grow">{course.desc}</p>
 
-                                <ul className="mb-6 space-y-2">
+                                <h3 className="text-xl font-bold mb-3" style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>{course.title}</h3>
+                                <p className="text-gray text-sm mb-6 flex-grow" style={{ marginBottom: '1.5rem', flexGrow: 1 }}>{course.desc}</p>
+
+                                <ul className="mb-6 space-y-2" style={{ marginBottom: '1.5rem' }}>
                                     {course.includes.map((item, i) => (
-                                        <li key={i} className="text-xs text-gray-300 flex items-center gap-2">
-                                            <span className="text-green-400">✓</span> {item}
+                                        <li key={i} className="text-xs text-gray-300 flex items-center gap-2" style={{ display: 'flex', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.9rem', color: '#cbd5e1' }}>
+                                            <span style={{ color: '#4ade80' }}>✓</span> {item}
                                         </li>
                                     ))}
                                 </ul>
 
-                                <div className="pt-4 border-t border-white/10 mt-auto">
-                                    <div className="flex items-baseline gap-2 mb-4">
-                                        <span className="text-2xl font-bold">{course.price}</span>
-                                        {course.oldPrice && <span className="text-sm text-gray line-through">{course.oldPrice}</span>}
+                                <div className="pt-4 border-t border-white/10 mt-auto" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem', marginTop: 'auto' }}>
+                                    <div className="flex items-baseline gap-2 mb-4" style={{ display: 'flex', gap: '0.5rem', alignItems: 'baseline', marginBottom: '1rem' }}>
+                                        <span className="text-2xl font-bold" style={{ fontSize: '1.5rem' }}>{course.price}</span>
+                                        {course.oldPrice && <span className="text-sm text-gray line-through" style={{ textDecoration: 'line-through', color: 'gray', fontSize: '0.9rem' }}>{course.oldPrice}</span>}
                                     </div>
-                                    <button className={`btn w-full ${course.featured ? 'btn-primary' : 'btn-secondary'}`} style={{ width: '100%' }}>
+
+                                    {/* Link to the Enroll Page with query param */}
+                                    <Link
+                                        href={`/enroll?course=${encodeURIComponent(course.title)}`}
+                                        className={`btn w-full ${course.featured ? 'btn-primary' : 'btn-secondary'}`}
+                                        style={{ width: '100%' }}
+                                    >
                                         {course.cta}
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
