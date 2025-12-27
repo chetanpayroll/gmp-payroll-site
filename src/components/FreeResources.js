@@ -16,22 +16,22 @@ const FreeResources = () => {
                     <TiltCard className="group glass-card-enhanced relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl font-black text-white select-none">01</div>
                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-blue-700"></div>
-                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10 relative z-10">
-                            {/* Icon Section */}
-                            <div className="flex-shrink-0">
+                        <div className="grid grid-cols-1 md:grid-cols-12 items-center p-6 md:p-8 gap-6 relative z-10 w-full">
+                            {/* Icon Section - col-span-2 */}
+                            <div className="md:col-span-2 flex justify-center md:justify-start">
                                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-900/50 to-slate-900/50 border border-blue-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                                     <span className="text-4xl">📚</span>
                                 </div>
                             </div>
 
-                            {/* Text Section */}
-                            <div className="flex-grow text-center md:text-left">
+                            {/* Text Section - col-span-6 */}
+                            <div className="md:col-span-6 text-center md:text-left">
                                 <h3 className="text-xl font-bold mb-2 text-white">Free AI Starter Course</h3>
-                                <p className="text-gray-400 text-sm max-w-md">5 video lessons covering AI fundamentals & prompt engineering basics. Start learning immediately.</p>
+                                <p className="text-gray-400 text-sm leading-relaxed">5 video lessons covering AI fundamentals & prompt engineering basics. Start learning immediately.</p>
                             </div>
 
-                            {/* Form Section */}
-                            <div className="flex-shrink-0 w-full md:w-auto min-w-[300px]">
+                            {/* Form Section - col-span-4 */}
+                            <div className="md:col-span-4 w-full">
                                 <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="flex flex-col gap-3">
                                     <input type="hidden" name="_subject" value="New Request: Free AI Starter Course" />
                                     <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
@@ -53,22 +53,22 @@ const FreeResources = () => {
                     <TiltCard className="group glass-card-enhanced relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl font-black text-white select-none">02</div>
                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-purple-700"></div>
-                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10 relative z-10">
+                        <div className="grid grid-cols-1 md:grid-cols-12 items-center p-6 md:p-8 gap-6 relative z-10 w-full">
                             {/* Icon Section */}
-                            <div className="flex-shrink-0">
+                            <div className="md:col-span-2 flex justify-center md:justify-start">
                                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-900/50 to-slate-900/50 border border-purple-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                                     <span className="text-4xl">📋</span>
                                 </div>
                             </div>
 
                             {/* Text Section */}
-                            <div className="flex-grow text-center md:text-left">
+                            <div className="md:col-span-6 text-center md:text-left">
                                 <h3 className="text-xl font-bold mb-2 text-white">100+ Prompt Templates</h3>
-                                <p className="text-gray-400 text-sm max-w-md">Battle-tested prompts for marketing, sales, and HR operations. Copy-paste ready.</p>
+                                <p className="text-gray-400 text-sm leading-relaxed">Battle-tested prompts for marketing, sales, and HR operations. Copy-paste ready.</p>
                             </div>
 
                             {/* Form Section */}
-                            <div className="flex-shrink-0 w-full md:w-auto min-w-[300px]">
+                            <div className="md:col-span-4 w-full">
                                 <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="flex flex-col gap-3">
                                     <input type="hidden" name="_subject" value="New Request: 100+ Prompt Templates" />
                                     <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
@@ -90,22 +90,22 @@ const FreeResources = () => {
                     <TiltCard className="group glass-card-enhanced relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-4 opacity-10 text-6xl font-black text-white select-none">03</div>
                         <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-500 to-cyan-700"></div>
-                        <div className="flex flex-col md:flex-row items-center p-6 md:p-8 gap-6 md:gap-10 relative z-10">
+                        <div className="grid grid-cols-1 md:grid-cols-12 items-center p-6 md:p-8 gap-6 relative z-10 w-full">
                             {/* Icon Section */}
-                            <div className="flex-shrink-0">
+                            <div className="md:col-span-2 flex justify-center md:justify-start">
                                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-cyan-900/50 to-slate-900/50 border border-cyan-500/30 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                                     <span className="text-4xl">🔧</span>
                                 </div>
                             </div>
 
                             {/* Text Section */}
-                            <div className="flex-grow text-center md:text-left">
+                            <div className="md:col-span-6 text-center md:text-left">
                                 <h3 className="text-xl font-bold mb-2 text-white">Automation Starter Kit</h3>
-                                <p className="text-gray-400 text-sm max-w-md">5 ready-to-use automation workflows for Make & Zapier. Plug and play.</p>
+                                <p className="text-gray-400 text-sm leading-relaxed">5 ready-to-use automation workflows for Make & Zapier. Plug and play.</p>
                             </div>
 
                             {/* Form Section */}
-                            <div className="flex-shrink-0 w-full md:w-auto min-w-[300px]">
+                            <div className="md:col-span-4 w-full">
                                 <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" className="flex flex-col gap-3">
                                     <input type="hidden" name="_subject" value="New Request: Automation Starter Kit" />
                                     <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
