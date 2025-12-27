@@ -11,7 +11,8 @@ export default function AboutPage() {
         <main className="min-h-screen bg-dark">
             <Navbar />
 
-            <div style={{ paddingTop: '100px' }}>
+            {/* Top Spacing Adjusted - Removed explicit padding to pull content up */}
+            <div className="pt-24 pb-4 px-4 bg-dark">
                 <Breadcrumbs />
             </div>
 
