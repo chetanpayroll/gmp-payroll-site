@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Search from './Search';
-import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -33,11 +31,6 @@ const Navbar = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <div className="hidden md:block">
-                        <Search />
-                    </div>
-                    <ThemeToggle />
-
                     {/* CTA */}
                     <div className="cta-desktop">
                         <Link href="/enroll" className="btn btn-primary btn-hover-effect">
