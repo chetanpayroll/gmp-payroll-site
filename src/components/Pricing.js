@@ -58,117 +58,109 @@ const Pricing = () => {
                     </span>
                 </div>
 
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                    gap: '2rem',
-                    alignItems: 'stretch'
-                }}>
+                <div className="flex flex-col gap-8 max-w-5xl mx-auto">
                     {/* Starter Plan */}
-                    <TiltCard className="glass-card-enhanced" style={{
-                        padding: '2.5rem',
-                        display: 'flex',
-                        flexDirection: 'column'
-                    }}>
-                        <h3 className="text-xl font-bold mb-2">Starter</h3>
-                        <p className="text-sm text-gray mb-6 h-10">Perfect for AI-curious beginners starting their journey.</p>
-                        <div className="mb-6">
-                            <span className="text-4xl font-bold">{annual ? '₹4,000' : '₹500'}</span>
-                            <span className="text-gray text-sm">{annual ? '/year' : '/mo'}</span>
+                    <TiltCard className="group glass-card-enhanced relative overflow-hidden p-8">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-green-400 to-green-600"></div>
+                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                            {/* Header */}
+                            <div className="w-full md:w-1/4 text-center md:text-left">
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🌱</div>
+                                <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
+                                <p className="text-sm text-gray-400">Perfect for beginners starting their AI journey.</p>
+                            </div>
+
+                            {/* Features */}
+                            <div className="w-full md:w-1/2 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+                                <h4 className="text-xs font-bold text-green-400 uppercase tracking-widest mb-4">What's Included</h4>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-300">
+                                    <li className="flex gap-2 items-center"><span className="text-green-400">✓</span> Foundations Course</li>
+                                    <li className="flex gap-2 items-center"><span className="text-green-400">✓</span> 20+ Prompt Templates</li>
+                                    <li className="flex gap-2 items-center"><span className="text-green-400">✓</span> Community Access</li>
+                                    <li className="flex gap-2 items-center"><span className="text-green-400">✓</span> Basic Assignments</li>
+                                </ul>
+                            </div>
+
+                            {/* Price & CTA */}
+                            <div className="w-full md:w-1/4 flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+                                <div className="mb-4 text-center">
+                                    <span className="text-3xl font-bold text-white">{annual ? '₹4,000' : '₹500'}</span>
+                                    <span className="text-gray-400 text-sm block">{annual ? '/year' : '/mo'}</span>
+                                </div>
+                                <button className="btn btn-secondary btn-hover-effect w-full text-sm">Start Learning</button>
+                            </div>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-gray flex-grow">
-                            <li className="flex gap-3">
-                                <span style={{ color: '#4ade80' }}>✓</span> Access to Foundations Course
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#4ade80' }}>✓</span> 20+ Prompt Templates
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#4ade80' }}>✓</span> Community Access (Read-only)
-                            </li>
-                        </ul>
-                        <button className="btn btn-secondary btn-hover-effect w-full" style={{ borderRadius: '12px', padding: '14px' }}>Start Learning</button>
                     </TiltCard>
 
                     {/* Professional Plan (Featured) */}
-                    <TiltCard className="glass-card-enhanced" style={{
-                        border: '1px solid #7c3aed',
-                        padding: '2.5rem',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        position: 'relative',
-                        boxShadow: '0 0 40px rgba(124, 58, 237, 0.15)',
-                        zIndex: 10
-                    }}>
-                        <div style={{
-                            position: 'absolute',
-                            top: '-14px',
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            background: 'linear-gradient(90deg, #7c3aed, #06b6d4)',
-                            color: 'white',
-                            fontSize: '0.75rem',
-                            fontWeight: 'bold',
-                            padding: '6px 16px',
-                            borderRadius: '50px',
-                            whiteSpace: 'nowrap',
-                            boxShadow: '0 4px 10px rgba(124, 58, 237, 0.4)'
-                        }}>
-                            MOST POPULAR
+                    <TiltCard className="group glass-card-enhanced relative overflow-hidden p-8 border border-purple-500/30">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-pink-500"></div>
+                        {/* Most Popular Badge */}
+                        <div className="absolute top-0 right-0 bg-gradient-to-l from-purple-600 to-pink-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg shadow-lg">
+                            MOST POPULAR 🚀
                         </div>
 
-                        <h3 className="text-xl font-bold mb-2">Professional</h3>
-                        <p className="text-sm text-gray mb-6 h-10">For serious career advancement and mastery.</p>
-                        <div className="mb-6">
-                            <span className="text-4xl font-bold gradient-text-anim">{annual ? '₹8,000' : '₹1,000'}</span>
-                            <span className="text-gray text-sm">{annual ? '/year' : '/mo'}</span>
+                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                            {/* Header */}
+                            <div className="w-full md:w-1/4 text-center md:text-left">
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🚀</div>
+                                <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
+                                <p className="text-sm text-gray-400">For serious career advancement & mastery.</p>
+                            </div>
+
+                            {/* Features */}
+                            <div className="w-full md:w-1/2 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+                                <h4 className="text-xs font-bold text-purple-400 uppercase tracking-widest mb-4">Everything in Starter +</h4>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-white font-medium">
+                                    <li className="flex gap-2 items-center"><span className="text-purple-400">✓</span> All Learning Paths</li>
+                                    <li className="flex gap-2 items-center"><span className="text-purple-400">✓</span> 100+ Automations</li>
+                                    <li className="flex gap-2 items-center"><span className="text-purple-400">✓</span> Weekly Workshops</li>
+                                    <li className="flex gap-2 items-center"><span className="text-purple-400">✓</span> Verified Certificates</li>
+                                </ul>
+                            </div>
+
+                            {/* Price & CTA */}
+                            <div className="w-full md:w-1/4 flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+                                <div className="mb-4 text-center">
+                                    <span className="text-4xl font-bold gradient-text-anim">{annual ? '₹8,000' : '₹1,000'}</span>
+                                    <span className="text-gray-400 text-sm block">{annual ? '/year' : '/mo'}</span>
+                                </div>
+                                <button className="btn btn-primary btn-glow btn-hover-effect w-full text-sm shadow-lg shadow-purple-900/40">Go Professional</button>
+                            </div>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm flex-grow">
-                            <li className="flex gap-3 font-semibold">
-                                <span style={{ color: '#7c3aed' }}>✓</span> Everything in Starter
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#7c3aed' }}>✓</span> All Courses & Learning Paths
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#7c3aed' }}>✓</span> 100+ Automation Templates
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#7c3aed' }}>✓</span> Weekly Live Workshops
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#7c3aed' }}>✓</span> Blockchain-Verified Certificates
-                            </li>
-                        </ul>
-                        <button className="btn btn-primary btn-glow btn-hover-effect w-full" style={{ borderRadius: '12px', padding: '14px' }}>Go Professional</button>
                     </TiltCard>
 
                     {/* Enterprise Plan */}
-                    <TiltCard className="glass-card-enhanced" style={{
-                        padding: '2.5rem',
-                        display: 'flex',
-                        flexDirection: 'column'
-                    }}>
-                        <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-                        <p className="text-sm text-gray mb-6 h-10">Team & corporate training for organizations.</p>
-                        <div className="mb-6">
-                            <span className="text-4xl font-bold">Custom</span>
+                    <TiltCard className="group glass-card-enhanced relative overflow-hidden p-8">
+                        <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-blue-600"></div>
+                        <div className="flex flex-col md:flex-row gap-8 items-center">
+                            {/* Header */}
+                            <div className="w-full md:w-1/4 text-center md:text-left">
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">🏢</div>
+                                <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
+                                <p className="text-sm text-gray-400">Custom training for teams & organizations.</p>
+                            </div>
+
+                            {/* Features */}
+                            <div className="w-full md:w-1/2 border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+                                <h4 className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-4">For Teams</h4>
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-300">
+                                    <li className="flex gap-2 items-center"><span className="text-cyan-400">✓</span> Custom Curriculum</li>
+                                    <li className="flex gap-2 items-center"><span className="text-cyan-400">✓</span> Dedicated Account Manager</li>
+                                    <li className="flex gap-2 items-center"><span className="text-cyan-400">✓</span> Onsite/Virtual Workshops</li>
+                                    <li className="flex gap-2 items-center"><span className="text-cyan-400">✓</span> Team Analytics</li>
+                                </ul>
+                            </div>
+
+                            {/* Price & CTA */}
+                            <div className="w-full md:w-1/4 flex flex-col items-center justify-center border-t md:border-t-0 md:border-l border-white/10 pt-6 md:pt-0 md:pl-8">
+                                <div className="mb-4 text-center">
+                                    <span className="text-3xl font-bold text-white">Custom</span>
+                                    <span className="text-gray-400 text-sm block">Contact for pricing</span>
+                                </div>
+                                <button className="btn btn-secondary btn-hover-effect w-full text-sm">Contact Sales</button>
+                            </div>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-gray flex-grow">
-                            <li className="flex gap-3">
-                                <span style={{ color: '#06b6d4' }}>✓</span> Custom Training Programs
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#06b6d4' }}>✓</span> Dedicated Account Manager
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#06b6d4' }}>✓</span> Onsite/Virtual Workshops
-                            </li>
-                            <li className="flex gap-3">
-                                <span style={{ color: '#06b6d4' }}>✓</span> Volume Licensing
-                            </li>
-                        </ul>
-                        <button className="btn btn-secondary btn-hover-effect w-full" style={{ borderRadius: '12px', padding: '14px' }}>Contact Sales</button>
                     </TiltCard>
                 </div>
 
