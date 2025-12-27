@@ -1,62 +1,79 @@
+import React from 'react';
 import Link from 'next/link';
 
-export default function Footer() {
+const Footer = () => {
     return (
-        <footer style={{ backgroundColor: '#0F172A', color: '#F8FAFC', padding: '80px 0 40px', borderTop: '1px solid #1E293B' }}>
+        <footer className="footer">
             <div className="container">
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '48px', marginBottom: '64px' }}>
-                    <div style={{ flex: '2 1 300px' }}>
-                        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: '24px' }}>
-                            <img src="/logo-white.svg" alt="GMP Payroll" style={{ height: '40px', width: 'auto' }} />
+                {/* Newsletter */}
+                <div className="border-b border-white/10 pb-12 mb-12 text-center max-w-2xl mx-auto">
+                    <h3 className="text-2xl font-bold mb-2">Stay Ahead of the AI Curve</h3>
+                    <p className="text-gray mb-6">Weekly insights on AI tools, automation tips, and career opportunities.</p>
+                    <form className="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" />
+                        <button className="btn btn-primary">Subscribe</button>
+                    </form>
+                    <p className="text-gray text-xs mt-4">Join 10,000+ subscribers.</p>
+                </div>
+
+                <div className="footer-grid">
+                    {/* Brand */}
+                    <div className="footer-brand">
+                        <Link href="/" className="logo" style={{ marginBottom: '1.5rem' }}>
+                            <div className="logo-icon"></div>
+                            <span>AI Gravity</span>
                         </Link>
-                        <p style={{ color: '#94A3B8', maxWidth: '300px', marginBottom: '32px' }}>
-                            World-class independent payroll implementation consulting. Zero-error cutovers for global enterprises.
+                        <p className="text-gray" style={{ marginBottom: '1.5rem', maxWidth: '300px' }}>
+                            Practical AI education for business professionals who want results, not theory.
                         </p>
                         <div className="flex gap-4">
-                            {/* Social Placeholders */}
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#334155', color: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>in</div>
-                            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#334155', color: '#F8FAFC', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>📧</div>
+                            {/* Social placeholders */}
+                            <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}>𝕏</div>
+                            <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}>in</div>
+                            <div style={{ padding: '0.5rem', background: 'rgba(255,255,255,0.1)', borderRadius: '50%' }}>YT</div>
                         </div>
                     </div>
 
-                    <div style={{ flex: '1 1 150px' }}>
-                        <h4 style={{ color: '#F8FAFC', marginBottom: '24px', fontSize: '18px', fontWeight: 'bold' }}>Services</h4>
-                        <div className="flex flex-col gap-3" style={{ color: '#94A3B8' }}>
-                            <Link href="/services/readiness-assessment" className="hover:text-teal-400 transition-colors">Readiness Assessment</Link>
-                            <Link href="/services/cutover-planning" className="hover:text-teal-400 transition-colors">Cutover Planning</Link>
-                            <Link href="/services/compliance-audit" className="hover:text-teal-400 transition-colors">Compliance Audit</Link>
-                            <Link href="/services/automation" className="hover:text-teal-400 transition-colors">Automation Solutions</Link>
-                        </div>
+                    {/* Learn */}
+                    <div className="footer-links-col">
+                        <h4>Learn</h4>
+                        <ul>
+                            <li><Link href="#courses">All Courses</Link></li>
+                            <li><Link href="#paths">Learning Paths</Link></li>
+                            <li><Link href="#free">Free Resources</Link></li>
+                            <li><Link href="#certifications">Certifications</Link></li>
+                        </ul>
                     </div>
 
-                    <div style={{ flex: '1 1 150px' }}>
-                        <h4 style={{ color: '#F8FAFC', marginBottom: '24px', fontSize: '18px', fontWeight: 'bold' }}>Company</h4>
-                        <div className="flex flex-col gap-3" style={{ color: '#94A3B8' }}>
-                            <Link href="/about" className="hover:text-teal-400 transition-colors">About Me</Link>
-                            <Link href="/case-studies" className="hover:text-teal-400 transition-colors">Case Studies</Link>
-                            <Link href="/expertise" className="hover:text-teal-400 transition-colors">Expertise</Link>
-                            <Link href="/contact" className="hover:text-teal-400 transition-colors">Contact</Link>
-                        </div>
+                    {/* Resources */}
+                    <div className="footer-links-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><Link href="/blog">Blog</Link></li>
+                            <li><Link href="/tools">AI Tools Directory</Link></li>
+                            <li><Link href="/community">Community</Link></li>
+                        </ul>
                     </div>
 
-                    <div style={{ flex: '1 1 150px' }}>
-                        <h4 style={{ color: '#F8FAFC', marginBottom: '24px', fontSize: '18px', fontWeight: 'bold' }}>Resources</h4>
-                        <div className="flex flex-col gap-3" style={{ color: '#94A3B8' }}>
-                            <Link href="/blog" className="hover:text-teal-400 transition-colors">Blog</Link>
-                            <Link href="/newsletter" className="hover:text-teal-400 transition-colors">Newsletter</Link>
-                        </div>
+                    {/* Company */}
+                    <div className="footer-links-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><Link href="/about">About Us</Link></li>
+                            <li><Link href="/contact">Contact</Link></li>
+                            <li><Link href="/privacy">Privacy Policy</Link></li>
+                            <li><Link href="/terms">Terms of Service</Link></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div className="flex flex-mobile-col" style={{ borderTop: '1px solid #1E293B', paddingTop: '32px', justifyContent: 'space-between', color: '#94A3B8', fontSize: '14px', gap: '24px' }}>
-                    <div className="text-center">© {new Date().getFullYear()} Chetan Sharma. All rights reserved.</div>
-                    <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap', justifyContent: 'center' }}>
-                        <Link href="/privacy" className="hover:text-teal-400 transition-colors">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-teal-400 transition-colors">Terms of Service</Link>
-                        <Link href="/cookies" className="hover:text-teal-400 transition-colors">Cookie Policy</Link>
-                    </div>
+                <div style={{ borderTop: '1px solid var(--color-glass-border)', paddingTop: '2rem', textAlign: 'center', fontSize: '0.9rem', color: 'var(--text-gray)', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+                    <div>&copy; {new Date().getFullYear()} AI Gravity Academy. All rights reserved.</div>
+                    <div>Made with ❤️ for the AI-curious</div>
                 </div>
             </div>
         </footer>
     );
-}
+};
+
+export default Footer;

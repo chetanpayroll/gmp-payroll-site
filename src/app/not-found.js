@@ -1,15 +1,15 @@
 export const metadata = {
-    title: 'Page Not Found',
+    title: 'Page Not Found - AI Gravity',
 };
 
 export default function Custom404() {
     return (
-        <div style={{ padding: '100px 0', textAlign: 'center', height: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-            <h1 style={{ fontSize: '72px', color: 'var(--color-navy)', marginBottom: '24px' }}>404</h1>
-            <p style={{ fontSize: '24px', color: '#94A3B8', marginBottom: '40px' }}>
-                Oops. It seems you've ventured into a jurisdiction we don't cover.
+        <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', color: 'white' }}>
+            <h1 style={{ fontSize: '72px', fontWeight: 'bold', background: 'var(--gradient-main)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '1rem' }}>404</h1>
+            <p style={{ fontSize: '24px', color: 'var(--text-gray)', marginBottom: '2rem' }}>
+                Lost in the void? Let's gravitate back to safety.
             </p>
-            <a href="/" className="btn btn-primary">Return to Home</a>
+            <a href="/" className="btn btn-primary">Return Home</a>
         </div>
     );
 }

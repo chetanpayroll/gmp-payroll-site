@@ -1,57 +1,29 @@
-import Link from 'next/link';
+import React from 'react';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
-export const metadata = {
-    title: 'Terms of Service | GMP Payroll',
-    description: 'Terms of Service for GMP Payroll consulting services.',
-};
-
-export default function TermsOfService() {
+export default function Terms() {
     return (
-        <main className="container" style={{ padding: '120px 20px 80px', maxWidth: '800px' }}>
-            <h1 style={{ fontSize: '48px', marginBottom: '40px', textAlign: 'center' }}>Terms of Service</h1>
+        <main className="min-h-screen bg-dark">
+            <Navbar />
+            <section className="section pt-32">
+                <div className="container max-w-3xl">
+                    <h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
+                    <div className="prose prose-invert text-gray space-y-6">
+                        <p>Last Updated: December 28, 2024</p>
 
-            <div style={{ color: '#475569', fontSize: '18px', lineHeight: '1.8' }}>
-                <p style={{ marginBottom: '24px' }}>Last Updated: December 21, 2025</p>
+                        <h3 className="text-white text-xl font-bold mt-8">1. Acceptance of Terms</h3>
+                        <p>By accessing AI Gravity Academy, you agree to these Terms of Service. If you do not agree, please do not use our platform.</p>
 
-                <section style={{ marginBottom: '40px' }}>
-                    <h2 style={{ fontSize: '24px', color: '#0F172A', marginBottom: '16px' }}>1. Agreement to Terms</h2>
-                    <p>
-                        These Terms of Service constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and GMP Payroll ("we," "us" or "our"),
-                        concerning your access to and use of the gmppayroll.com website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site").
-                    </p>
-                </section>
+                        <h3 className="text-white text-xl font-bold mt-8">2. Course Access & usage</h3>
+                        <p>Purchasing a course grants you a non-exclusive, non-transferable license to access the content. Sharing login credentials is strictly prohibited.</p>
 
-                <section style={{ marginBottom: '40px' }}>
-                    <h2 style={{ fontSize: '24px', color: '#0F172A', marginBottom: '16px' }}>2. Intellectual Property Rights</h2>
-                    <p>
-                        Unless otherwise indicated, the Site is our proprietary property and all source code, databases, functionality, software, website designs, audio, video, text, photographs, and graphics on the Site (collectively, the "Content")
-                        and the trademarks, service marks, and logos contained therein (the "Marks") are owned or controlled by us or licensed to us, and are protected by copyright and trademark laws.
-                    </p>
-                </section>
-
-                <section style={{ marginBottom: '40px' }}>
-                    <h2 style={{ fontSize: '24px', color: '#0F172A', marginBottom: '16px' }}>3. User Representations</h2>
-                    <p>
-                        By using the Site, you represent and warrant that: (1) all registration information you submit will be true, accurate, current, and complete;
-                        (2) you will maintain the accuracy of such information and promptly update such registration information as necessary;
-                        (3) you have the legal capacity and you agree to comply with these Terms of Service.
-                    </p>
-                </section>
-
-                <section style={{ marginBottom: '40px' }}>
-                    <h2 style={{ fontSize: '24px', color: '#0F172A', marginBottom: '16px' }}>4. Disclaimer</h2>
-                    <p>
-                        THE SITE IS PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR USE OF THE SITE AND OUR SERVICES WILL BE AT YOUR SOLE RISK.
-                    </p>
-                </section>
-
-                <section style={{ marginBottom: '40px' }}>
-                    <h2 style={{ fontSize: '24px', color: '#0F172A', marginBottom: '16px' }}>5. Contact Us</h2>
-                    <p>
-                        In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at: <a href="mailto:chetansharma@gmppayroll.com" style={{ color: '#0891B2', textDecoration: 'underline' }}>chetansharma@gmppayroll.com</a>.
-                    </p>
-                </section>
-            </div>
+                        <h3 className="text-white text-xl font-bold mt-8">3. Refund Policy</h3>
+                        <p>We offer a 30-day money-back guarantee on all courses. If you are not satisfied, contact support within 30 days of purchase for a full refund.</p>
+                    </div>
+                </div>
+            </section>
+            <Footer />
         </main>
     );
 }
