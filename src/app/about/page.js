@@ -128,20 +128,23 @@ export default function AboutPage() {
             {/* Section 5: Core Values */}
             <section className="section">
                 <div className="container">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-16">
                         <span className="badge badge-green mb-4">WHAT WE BELIEVE</span>
                         <h2 className="text-3xl font-bold">Our Core Values</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
                         {[
-                            { icon: '🎯', title: 'Practical', desc: 'Every lesson includes hands-on projects. No abstract concepts.' },
-                            { icon: '🌍', title: 'Accessible', desc: 'No coding required. If you can use a computer, you can master AI.' },
-                            { icon: '🤝', title: 'Community', desc: 'Learning is better together. Our community supports and grows together.' },
-                            { icon: '📈', title: 'Results', desc: 'We measure success by what you build and achieve.' }
+                            { icon: '🎯', title: 'Practical', desc: 'Real projects only.', color: 'from-green-400 to-emerald-600' },
+                            { icon: '🌍', title: 'Accessible', desc: 'No coding required.', color: 'from-blue-400 to-cyan-600' },
+                            { icon: '🤝', title: 'Community', desc: 'Grow together.', color: 'from-purple-400 to-pink-600' },
+                            { icon: '📈', title: 'Results', desc: 'Build & achieve.', color: 'from-orange-400 to-red-600' }
                         ].map((val, i) => (
-                            <div key={i} className="glass-card-enhanced p-6 text-center hover:bg-white/5 transition-colors">
-                                <div className="text-4xl mb-4">{val.icon}</div>
-                                <h3 className="text-xl font-bold mb-2">{val.title}</h3>
+                            <div key={i} className="glass-card-enhanced p-8 text-center group transition-all hover:-translate-y-2" style={{ position: 'relative', overflow: 'hidden' }}>
+                                {/* Top Gradient Line */}
+                                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${val.color}`}></div>
+
+                                <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">{val.icon}</div>
+                                <h3 className="text-xl font-bold mb-3 text-white">{val.title}</h3>
                                 <p className="text-sm text-gray-400">{val.desc}</p>
                             </div>
                         ))}
@@ -152,26 +155,35 @@ export default function AboutPage() {
             {/* Section 6: By the Numbers */}
             <section className="section bg-dark">
                 <div className="container">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-16">
                         <span className="badge badge-red mb-4">OUR IMPACT</span>
                         <h2 className="text-3xl font-bold">By The Numbers</h2>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-                        {[
-                            { label: 'Students Taught', val: 5000, suffix: '+' },
-                            { label: 'Countries Reached', val: 40, suffix: '+' },
-                            { label: 'Automations Built', val: 10000, suffix: '+' },
-                            { label: 'Career Growth', val: 73, suffix: '%' },
-                            { label: 'Average Rating', val: 4.9, suffix: '/5', decimals: 1 },
-                            { label: 'Hours Saved', val: 50000, suffix: '+' },
-                        ].map((stat, i) => (
-                            <div key={i} className="glass-card-enhanced p-6">
-                                <div className="text-3xl md:text-4xl font-bold gradient-text-anim mb-2">
-                                    <CountUpStats end={stat.val} suffix={stat.suffix} decimals={stat.decimals || 0} />
+                    {/* Horizontal Strip Layout */}
+                    <div className="glass-card-enhanced p-8 md:p-12">
+                        <div style={{
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            justifyContent: 'space-between',
+                            gap: '3rem',
+                            alignItems: 'center'
+                        }}>
+                            {[
+                                { label: 'Students', val: 5000, suffix: '+', color: '#4ade80' },
+                                { label: 'Countries', val: 40, suffix: '+', color: '#60a5fa' },
+                                { label: 'Automations', val: 10000, suffix: '+', color: '#a78bfa' },
+                                { label: 'Growth', val: 73, suffix: '%', color: '#f472b6' },
+                                { label: 'Rating', val: 4.9, suffix: '/5', decimals: 1, color: '#fbbf24' },
+                                { label: 'Hours Saved', val: 50000, suffix: '+', color: '#22d3ee' },
+                            ].map((stat, i) => (
+                                <div key={i} className="text-center flex-1 min-w-[140px]">
+                                    <div className="text-4xl md:text-5xl font-extrabold mb-2" style={{ color: stat.color, textShadow: `0 0 20px ${stat.color}40` }}>
+                                        <CountUpStats end={stat.val} suffix={stat.suffix} decimals={stat.decimals || 0} />
+                                    </div>
+                                    <div className="text-xs md:text-sm font-bold text-gray-400 uppercase tracking-[2px]">{stat.label}</div>
                                 </div>
-                                <div className="text-sm text-gray-400 uppercase tracking-widest">{stat.label}</div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
