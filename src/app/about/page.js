@@ -85,38 +85,48 @@ export default function AboutPage() {
 
             {/* Section 4: Timeline */}
             <section className="section bg-animated">
-                <div className="container" style={{ maxWidth: '1000px' }}>
-                    <div className="text-center mb-16">
+                <div className="container">
+                    <div className="text-center mb-20">
                         <span className="badge badge-purple mb-4">OUR JOURNEY</span>
                         <h2 className="text-3xl font-bold">Key Milestones</h2>
                     </div>
 
                     <div className="relative">
-                        {/* Central Line */}
-                        <div className="absolute left-4 md:left-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500 to-cyan-500 transform md:-translate-x-1/2"></div>
+                        {/* Connecting Line (Desktop) */}
+                        <div className="hidden md:block absolute top-[20px] left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-cyan-500 to-green-500 rounded opacity-50"></div>
 
-                        <div className="space-y-12">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
                             {[
-                                { year: '2011', title: 'Started Enterprise Operations', desc: 'Began career managing complex payroll systems.' },
-                                { year: '2018', title: 'Discovered AI & Automation', desc: 'Built first automation workflow using early no-code tools.' },
-                                { year: '2020', title: '1,000th Automation Built', desc: 'Scaled operations to 25+ countries with 99.8% accuracy.' },
-                                { year: '2023', title: 'Launched AI Gravity Academy', desc: 'Started teaching others to replicate this success.' },
-                                { year: '2024', title: 'Global Impact', desc: 'Reached 5,000+ students across 40+ countries.' },
+                                { year: '2011', title: 'Started Enterprise Operations', desc: 'Began career managing complex payroll systems.', color: 'from-purple-500 to-indigo-600', dot: '#9333ea' },
+                                { year: '2018', title: 'Discovered AI & Automation', desc: 'Built first automation workflow using early no-code tools.', color: 'from-blue-500 to-cyan-600', dot: '#2563eb' },
+                                { year: '2020', title: '1,000th Automation Built', desc: 'Scaled operations to 25+ countries with 99.8% accuracy.', color: 'from-cyan-400 to-teal-500', dot: '#06b6d4' },
+                                { year: '2023', title: 'Launched AI Gravity Academy', desc: 'Started teaching others to replicate this success.', color: 'from-teal-400 to-emerald-500', dot: '#10b981' },
+                                { year: '2024', title: 'Global Impact', desc: 'Reached 5,000+ students across 40+ countries.', color: 'from-green-400 to-lime-500', dot: '#4ade80' },
                             ].map((item, i) => (
-                                <div key={i} className={`relative flex items-center md:justify-between ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
-                                    {/* Spacer for Desktop (keeps card on one side) */}
-                                    <div className="hidden md:block w-5/12"></div>
-
-                                    {/* Dot */}
-                                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-white border-4 border-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.5)] transform -translate-x-1/2 z-10"></div>
-
-                                    {/* Content Card */}
-                                    <div className="w-full pl-12 md:pl-0 md:w-5/12">
-                                        <div className="glass-card-enhanced p-6 transform transition-all hover:scale-105 hover:border-purple-500/50">
-                                            <div className="text-2xl font-bold gradient-text-anim mb-2">{item.year}</div>
-                                            <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                                            <p className="text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                                <div key={i} className="group relative pt-16 md:pt-16 text-center md:text-left">
+                                    {/* Glowing Node */}
+                                    <div className="absolute top-0 left-1/2 md:left-8 transform -translate-x-1/2 md:translate-x-0 z-10">
+                                        <div
+                                            className="w-10 h-10 rounded-full border-4 border-[#0a1628] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-125"
+                                            style={{ background: item.dot, boxShadow: `0 0 20px ${item.dot}80` }}
+                                        >
+                                            <div className="w-3 h-3 bg-white rounded-full"></div>
                                         </div>
+                                    </div>
+
+                                    {/* Vertical Line Connector (Mobile Only) */}
+                                    <div className="md:hidden absolute top-0 bottom-0 left-1/2 w-0.5 bg-gray-800 -translate-x-1/2 z-0"></div>
+
+                                    {/* Card */}
+                                    <div
+                                        className="glass-card-enhanced p-6 h-full relative z-10 transition-all duration-300 hover:-translate-y-2"
+                                        style={{ borderTop: `4px solid ${item.dot}` }}
+                                    >
+                                        <div className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r" style={{ backgroundImage: `linear-gradient(to right, white, ${item.dot})` }}>
+                                            {item.year}
+                                        </div>
+                                        <h3 className="text-md font-bold text-white mb-2 leading-tight">{item.title}</h3>
+                                        <p className="text-sm text-gray-400 leading-relaxed opacity-90">{item.desc}</p>
                                     </div>
                                 </div>
                             ))}
