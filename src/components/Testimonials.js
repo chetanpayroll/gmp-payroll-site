@@ -42,22 +42,27 @@ const Testimonials = () => {
                 </div>
 
                 {/* Featured Video Placeholder */}
-                <div className="mb-16 relative rounded-2xl overflow-hidden border border-white/10 bg-black aspect-video max-w-4xl mx-auto flex items-center justify-center group cursor-pointer">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
-                        <p className="text-xl md:text-2xl font-bold text-white mb-2">"This course helped me automate 10 hours of work weekly and land a $30K raise."</p>
-                        <div className="flex items-center gap-4">
-                            <div className="font-semibold text-cyan-400">Sarah Chen, Marketing Director</div>
-                            <span className="badge badge-purple">Promoted</span>
-                        </div>
-                    </div>
-                    <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center border border-white/30 group-hover:scale-110 transition-transform">
-                        <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-white border-b-[10px] border-b-transparent ml-1"></div>
-                    </div>
+                <div className="mb-16 relative rounded-2xl overflow-hidden border border-white/10 bg-black aspect-video max-w-4xl mx-auto flex items-center justify-center group cursor-pointer shadow-2xl">
+                    <iframe
+                        width="100%"
+                        height="100%"
+                        src="https://www.youtube.com/embed/5iMh9hV9j3o?rel=0&modestbranding=1"
+                        title="Student Success Story"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {testimonials.map((t, i) => (
-                        <div key={i} className="testimonial-card">
+                        <div key={i} className="testimonial-card" style={{
+                            background: '#0f172a',
+                            border: '1px solid rgba(255,255,255,0.05)',
+                            borderRadius: '16px',
+                            padding: '1.5rem',
+                            transition: 'all 0.3s'
+                        }}>
                             <div className="flex gap-1 text-yellow-400 mb-4">{'★'.repeat(t.stars)}</div>
                             <p className="text-gray-300 mb-6 text-sm leading-relaxed">"{t.text}"</p>
                             <div className="border-t border-white/5 pt-4">
@@ -69,23 +74,34 @@ const Testimonials = () => {
                     ))}
                 </div>
 
-                {/* Stats Bar */}
-                <div className="mt-16 py-8 border-y border-white/10 bg-white/5 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div>
-                        <div className="font-bold text-2xl">5,000+</div>
-                        <div className="text-xs text-gray">Learners</div>
-                    </div>
-                    <div>
-                        <div className="font-bold text-2xl">40+</div>
-                        <div className="text-xs text-gray">Countries</div>
-                    </div>
-                    <div>
-                        <div className="font-bold text-2xl">4.9/5</div>
-                        <div className="text-xs text-gray">Average Rating</div>
-                    </div>
-                    <div>
-                        <div className="font-bold text-2xl">73%</div>
-                        <div className="text-xs text-gray">Career Growth</div>
+                {/* Stats Bar - Refactored to Enterprise Grid/Horizontal Layout */}
+                <div className="mt-20">
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                        gap: '2rem',
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        borderRadius: '20px',
+                        padding: '3rem',
+                        backdropFilter: 'blur(10px)'
+                    }}>
+                        <div style={{ textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.1)' }} className="stat-item">
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '0.5rem' }}>5,000+</div>
+                            <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Active Learners</div>
+                        </div>
+                        <div style={{ textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.1)' }} className="stat-item">
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '0.5rem' }}>40+</div>
+                            <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Countries</div>
+                        </div>
+                        <div style={{ textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.1)' }} className="stat-item">
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#fbbf24', marginBottom: '0.5rem' }}>4.9/5</div>
+                            <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Average Rating</div>
+                        </div>
+                        <div style={{ textAlign: 'center' }} className="stat-item">
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#4ade80', marginBottom: '0.5rem' }}>73%</div>
+                            <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Report Career Growth</div>
+                        </div>
                     </div>
                 </div>
             </div>
