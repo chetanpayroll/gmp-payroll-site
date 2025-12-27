@@ -66,7 +66,7 @@ const SolutionSection = () => {
                             ].map((item, i) => (
                                 <div key={i} style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                                     <div style={{ minWidth: '32px', height: '32px', borderRadius: '50%', background: 'linear-gradient(135deg, #7c3aed, #06b6d4)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem', boxShadow: '0 4px 10px rgba(124, 58, 237, 0.3)' }}>✓</div>
-                                    <p style={{ color: 'white', fontSize: '1.05rem', margin: 0, fontWeight: '500' }}>{item}</p>
+                                    <p style={{ fontSize: '1.05rem', margin: 0, fontWeight: '500' }}>{item}</p>
                                 </div>
                             ))}
                         </div>

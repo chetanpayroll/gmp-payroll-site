@@ -73,10 +73,10 @@ const Pricing = () => {
                         <h3 className="text-xl font-bold mb-2">Starter</h3>
                         <p className="text-sm text-gray mb-6 h-10">Perfect for AI-curious beginners starting their journey.</p>
                         <div className="mb-6">
-                            <span className="text-4xl font-bold text-white">{annual ? '₹4,000' : '₹500'}</span>
+                            <span className="text-4xl font-bold">{annual ? '₹4,000' : '₹500'}</span>
                             <span className="text-gray text-sm">{annual ? '/year' : '/mo'}</span>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                        <ul className="space-y-4 mb-8 text-sm text-gray flex-grow">
                             <li className="flex gap-3">
                                 <span style={{ color: '#4ade80' }}>✓</span> Access to Foundations Course
                             </li>
@@ -117,13 +117,13 @@ const Pricing = () => {
                             MOST POPULAR
                         </div>
 
-                        <h3 className="text-xl font-bold mb-2 text-white">Professional</h3>
+                        <h3 className="text-xl font-bold mb-2">Professional</h3>
                         <p className="text-sm text-gray mb-6 h-10">For serious career advancement and mastery.</p>
                         <div className="mb-6">
                             <span className="text-4xl font-bold gradient-text-anim">{annual ? '₹8,000' : '₹1,000'}</span>
                             <span className="text-gray text-sm">{annual ? '/year' : '/mo'}</span>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-white flex-grow">
+                        <ul className="space-y-4 mb-8 text-sm flex-grow">
                             <li className="flex gap-3 font-semibold">
                                 <span style={{ color: '#7c3aed' }}>✓</span> Everything in Starter
                             </li>
@@ -152,9 +152,9 @@ const Pricing = () => {
                         <h3 className="text-xl font-bold mb-2">Enterprise</h3>
                         <p className="text-sm text-gray mb-6 h-10">Team & corporate training for organizations.</p>
                         <div className="mb-6">
-                            <span className="text-4xl font-bold text-white">Custom</span>
+                            <span className="text-4xl font-bold">Custom</span>
                         </div>
-                        <ul className="space-y-4 mb-8 text-sm text-gray-300 flex-grow">
+                        <ul className="space-y-4 mb-8 text-sm text-gray flex-grow">
                             <li className="flex gap-3">
                                 <span style={{ color: '#06b6d4' }}>✓</span> Custom Training Programs
                             </li>
