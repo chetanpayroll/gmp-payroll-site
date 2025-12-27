@@ -854,6 +854,7 @@ textarea {
   background: linear-gradient(90deg, #7C3AED, #06B6D4, #7C3AED);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient-shift 8s linear infinite;
 }
@@ -871,8 +872,8 @@ textarea {
 /* Enhanced Glassmorphism */
 .glass-card-enhanced {
   background: var(--card-bg);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   box-shadow: var(--card-shadow);
