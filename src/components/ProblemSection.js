@@ -23,22 +23,24 @@ const painPoints = [
     }
 ];
 
+import TiltCard from './TiltCard';
+
 const ProblemSection = () => {
     return (
         <section className="section bg-dark">
             <div className="container">
                 <div className="text-center mb-8">
                     <div className="badge badge-purple mb-4">THE CHALLENGE</div>
-                    <h2 className="mb-4">AI Is Transforming Everything. <br /> <span className="text-gradient">Are You Keeping Up?</span></h2>
+                    <h2 className="mb-4">AI Is Transforming Everything. <br /> <span className="gradient-text-anim">Are You Keeping Up?</span></h2>
                 </div>
 
                 <div className="features-grid">
                     {painPoints.map((point, index) => (
-                        <div key={index} className="pain-point-card">
+                        <TiltCard key={index} className="pain-point-card glass-card-enhanced feature-card">
                             <div className="text-4xl mb-4">{point.icon}</div>
                             <h3 className="text-xl font-bold mb-2">{point.title}</h3>
                             <p className="text-gray text-sm">{point.desc}</p>
-                        </div>
+                        </TiltCard>
                     ))}
                 </div>
 

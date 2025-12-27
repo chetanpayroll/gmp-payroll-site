@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+import CountUpStats from './CountUpStats';
+
 const Hero = () => {
     const [videoOpen, setVideoOpen] = useState(false);
 
@@ -21,12 +23,12 @@ const Hero = () => {
                         {/* LEFT SIDE: Content */}
                         <div className="hero-content fade-in-up" style={{ paddingRight: '2rem' }}>
                             <div className="glass-badge mb-4">
-                                <span>🏆</span> Trusted by 5,000+ Learners Across 40+ Countries
+                                <span>🏆</span> Trusted by <span className="font-bold mx-1"><CountUpStats end={5000} suffix="+" /></span> Learners Across <span className="font-bold mx-1"><CountUpStats end={40} suffix="+" /></span> Countries
                             </div>
 
                             <h1 className="mb-4 delay-100 fade-in-up" style={{ fontSize: '3.5rem', lineHeight: 1.1 }}>
                                 Master AI Without <br />
-                                Writing a <span className="text-gradient">Single Line of Code</span>
+                                Writing a <span className="gradient-text-anim">Single Line of Code</span>
                             </h1>
 
                             <p className="text-gray mb-8 delay-200 fade-in-up" style={{ fontSize: '1.125rem', maxWidth: '600px', lineHeight: 1.6 }}>
@@ -35,11 +37,11 @@ const Hero = () => {
                             </p>
 
                             <div className="flex gap-4 mb-8 delay-300 fade-in-up" style={{ flexWrap: 'wrap' }}>
-                                <Link href="#join" className="btn btn-primary btn-glow" style={{ fontSize: '1.1rem', padding: '16px 32px' }}>
+                                <Link href="/enroll" className="btn btn-primary btn-glow btn-hover-effect" style={{ fontSize: '1.1rem', padding: '16px 32px' }}>
                                     Start Your Free AI Journey →
                                 </Link>
                                 <button
-                                    className="btn btn-secondary flex items-center gap-2 group"
+                                    className="btn btn-secondary flex items-center gap-2 group btn-hover-effect"
                                     onClick={() => setVideoOpen(true)}
                                     style={{ padding: '16px 24px', transition: 'all 0.3s' }}
                                 >
@@ -53,7 +55,7 @@ const Hero = () => {
                             {/* Trust Indicators */}
                             <div className="flex gap-8 delay-300 fade-in-up" style={{ borderTop: '1px solid var(--color-glass-border)', paddingTop: '1.5rem', flexWrap: 'wrap' }}>
                                 <div className="flex items-center gap-2">
-                                    <span style={{ color: '#FBBF24' }}>⭐ 4.9/5</span>
+                                    <span style={{ color: '#FBBF24', fontWeight: 'bold' }}>⭐ <CountUpStats end={4.9} decimals={1} suffix="/5" /></span>
                                     <span className="text-gray text-sm">from 2,000+ Reviews</span>
                                 </div>
                                 <div className="flex items-center gap-2">
@@ -62,7 +64,7 @@ const Hero = () => {
                                 </div>
                                 <div className="flex items-center gap-2">
                                     <span>💼</span>
-                                    <span className="text-gray text-sm">73% Career Advancement</span>
+                                    <span className="text-gray text-sm"><span className="font-bold text-white"><CountUpStats end={73} suffix="%" /></span> Career Advancement</span>
                                 </div>
                             </div>
                         </div>

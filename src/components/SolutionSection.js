@@ -1,12 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const stats = [
-    { label: "Years Experience", value: "13+" },
-    { label: "Countries Implemented", value: "25+" },
-    { label: "Automations Built", value: "10,000+" },
-    { label: "Success Rate", value: "99.8%" },
-];
+import CountUpStats from './CountUpStats';
 
 const SolutionSection = () => {
     return (
@@ -18,17 +13,16 @@ const SolutionSection = () => {
             <div className="container" style={{ position: 'relative', zIndex: 10 }}>
                 <div className="text-center mb-16">
                     <div className="badge badge-cyan mb-6" style={{ boxShadow: '0 0 20px rgba(6, 182, 212, 0.4)' }}>THE SOLUTION</div>
-                    <h2 className="mb-6" style={{ fontSize: '3rem' }}>Become the AI Expert <span className="text-gradient">Everyone Needs</span></h2>
+                    <h2 className="mb-6" style={{ fontSize: '3rem' }}>Become the AI Expert <span className="gradient-text-anim">Everyone Needs</span></h2>
                     <p className="text-gray max-w-2xl mx-auto" style={{ fontSize: '1.2rem' }}>Our hands-on, project-based training system takes you from confused to confident in weeks, not years.</p>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'stretch' }}>
 
                     {/* BEFORE CARD */}
-                    <div style={{
+                    <div className="glass-card-enhanced" style={{
                         background: 'rgba(15, 23, 42, 0.6)',
                         border: '1px solid rgba(239, 68, 68, 0.2)',
-                        borderRadius: '24px',
                         padding: '3rem',
                         position: 'relative'
                     }}>
@@ -52,10 +46,9 @@ const SolutionSection = () => {
                     </div>
 
                     {/* AFTER CARD */}
-                    <div style={{
+                    <div className="glass-card-enhanced" style={{
                         background: 'linear-gradient(145deg, rgba(124, 58, 237, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%)',
                         border: '1px solid rgba(124, 58, 237, 0.4)',
-                        borderRadius: '24px',
                         padding: '3rem',
                         position: 'relative',
                         boxShadow: '0 20px 50px -10px rgba(124, 58, 237, 0.15)'
@@ -81,7 +74,7 @@ const SolutionSection = () => {
                 </div>
 
                 <div className="text-center mt-16">
-                    <Link href="/enroll" className="btn btn-primary btn-glow" style={{ padding: '1.2rem 3rem', fontSize: '1.2rem' }}>See How It Works →</Link>
+                    <Link href="/enroll" className="btn btn-primary btn-glow btn-hover-effect" style={{ padding: '1.2rem 3rem', fontSize: '1.2rem' }}>See How It Works →</Link>
                 </div>
 
                 {/* VISUALLY FORCED HORIZONTAL LAYOUT FOR STATS */}
@@ -94,12 +87,30 @@ const SolutionSection = () => {
                     borderTop: '1px solid rgba(255,255,255,0.05)',
                     paddingTop: '3rem'
                 }}>
-                    {stats.map((stat, index) => (
-                        <div key={index} style={{ textAlign: 'center', minWidth: '150px' }}>
-                            <div className="text-gradient" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>{stat.value}</div>
-                            <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>{stat.label}</div>
+                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
+                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
+                            <CountUpStats end={13} suffix="+" />
                         </div>
-                    ))}
+                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Years Experience</div>
+                    </div>
+                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
+                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
+                            <CountUpStats end={25} suffix="+" />
+                        </div>
+                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Countries Implemented</div>
+                    </div>
+                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
+                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
+                            <CountUpStats end={10000} suffix="+" />
+                        </div>
+                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Automations Built</div>
+                    </div>
+                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
+                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
+                            <CountUpStats end={99.8} decimals={1} suffix="%" />
+                        </div>
+                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Success Rate</div>
+                    </div>
                 </div>
             </div>
         </section>

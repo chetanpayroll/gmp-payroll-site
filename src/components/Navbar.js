@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Search from './Search';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -23,24 +25,31 @@ const Navbar = () => {
                 </Link>
 
                 {/* Desktop Links */}
-                <div className="nav-links">
-                    <Link href="#courses">Courses</Link>
-                    <Link href="#methodology">Methodology</Link>
-                    <Link href="#mentors">Mentors</Link>
-                    <Link href="#pricing">Pricing</Link>
+                <div className="nav-links" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+                    <Link href="/about">About</Link>
+                    <Link href="/blog">Blog</Link>
+                    <Link href="/#courses">Courses</Link>
+                    <Link href="/#pricing">Pricing</Link>
                 </div>
 
-                {/* CTA */}
-                <div className="cta-desktop">
-                    <Link href="#join" className="btn btn-primary">
-                        Start Learning
-                    </Link>
-                </div>
+                <div className="flex items-center gap-4">
+                    <div className="hidden md:block">
+                        <Search />
+                    </div>
+                    <ThemeToggle />
 
-                {/* Mobile Toggle */}
-                <button className="mobile-toggle">
-                    ☰
-                </button>
+                    {/* CTA */}
+                    <div className="cta-desktop">
+                        <Link href="/enroll" className="btn btn-primary btn-hover-effect">
+                            Start Learning
+                        </Link>
+                    </div>
+
+                    {/* Mobile Toggle */}
+                    <button className="mobile-toggle">
+                        ☰
+                    </button>
+                </div>
             </div>
         </nav>
     );

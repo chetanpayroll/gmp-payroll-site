@@ -1,5 +1,7 @@
 import React from 'react';
 
+import TiltCard from './TiltCard';
+
 const FreeResources = () => {
     return (
         <section className="section bg-animated">
@@ -11,7 +13,7 @@ const FreeResources = () => {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {/* Resource 1 */}
-                    <div className="resource-card group">
+                    <TiltCard className="resource-card group glass-card-enhanced">
                         <div className="h-40 bg-gradient-to-br from-blue-900 to-slate-900 flex items-center justify-center">
                             <span className="text-4xl group-hover:scale-110 transition-transform">📚</span>
                         </div>
@@ -25,13 +27,13 @@ const FreeResources = () => {
                                 <input type="hidden" name="Resource" value="Free AI Starter Course" />
 
                                 <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
-                                <button type="submit" className="btn btn-primary w-full text-sm py-2">Get Free Access →</button>
+                                <button type="submit" className="btn btn-primary btn-hover-effect w-full text-sm py-2">Get Free Access →</button>
                             </form>
                         </div>
-                    </div>
+                    </TiltCard>
 
                     {/* Resource 2 */}
-                    <div className="resource-card group">
+                    <TiltCard className="resource-card group glass-card-enhanced">
                         <div className="h-40 bg-gradient-to-br from-purple-900 to-slate-900 flex items-center justify-center">
                             <span className="text-4xl group-hover:scale-110 transition-transform">📋</span>
                         </div>
@@ -45,13 +47,13 @@ const FreeResources = () => {
                                 <input type="hidden" name="Resource" value="100+ Prompt Templates" />
 
                                 <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
-                                <button type="submit" className="btn btn-secondary w-full text-sm py-2">Download PDF →</button>
+                                <button type="submit" className="btn btn-secondary btn-hover-effect w-full text-sm py-2">Download PDF →</button>
                             </form>
                         </div>
-                    </div>
+                    </TiltCard>
 
                     {/* Resource 3 */}
-                    <div className="resource-card group">
+                    <TiltCard className="resource-card group glass-card-enhanced">
                         <div className="h-40 bg-gradient-to-br from-cyan-900 to-slate-900 flex items-center justify-center">
                             <span className="text-4xl group-hover:scale-110 transition-transform">🔧</span>
                         </div>
@@ -65,10 +67,10 @@ const FreeResources = () => {
                                 <input type="hidden" name="Resource" value="Automation Starter Kit" />
 
                                 <input type="email" name="Email" placeholder="Enter your email" required className="form-input text-sm" />
-                                <button type="submit" className="btn btn-primary w-full text-sm py-2">Get Starter Kit →</button>
+                                <button type="submit" className="btn btn-primary btn-hover-effect w-full text-sm py-2">Get Starter Kit →</button>
                             </form>
                         </div>
-                    </div>
+                    </TiltCard>
                 </div>
 
                 <div className="text-center mt-12">

@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+import TiltCard from './TiltCard';
+
 const courses = [
     {
         title: "AI Foundations",
@@ -101,21 +103,14 @@ const LearningPaths = () => {
                     alignItems: 'start'
                 }}>
                     {filteredCourses.map((course, index) => (
-                        <div key={index} style={{
-                            background: '#0f172a',
-                            border: course.featured ? '1px solid #7c3aed' : '1px solid rgba(255,255,255,0.1)',
+                        <TiltCard key={index} className="glass-card-enhanced" style={{
+                            border: course.featured ? '1px solid #7c3aed' : undefined,
                             borderRadius: '20px',
-                            overflow: 'hidden',
-                            position: 'relative',
-                            transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                             display: 'flex',
                             flexDirection: 'column',
                             height: '100%',
                             boxShadow: course.featured ? '0 0 30px rgba(124, 58, 237, 0.2)' : 'none'
-                        }}
-                            onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4)'; }}
-                            onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = course.featured ? '0 0 30px rgba(124, 58, 237, 0.2)' : 'none'; }}
-                        >
+                        }}>
                             {course.featured && (
                                 <div style={{ background: 'linear-gradient(90deg, #7c3aed, #06b6d4)', color: 'white', padding: '8px', textAlign: 'center', fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '1px' }}>
                                     Most Popular
@@ -187,7 +182,7 @@ const LearningPaths = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </div>
+                        </TiltCard>
                     ))}
                 </div>
 
@@ -195,7 +190,7 @@ const LearningPaths = () => {
                     <a href="#" className="text-gray hover:text-white transition-colors border-b border-gray-700 pb-1 text-sm">Not sure which path? Take our 2-minute AI readiness quiz →</a>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 
+import TiltCard from './TiltCard';
+
 const Pricing = () => {
     const [annual, setAnnual] = useState(true);
 
@@ -12,7 +14,7 @@ const Pricing = () => {
             <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
                 <div className="text-center mb-16">
                     <div style={{ display: 'inline-block', padding: '6px 16px', borderRadius: '50px', background: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34, 197, 94, 0.3)', color: '#86efac', fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '1rem', letterSpacing: '1px' }}>PRICING</div>
-                    <h2 className="mb-4" style={{ fontSize: '3rem', fontWeight: 'bold' }}>Invest in Your <span className="text-gradient">AI Future</span></h2>
+                    <h2 className="mb-4" style={{ fontSize: '3rem', fontWeight: 'bold' }}>Invest in Your <span className="gradient-text-anim">AI Future</span></h2>
                     <p className="text-gray" style={{ fontSize: '1.2rem' }}>Choose the plan that fits your career goals.</p>
                 </div>
 
@@ -63,18 +65,11 @@ const Pricing = () => {
                     alignItems: 'stretch'
                 }}>
                     {/* Starter Plan */}
-                    <div style={{
-                        background: 'rgba(15, 23, 42, 0.6)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        borderRadius: '24px',
+                    <TiltCard className="glass-card-enhanced" style={{
                         padding: '2.5rem',
                         display: 'flex',
-                        flexDirection: 'column',
-                        transition: 'transform 0.3s',
-                    }}
-                        onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.2)'; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)'; }}
-                    >
+                        flexDirection: 'column'
+                    }}>
                         <h3 className="text-xl font-bold mb-2">Starter</h3>
                         <p className="text-sm text-gray mb-6 h-10">Perfect for AI-curious beginners starting their journey.</p>
                         <div className="mb-6">
@@ -92,20 +87,17 @@ const Pricing = () => {
                                 <span style={{ color: '#4ade80' }}>✓</span> Community Access (Read-only)
                             </li>
                         </ul>
-                        <button className="btn btn-secondary w-full" style={{ borderRadius: '12px', padding: '14px' }}>Start Learning</button>
-                    </div>
+                        <button className="btn btn-secondary btn-hover-effect w-full" style={{ borderRadius: '12px', padding: '14px' }}>Start Learning</button>
+                    </TiltCard>
 
                     {/* Professional Plan (Featured) */}
-                    <div style={{
-                        background: '#0f172a',
+                    <TiltCard className="glass-card-enhanced" style={{
                         border: '1px solid #7c3aed',
-                        borderRadius: '24px',
                         padding: '2.5rem',
                         display: 'flex',
                         flexDirection: 'column',
                         position: 'relative',
                         boxShadow: '0 0 40px rgba(124, 58, 237, 0.15)',
-                        transform: 'scale(1.05)',
                         zIndex: 10
                     }}>
                         <div style={{
@@ -128,7 +120,7 @@ const Pricing = () => {
                         <h3 className="text-xl font-bold mb-2 text-white">Professional</h3>
                         <p className="text-sm text-gray mb-6 h-10">For serious career advancement and mastery.</p>
                         <div className="mb-6">
-                            <span className="text-4xl font-bold text-gradient">{annual ? '₹8,000' : '₹1,000'}</span>
+                            <span className="text-4xl font-bold gradient-text-anim">{annual ? '₹8,000' : '₹1,000'}</span>
                             <span className="text-gray text-sm">{annual ? '/year' : '/mo'}</span>
                         </div>
                         <ul className="space-y-4 mb-8 text-sm text-white flex-grow">
@@ -148,22 +140,15 @@ const Pricing = () => {
                                 <span style={{ color: '#7c3aed' }}>✓</span> Blockchain-Verified Certificates
                             </li>
                         </ul>
-                        <button className="btn btn-primary btn-glow w-full" style={{ borderRadius: '12px', padding: '14px' }}>Go Professional</button>
-                    </div>
+                        <button className="btn btn-primary btn-glow btn-hover-effect w-full" style={{ borderRadius: '12px', padding: '14px' }}>Go Professional</button>
+                    </TiltCard>
 
                     {/* Enterprise Plan */}
-                    <div style={{
-                        background: 'rgba(15, 23, 42, 0.6)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        borderRadius: '24px',
+                    <TiltCard className="glass-card-enhanced" style={{
                         padding: '2.5rem',
                         display: 'flex',
-                        flexDirection: 'column',
-                        transition: 'transform 0.3s',
-                    }}
-                        onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.2)'; }}
-                        onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.border = '1px solid rgba(255, 255, 255, 0.1)'; }}
-                    >
+                        flexDirection: 'column'
+                    }}>
                         <h3 className="text-xl font-bold mb-2">Enterprise</h3>
                         <p className="text-sm text-gray mb-6 h-10">Team & corporate training for organizations.</p>
                         <div className="mb-6">
@@ -183,8 +168,8 @@ const Pricing = () => {
                                 <span style={{ color: '#06b6d4' }}>✓</span> Volume Licensing
                             </li>
                         </ul>
-                        <button className="btn btn-secondary w-full" style={{ borderRadius: '12px', padding: '14px' }}>Contact Sales</button>
-                    </div>
+                        <button className="btn btn-secondary btn-hover-effect w-full" style={{ borderRadius: '12px', padding: '14px' }}>Contact Sales</button>
+                    </TiltCard>
                 </div>
 
                 <div className="text-center mt-12 text-sm text-gray">

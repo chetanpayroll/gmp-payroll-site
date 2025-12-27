@@ -32,6 +32,9 @@ const testimonials = [
     }
 ];
 
+import TiltCard from './TiltCard';
+import CountUpStats from './CountUpStats';
+
 const Testimonials = () => {
     const [isPlaying, setIsPlaying] = useState(false);
 
@@ -44,7 +47,7 @@ const Testimonials = () => {
             <div className="container">
                 <div className="text-center mb-12">
                     <div className="badge badge-green mb-4">SUCCESS STORIES</div>
-                    <h2 className="mb-4">Real Results from <span className="text-gradient">Real Learners</span></h2>
+                    <h2 className="mb-4">Real Results from <span className="gradient-text-anim">Real Learners</span></h2>
                     <p className="text-gray">Join thousands who transformed their careers with AI skills</p>
                 </div>
 
@@ -103,21 +106,23 @@ const Testimonials = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {testimonials.map((t, i) => (
-                        <div key={i} className="testimonial-card" style={{
-                            background: '#0f172a',
-                            border: '1px solid rgba(255,255,255,0.05)',
-                            borderRadius: '16px',
+                        <TiltCard key={i} className="glass-card-enhanced" style={{
                             padding: '1.5rem',
-                            transition: 'all 0.3s'
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'space-between'
                         }}>
-                            <div className="flex gap-1 text-yellow-400 mb-4">{'★'.repeat(t.stars)}</div>
-                            <p className="text-gray-300 mb-6 text-sm leading-relaxed text-balance">"{t.text}"</p>
+                            <div>
+                                <div className="flex gap-1 text-yellow-400 mb-4">{'★'.repeat(t.stars)}</div>
+                                <p className="text-gray-300 mb-6 text-sm leading-relaxed text-balance">"{t.text}"</p>
+                            </div>
                             <div className="border-t border-white/5 pt-4">
                                 <div className="font-bold text-white">{t.name}</div>
                                 <div className="text-xs text-gray-500 mb-2">{t.role}</div>
                                 <span className="badge badge-green" style={{ fontSize: '0.65rem' }}>{t.result}</span>
                             </div>
-                        </div>
+                        </TiltCard>
                     ))}
                 </div>
 
@@ -134,19 +139,27 @@ const Testimonials = () => {
                         backdropFilter: 'blur(10px)'
                     }}>
                         <div style={{ textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.1)' }} className="stat-item">
-                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '0.5rem' }}>5,000+</div>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '0.5rem' }}>
+                                <CountUpStats end={5000} suffix="+" />
+                            </div>
                             <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Active Learners</div>
                         </div>
                         <div style={{ textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.1)' }} className="stat-item">
-                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '0.5rem' }}>40+</div>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'white', marginBottom: '0.5rem' }}>
+                                <CountUpStats end={40} suffix="+" />
+                            </div>
                             <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Countries</div>
                         </div>
                         <div style={{ textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.1)' }} className="stat-item">
-                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#fbbf24', marginBottom: '0.5rem' }}>4.9/5</div>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#fbbf24', marginBottom: '0.5rem' }}>
+                                <CountUpStats end={4.9} decimals={1} suffix="/5" />
+                            </div>
                             <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Average Rating</div>
                         </div>
                         <div style={{ textAlign: 'center' }} className="stat-item">
-                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#4ade80', marginBottom: '0.5rem' }}>73%</div>
+                            <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#4ade80', marginBottom: '0.5rem' }}>
+                                <CountUpStats end={73} suffix="%" />
+                            </div>
                             <div style={{ fontSize: '0.9rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '1px' }}>Report Career Growth</div>
                         </div>
                     </div>
