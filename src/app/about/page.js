@@ -54,7 +54,7 @@ export default function AboutPage() {
                         <div>
                             <div className="relative glass-card-enhanced p-2 inline-block">
                                 <img
-                                    src="/chetan-sharma.png"
+                                    src="/chetan-sharma-new.png"
                                     alt="Chetan Sharma"
                                     className="rounded-lg shadow-2xl relative z-10 w-full max-w-md mx-auto"
                                     style={{ borderRadius: '1rem' }}
