@@ -26,12 +26,12 @@ const Hero = () => {
                                 <span>🏆</span> Trusted by <span className="font-bold mx-1"><CountUpStats end={5000} suffix="+" /></span> Learners Across <span className="font-bold mx-1"><CountUpStats end={40} suffix="+" /></span> Countries
                             </div>
 
-                            <h1 className="mb-4 delay-100 fade-in-up" style={{ fontSize: '3.5rem', lineHeight: 1.1 }}>
+                            <h1 className="mb-4 delay-100 fade-in-up text-4xl md:text-6xl font-bold leading-tight">
                                 Master AI Without <br />
                                 Writing a <span className="gradient-text-anim">Single Line of Code</span>
                             </h1>
 
-                            <p className="text-gray mb-8 delay-200 fade-in-up" style={{ fontSize: '1.125rem', maxWidth: '600px', lineHeight: 1.6 }}>
+                            <p className="text-gray mb-8 delay-200 fade-in-up text-lg md:text-xl max-w-2xl leading-relaxed">
                                 Transform from AI-curious to automation expert in 90 days.
                                 Build real-world AI workflows, automate your business, and future-proof your career.
                             </p>

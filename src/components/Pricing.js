@@ -14,8 +14,8 @@ const Pricing = () => {
             <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
                 <div className="text-center mb-16">
                     <div style={{ display: 'inline-block', padding: '6px 16px', borderRadius: '50px', background: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34, 197, 94, 0.3)', color: '#86efac', fontSize: '0.8rem', fontWeight: 'bold', marginBottom: '1rem', letterSpacing: '1px' }}>PRICING</div>
-                    <h2 className="mb-4" style={{ fontSize: '3rem', fontWeight: 'bold' }}>Invest in Your <span className="gradient-text-anim">AI Future</span></h2>
-                    <p className="text-gray" style={{ fontSize: '1.2rem' }}>Choose the plan that fits your career goals.</p>
+                    <h2 className="mb-4 text-3xl md:text-5xl font-bold">Invest in Your <span className="gradient-text-anim">AI Future</span></h2>
+                    <p className="text-gray text-lg md:text-xl">Choose the plan that fits your career goals.</p>
                 </div>
 
                 {/* Toggle */}
