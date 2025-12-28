@@ -47,47 +47,65 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Section 3: Founder Story */}
-            <section className="section">
-                <div className="container">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <div className="relative group">
-                                {/* Premium Image Container */}
-                                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full h-full">
-                                    <img
-                                        src="/chetan-sharma-new.png"
-                                        alt="Chetan Sharma"
-                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                                    />
-                                    {/* Overlay Gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+            {/* Section 3: Founder Story - Full Width Immersive */}
+            <section className="relative w-full py-0 border-y border-white/5 overflow-hidden">
+                <div className="flex flex-col md:flex-row min-h-[700px]">
+                    {/* Left Column: Immersive Image (Cover) */}
+                    <div className="relative w-full md:w-1/2 min-h-[500px] md:min-h-full">
+                        <img
+                            src="/chetan-sharma-new.png"
+                            alt="Chetan Sharma"
+                            className="absolute inset-0 w-full h-full object-cover object-top"
+                        />
+                        {/* Gradient Overlay for Text Readability on Mobile */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent md:hidden"></div>
 
-                                    {/* Badge Integrated on Image */}
-                                    <div className="absolute bottom-4 left-4 right-4 text-center">
-                                        <div className="glass-badge backdrop-blur-md bg-white/10 border-white/20 text-white px-6 py-3 rounded-xl inline-block font-semibold tracking-wide shadow-lg">
-                                            Founded by Chetan Sharma
-                                        </div>
-                                    </div>
-                                </div>
-                                {/* Decorative backing blob */}
-                                <div className="absolute -z-10 top-4 -left-4 w-full h-full bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-2xl blur-xl"></div>
-                            </div>
+                        {/* Desktop Side Fade */}
+                        <div className="hidden md:block absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent to-dark"></div>
+                    </div>
+
+                    {/* Right Column: Premium Content */}
+                    <div className="w-full md:w-1/2 bg-gradient-to-br from-dark via-[#0B1221] to-dark flex items-center p-8 md:p-20 lg:p-24 relative">
+                        {/* Decorative Elements */}
+                        <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
+                            <div className="absolute top-10 right-10 w-64 h-64 bg-purple-600/30 rounded-full blur-3xl"></div>
+                            <div className="absolute bottom-10 left-10 w-64 h-64 bg-cyan-600/30 rounded-full blur-3xl"></div>
                         </div>
-                        <div>
-                            <span className="badge badge-cyan mb-4">MEET THE FOUNDER</span>
-                            <h2 className="text-3xl font-bold mb-6">Chetan Sharma</h2>
 
-                            <div className="space-y-6 text-gray-400">
+                        <div className="relative z-10 max-w-xl">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-xs font-bold tracking-[2px] mb-6 shadow-lg backdrop-blur-sm">
+                                <span>✦</span> MEET THE FOUNDER
+                            </div>
+
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
+                                Chetan <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Sharma</span>
+                            </h2>
+
+                            <div className="space-y-6 text-gray-300 text-lg leading-relaxed font-light">
                                 <p>
-                                    For 13+ years, I managed complex payroll operations across 25+ countries for Fortune 500 companies. The work was rewarding but exhausting—endless spreadsheets, manual data entry, and repetitive tasks that consumed 60+ hours every week.
+                                    <strong className="text-white font-semibold">13+ years.</strong> That's how long I spent managing complex payroll operations for Fortune 500s. The work was prestigious, but the reality was 60-hour weeks buried in spreadsheets.
                                 </p>
                                 <p>
-                                    Then I discovered AI and automation. Not the complex engineering kind—but practical, no-code tools that anyone could learn. Within months, I automated 15+ hours of weekly tasks, achieved 99.8% accuracy, and earned 5 promotions in 4 years.
+                                    Then I found <strong className="text-cyan-400">Automation</strong>.
                                 </p>
                                 <p>
-                                    I realized these skills shouldn't be gatekept by expensive bootcamps or engineering degrees. Every professional deserves access to the same tools transforming my career. That's why I created AI Gravity Academy—to make AI accessible, practical, and immediately applicable.
+                                    Not the complex code kind, but the tools anyone can use. In months, I automated 15 hours of my weekly workload and skyrocketed my career. I realized these skills are the new superpower.
                                 </p>
+                                <p>
+                                    I founded <span className="text-white font-medium">AI Gravity Academy</span> to pass this torch. No fluff. No jargon. Just the practical skills that define the future of work.
+                                </p>
+                            </div>
+
+                            <div className="mt-10 pt-8 border-t border-white/10 flex items-center gap-6">
+                                <div>
+                                    <div className="text-3xl font-bold text-white">5K+</div>
+                                    <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Students</div>
+                                </div>
+                                <div className="h-10 w-px bg-white/10"></div>
+                                <div>
+                                    <div className="text-3xl font-bold text-white">Top 1%</div>
+                                    <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Instructor</div>
+                                </div>
                             </div>
                         </div>
                     </div>
