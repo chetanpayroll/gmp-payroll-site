@@ -52,16 +52,26 @@ export default function AboutPage() {
                 <div className="container">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <div>
-                            <div className="relative glass-card-enhanced p-2 inline-block">
-                                <img
-                                    src="/chetan-sharma-new.png"
-                                    alt="Chetan Sharma"
-                                    className="rounded-lg shadow-2xl relative z-10 w-full max-w-md mx-auto"
-                                    style={{ borderRadius: '1rem' }}
-                                />
-                                <div className="absolute -bottom-6 -right-6 glass-badge glass-card-enhanced text-sm font-bold p-3">
-                                    Founder & Lead Instructor
+                            <div className="relative group">
+                                {/* Premium Image Container */}
+                                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 w-full h-full">
+                                    <img
+                                        src="/chetan-sharma-new.png"
+                                        alt="Chetan Sharma"
+                                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    {/* Overlay Gradient */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+
+                                    {/* Badge Integrated on Image */}
+                                    <div className="absolute bottom-4 left-4 right-4 text-center">
+                                        <div className="glass-badge backdrop-blur-md bg-white/10 border-white/20 text-white px-6 py-3 rounded-xl inline-block font-semibold tracking-wide shadow-lg">
+                                            Founded by Chetan Sharma
+                                        </div>
+                                    </div>
                                 </div>
+                                {/* Decorative backing blob */}
+                                <div className="absolute -z-10 top-4 -left-4 w-full h-full bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-2xl blur-xl"></div>
                             </div>
                         </div>
                         <div>
