@@ -77,41 +77,7 @@ const SolutionSection = () => {
                     <Link href="/enroll" className="btn btn-primary btn-glow btn-hover-effect" style={{ padding: '1.2rem 3rem', fontSize: '1.2rem' }}>See How It Works →</Link>
                 </div>
 
-                {/* VISUALLY FORCED HORIZONTAL LAYOUT FOR STATS */}
-                <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'center',
-                    gap: '4rem',
-                    marginTop: '6rem',
-                    borderTop: '1px solid rgba(255,255,255,0.05)',
-                    paddingTop: '3rem'
-                }}>
-                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
-                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
-                            <CountUpStats end={13} suffix="+" />
-                        </div>
-                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Years Experience</div>
-                    </div>
-                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
-                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
-                            <CountUpStats end={25} suffix="+" />
-                        </div>
-                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Countries Implemented</div>
-                    </div>
-                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
-                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
-                            <CountUpStats end={10000} suffix="+" />
-                        </div>
-                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Automations Built</div>
-                    </div>
-                    <div style={{ textAlign: 'center', minWidth: '150px' }}>
-                        <div className="gradient-text-anim" style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '0.5rem', lineHeight: 1 }}>
-                            <CountUpStats end={99.8} decimals={1} suffix="%" />
-                        </div>
-                        <div style={{ color: '#94a3b8', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: '600' }}>Success Rate</div>
-                    </div>
-                </div>
+                {/* Removed duplicate stats section - moved to CredentialsBar */}
             </div>
         </section>
     );

@@ -108,11 +108,16 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Learn</h4>
                         <ul className="space-y-4">
-                            {['All Courses', 'Learning Paths', 'Free Resources', 'Certifications'].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1 group">
+                            {[
+                                { name: 'All Courses', path: '/courses' },
+                                { name: 'Learning Paths', path: '/courses' },
+                                { name: 'Free Resources', path: '/blog' },
+                                { name: 'Certifications', path: '/courses' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.path} className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1 group">
                                         <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                        {item}
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -122,11 +127,16 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Resources</h4>
                         <ul className="space-y-4">
-                            {['Blog', 'AI Tools Directory', 'Community', 'Success Stories'].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1 group">
+                            {[
+                                { name: 'Blog', path: '/blog' },
+                                { name: 'AI Tools Directory', path: '/blog/zapier-vs-make-vs-n8n' },
+                                { name: 'Community', path: '#' },
+                                { name: 'Success Stories', path: '/#testimonials' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.path} className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1 group">
                                         <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                        {item}
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}
@@ -136,11 +146,17 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Company</h4>
                         <ul className="space-y-4">
-                            {['About Us', 'Contact', 'Privacy Policy', 'Terms of Service'].map((item) => (
-                                <li key={item}>
-                                    <Link href="#" className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1 group">
+                            {[
+                                { name: 'About Us', path: '/about' },
+                                { name: 'Contact', path: '/contact' },
+                                { name: 'FAQ', path: '/faq' },
+                                { name: 'Privacy Policy', path: '/privacy' },
+                                { name: 'Terms of Service', path: '/terms' }
+                            ].map((item) => (
+                                <li key={item.name}>
+                                    <Link href={item.path} className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-1 group">
                                         <ArrowRightIcon className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-                                        {item}
+                                        {item.name}
                                     </Link>
                                 </li>
                             ))}

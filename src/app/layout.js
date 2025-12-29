@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import './enterprise.css'
 import ScrollToTop from '../components/ScrollToTop';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { GoogleTagManagerHead } from '@/components/GoogleTagManager';

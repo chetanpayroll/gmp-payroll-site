@@ -52,10 +52,10 @@ const Navbar = () => {
     }, []);
 
     const navLinks = [
-        { href: '/#courses', label: 'Courses' },
+        { href: '/courses', label: 'Courses' },
         { href: '/#methodology', label: 'Methodology' },
         { href: '/#instructor', label: 'Mentor' },
-        { href: '/#pricing', label: 'Pricing' },
+        { href: '/blog', label: 'Blog' },
         { href: '/about', label: 'About' },
         { href: '/contact', label: 'Contact' },
     ];

@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import CredentialsBar from '../components/CredentialsBar';
 import ProblemSection from '../components/ProblemSection';
 import SolutionSection from '../components/SolutionSection';
 import LearningPaths from '../components/LearningPaths';
@@ -17,6 +18,7 @@ export default function Home() {
       <AllStructuredData />
       <Navbar />
       <Hero />
+      <CredentialsBar />
       <ProblemSection />
       <SolutionSection />
       <LearningPaths />
