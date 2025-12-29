@@ -1,4 +1,18 @@
 User-Agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /checkout/
+Disallow: /dashboard/
 
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+Host: https://www.gmppayroll.org
 Sitemap: https://www.gmppayroll.org/sitemap.xml

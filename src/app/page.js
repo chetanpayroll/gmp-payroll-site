@@ -9,10 +9,12 @@ import FreeResources from '../components/FreeResources';
 import Pricing from '../components/Pricing';
 import Consulting from '../components/Consulting';
 import Footer from '../components/Footer';
+import AllStructuredData from '../components/StructuredData';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
+      <AllStructuredData />
       <Navbar />
       <Hero />
       <ProblemSection />

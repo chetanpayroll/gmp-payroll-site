@@ -1,6 +1,19 @@
+
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+
+export const metadata = {
+    title: 'Terms of Service | AI Gravity Academy',
+    description: 'Read our terms of service for using AI Gravity Academy courses, community, and resources. Understand your rights and responsibilities.',
+    robots: {
+        index: true,
+        follow: true,
+    },
+    alternates: {
+        canonical: 'https://www.gmppayroll.org/terms',
+    },
+};
 
 export default function Terms() {
     return (

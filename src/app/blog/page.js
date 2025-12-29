@@ -1,8 +1,23 @@
-"use client";
+
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
+import { BreadcrumbSchema } from '@/components/StructuredData';
+
+export const metadata = {
+    title: 'AI & Automation Blog | Tips, Tutorials & Industry Insights',
+    description: 'Explore our blog for practical AI tips, automation tutorials, prompt engineering guides, and industry insights. Learn from real-world examples and expert advice.',
+    keywords: ['AI blog', 'automation tutorials', 'ChatGPT tips', 'prompt engineering guide', 'AI for business'],
+    openGraph: {
+        title: 'AI Gravity Academy Blog',
+        description: 'Practical AI tips, automation tutorials, and industry insights',
+        url: 'https://www.gmppayroll.org/blog',
+    },
+    alternates: {
+        canonical: 'https://www.gmppayroll.org/blog',
+    },
+};
 
 export default function Blog() {
     const posts = [
@@ -32,8 +47,14 @@ export default function Blog() {
         }
     ];
 
+    const breadcrumbs = [
+        { name: 'Home', url: 'https://www.gmppayroll.org' },
+        { name: 'Blog', url: 'https://www.gmppayroll.org/blog' },
+    ];
+
     return (
         <main className="min-h-screen bg-dark">
+            <BreadcrumbSchema items={breadcrumbs} />
             <Navbar />
             {/* Background Effects */}
             <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>

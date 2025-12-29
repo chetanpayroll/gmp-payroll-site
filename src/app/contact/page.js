@@ -1,167 +1,145 @@
-"use client";
+
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import ContactForm from '../../components/ContactForm';
+import { BreadcrumbSchema, LocalBusinessSchema } from '@/components/StructuredData';
+
+export const metadata = {
+    title: 'Contact Us | Get in Touch with AI Gravity Academy',
+    description: 'Have questions about our AI courses? Contact AI Gravity Academy for course inquiries, corporate training, partnerships, or support. We respond within 24 hours.',
+    keywords: ['contact AI Gravity', 'AI training inquiry', 'corporate AI training', 'course support'],
+    openGraph: {
+        title: 'Contact AI Gravity Academy',
+        description: 'Get in touch for course inquiries, corporate training, or support. Response within 24 hours.',
+        url: 'https://www.gmppayroll.org/contact',
+    },
+    twitter: {
+        title: 'Contact AI Gravity Academy',
+        description: 'Get in touch for AI training inquiries',
+    },
+    alternates: {
+        canonical: 'https://www.gmppayroll.org/contact',
+    },
+};
+
+// Inline Icons
+const EmailIcon = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+);
+const PhoneIcon = ({ className }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+);
 
 export default function Contact() {
+    const breadcrumbs = [
+        { name: 'Home', url: 'https://www.gmppayroll.org' },
+        { name: 'Contact', url: 'https://www.gmppayroll.org/contact' },
+    ];
+
     return (
-        <main className="min-h-screen bg-dark">
+        <main className="min-h-screen bg-[#050B14]">
+            <BreadcrumbSchema items={breadcrumbs} />
+            <LocalBusinessSchema />
+
             <Navbar />
 
             {/* Background Effects */}
-            <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, pointerEvents: 'none' }}>
-                <div style={{ position: 'absolute', top: '10%', right: '10%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%)' }}></div>
-                <div style={{ position: 'absolute', bottom: '10%', left: '5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%)' }}></div>
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full" />
+                <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] bg-cyan-600/10 blur-[100px] rounded-full" />
             </div>
 
-            <section className="section" style={{ position: 'relative', zIndex: 1, padding: '8rem 0' }}>
-                <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-
-                    {/* Enterprise Flex Layout */}
-                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start', justifyContent: 'space-between', gap: '4rem' }}>
+            <section className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+                <div className="container mx-auto max-w-7xl">
+                    <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
 
                         {/* Left Side: Info */}
-                        <div style={{ flex: '1 1 500px', maxWidth: '600px' }}>
-                            <div className="badge badge-purple mb-6" style={{ display: 'inline-block' }}>CONTACT US</div>
-                            <h1 className="text-5xl font-bold mb-6" style={{ lineHeight: 1.1, fontSize: '3.5rem' }}>Let's Build Something <br /><span className="text-gradient">Extraordinary</span></h1>
-                            <p className="text-gray mb-12 text-lg" style={{ lineHeight: 1.6, fontSize: '1.2rem', maxWidth: '500px' }}>
+                        <div className="w-full lg:w-1/2 lg:sticky lg:top-32">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-bold uppercase tracking-wider mb-8">
+                                <span>Contact Us</span>
+                            </div>
+
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                                Let's Build Something <br />
+                                <span className="bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] bg-clip-text text-transparent">Extraordinary</span>
+                            </h1>
+
+                            <p className="text-gray-400 text-lg sm:text-xl leading-relaxed mb-12 max-w-lg">
                                 Ready to transform your career or business with AI? Reach out directly.
                                 We typically respond within 2 hours.
                             </p>
 
                             <div className="space-y-6">
                                 {/* Email Card */}
-                                <a href="mailto:chetansharma@gmppayroll.com" className="group" style={{ textDecoration: 'none' }}>
-                                    <div style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '24px',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        border: '1px solid rgba(255,255,255,0.05)',
-                                        padding: '2rem',
-                                        borderRadius: '20px',
-                                        transition: 'all 0.3s'
-                                    }} className="hover:bg-white/5 hover:border-white/20 hover:-translate-y-1">
-                                        <div style={{
-                                            width: '64px',
-                                            height: '64px',
-                                            borderRadius: '50%',
-                                            background: 'linear-gradient(135deg, #7c3aed, #4f46e5)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            fontSize: '1.8rem',
-                                            boxShadow: '0 10px 20px rgba(124, 58, 237, 0.3)'
-                                        }}>
-                                            📧
+                                <a
+                                    href="mailto:chetansharma@gmppayroll.com"
+                                    className="
+                                        group block p-6 sm:p-8
+                                        bg-white/5 border border-white/10 rounded-2xl
+                                        hover:bg-white/10 hover:border-white/20 hover:-translate-y-1
+                                        transition-all duration-300
+                                    "
+                                >
+                                    <div className="flex items-center gap-6">
+                                        <div className="
+                                            w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0
+                                            rounded-full
+                                            bg-gradient-to-br from-[#7C3AED] to-[#4F46E5]
+                                            flex items-center justify-center
+                                            text-white shadow-lg shadow-purple-500/30
+                                        ">
+                                            <EmailIcon className="w-8 h-8 sm:w-10 sm:h-10" />
                                         </div>
-                                        <div>
-                                            <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 'bold', color: '#94a3b8', marginBottom: '4px' }}>Email Directly</h4>
-                                            <div style={{ fontSize: '1.4rem', fontWeight: 'bold', color: 'white', wordBreak: 'break-all' }}>chetansharma@gmppayroll.com</div>
+                                        <div className="min-w-0">
+                                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 group-hover:text-purple-400 transition-colors">Email Directly</h4>
+                                            <div className="text-lg sm:text-2xl font-bold text-white truncate group-hover:underline decoration-white/30 underline-offset-4">
+                                                chetansharma@gmppayroll.com
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
 
                                 {/* Phone Card */}
-                                <a href="tel:+918619495587" className="group" style={{ textDecoration: 'none' }}>
-                                    <div style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '24px',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        border: '1px solid rgba(255,255,255,0.05)',
-                                        padding: '2rem',
-                                        borderRadius: '20px',
-                                        transition: 'all 0.3s'
-                                    }} className="hover:bg-white/5 hover:border-white/20 hover:-translate-y-1">
-                                        <div style={{
-                                            width: '64px',
-                                            height: '64px',
-                                            borderRadius: '50%',
-                                            background: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            fontSize: '1.8rem',
-                                            boxShadow: '0 10px 20px rgba(6, 182, 212, 0.3)'
-                                        }}>
-                                            📱
+                                <a
+                                    href="tel:+918619495587"
+                                    className="
+                                        group block p-6 sm:p-8
+                                        bg-white/5 border border-white/10 rounded-2xl
+                                        hover:bg-white/10 hover:border-white/20 hover:-translate-y-1
+                                        transition-all duration-300
+                                    "
+                                >
+                                    <div className="flex items-center gap-6">
+                                        <div className="
+                                            w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0
+                                            rounded-full
+                                            bg-gradient-to-br from-[#06B6D4] to-[#3B82F6]
+                                            flex items-center justify-center
+                                            text-white shadow-lg shadow-cyan-500/30
+                                        ">
+                                            <PhoneIcon className="w-8 h-8 sm:w-10 sm:h-10" />
                                         </div>
-                                        <div>
-                                            <h4 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 'bold', color: '#94a3b8', marginBottom: '4px' }}>Call / WhatsApp</h4>
-                                            <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'white' }}>+91 8619495587</div>
+                                        <div className="min-w-0">
+                                            <h4 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1 group-hover:text-cyan-400 transition-colors">Call / WhatsApp</h4>
+                                            <div className="text-xl sm:text-2xl font-bold text-white truncate group-hover:underline decoration-white/30 underline-offset-4">
+                                                +91 8619495587
+                                            </div>
                                         </div>
                                     </div>
                                 </a>
                             </div>
                         </div>
 
-                        {/* Right Side: Advanced Form */}
-                        <div style={{ flex: '1 1 500px', maxWidth: '550px' }}>
-                            <div style={{
-                                background: 'rgba(15, 23, 42, 0.8)',
-                                backdropFilter: 'blur(20px)',
-                                border: '1px solid rgba(124, 58, 237, 0.3)',
-                                borderRadius: '24px',
-                                padding: '3rem',
-                                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
-                            }}>
-                                <h3 className="text-2xl font-bold mb-8 text-white">Send a Message</h3>
-                                <form action="https://formsubmit.co/chetansharma@gmppayroll.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                                    {/* FormSubmit Config */}
-                                    <input type="hidden" name="_subject" value="New Contact Form Submission" />
-                                    <input type="hidden" name="_next" value="https://chetanpayroll.github.io/gmp-payroll-site/" />
-                                    <input type="hidden" name="_captcha" value="false" />
-
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-                                        <div>
-                                            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>First Name</label>
-                                            <input type="text" name="First Name" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem' }} placeholder="John" required />
-                                        </div>
-                                        <div>
-                                            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>Last Name</label>
-                                            <input type="text" name="Last Name" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem' }} placeholder="Doe" required />
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>Email Address</label>
-                                        <input type="email" name="Email" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem' }} placeholder="john@company.com" required />
-                                    </div>
-
-                                    <div>
-                                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>Phone Number</label>
-                                        <input type="tel" name="Phone" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem' }} placeholder="+1 (555) 000-0000" />
-                                    </div>
-
-                                    <div>
-                                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>Topic</label>
-                                        <div style={{ position: 'relative' }}>
-                                            <select name="Subject" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem', appearance: 'none', cursor: 'pointer' }}>
-                                                <option style={{ color: 'black' }} value="General Inquiry">General Inquiry</option>
-                                                <option style={{ color: 'black' }} value="Course Support">Course Support</option>
-                                                <option style={{ color: 'black' }} value="Partnership">Partnership</option>
-                                                <option style={{ color: 'black' }} value="Consulting">Consulting</option>
-                                            </select>
-                                            <div style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#94a3b8' }}>▼</div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: '#94a3b8', textTransform: 'uppercase', marginBottom: '6px', letterSpacing: '1px' }}>Message</label>
-                                        <textarea name="Message" rows="4" style={{ width: '100%', padding: '14px 16px', borderRadius: '12px', background: 'rgba(30, 41, 59, 0.8)', border: '1px solid rgba(255, 255, 255, 0.1)', color: 'white', outline: 'none', fontSize: '1rem', resize: 'vertical' }} placeholder="How can we help you?" required></textarea>
-                                    </div>
-
-                                    <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '16px', fontSize: '1.1rem', fontWeight: 'bold', borderRadius: '12px', marginTop: '1rem', boxShadow: '0 10px 25px -5px rgba(124, 58, 237, 0.5)', border: 'none', cursor: 'pointer', transition: 'all 0.3s' }}>
-                                        Send Message →
-                                    </button>
-                                </form>
-                            </div>
+                        {/* Right Side: Form */}
+                        <div className="w-full lg:w-1/2">
+                            <ContactForm />
                         </div>
 
                     </div>
                 </div>
             </section>
+
             <Footer />
         </main>
     );

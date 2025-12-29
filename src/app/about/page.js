@@ -1,14 +1,49 @@
-"use client";
+
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import CountUpStats from '../../components/CountUpStats';
 import Link from 'next/link';
+import { BreadcrumbSchema, PersonSchema } from '@/components/StructuredData';
+
+export const metadata = {
+    title: 'About Chetan Sharma | Founder of AI Gravity Academy',
+    description: 'Meet Chetan "Champ" Sharma - Fortune 500 consultant with 13+ years experience across 25+ countries, now helping 5,000+ professionals master AI and automation without coding.',
+    keywords: ['Chetan Sharma', 'AI Gravity founder', 'AI instructor', 'automation expert', 'global payroll expert'],
+    openGraph: {
+        title: 'About Chetan Sharma | AI Gravity Academy Founder',
+        description: 'From managing Fortune 500 payroll across 25+ countries to training 5,000+ professionals in AI.',
+        url: 'https://www.gmppayroll.org/about',
+        images: [
+            {
+                url: 'https://www.gmppayroll.org/about-og.png',
+                width: 1200,
+                height: 630,
+                alt: 'Chetan Sharma - Founder of AI Gravity Academy',
+            },
+        ],
+    },
+    twitter: {
+        title: 'About Chetan Sharma | AI Gravity Academy',
+        description: 'Meet the founder who helps professionals master AI without coding',
+    },
+    alternates: {
+        canonical: 'https://www.gmppayroll.org/about',
+    },
+};
 
 export default function AboutPage() {
+    const breadcrumbs = [
+        { name: 'Home', url: 'https://www.gmppayroll.org' },
+        { name: 'About', url: 'https://www.gmppayroll.org/about' },
+    ];
+
     return (
         <main className="min-h-screen bg-dark">
+            <BreadcrumbSchema items={breadcrumbs} />
+            <PersonSchema />
+
             <Navbar />
 
             {/* Top Spacing Adjusted - Removed explicit padding to pull content up */}
@@ -49,62 +84,67 @@ export default function AboutPage() {
 
             {/* Section 3: Founder Story - Full Width Immersive */}
             <section className="relative w-full py-0 border-y border-white/5 overflow-hidden">
-                <div className="flex flex-col md:flex-row min-h-[700px]">
+                <div className="flex flex-col lg:flex-row min-h-[700px] bg-[#0B1221]">
                     {/* Left Column: Immersive Image (Cover) */}
-                    <div className="relative w-full md:w-1/2 min-h-[500px] md:min-h-full">
+                    <div className="relative w-full lg:w-1/2 h-[450px] md:h-[600px] lg:h-auto min-h-[450px] lg:min-h-full">
                         <img
                             src="/chetan-sharma-new.png"
-                            alt="Chetan Sharma"
-                            className="absolute inset-0 w-full h-full object-cover object-top"
+                            alt="Chetan Sharma - Founder of AI Gravity Academy"
+                            className="absolute inset-0 w-full h-full object-cover object-top shadow-2xl"
                         />
-                        {/* Gradient Overlay for Text Readability on Mobile */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent md:hidden"></div>
-
-                        {/* Desktop Side Fade */}
-                        <div className="hidden md:block absolute inset-y-0 right-0 w-32 bg-gradient-to-r from-transparent to-dark"></div>
+                        {/* Gradient Overlays for smooth transitions */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-transparent to-transparent lg:hidden"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0B1221] hidden lg:block"></div>
                     </div>
 
                     {/* Right Column: Premium Content */}
-                    <div className="w-full md:w-1/2 bg-gradient-to-br from-dark via-[#0B1221] to-dark flex items-center p-8 md:p-20 lg:p-24 relative">
-                        {/* Decorative Elements */}
-                        <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none opacity-20">
-                            <div className="absolute top-10 right-10 w-64 h-64 bg-purple-600/30 rounded-full blur-3xl"></div>
-                            <div className="absolute bottom-10 left-10 w-64 h-64 bg-cyan-600/30 rounded-full blur-3xl"></div>
+                    <div className="w-full lg:w-1/2 bg-[#0B1221] flex flex-col justify-center p-8 md:p-14 lg:p-20 relative">
+                        {/* Background Effects */}
+                        <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
+                            <div className="absolute top-[-10%] right-[-10%] w-96 h-96 bg-purple-600/10 rounded-full blur-[100px]"></div>
+                            <div className="absolute bottom-[-10%] left-[-10%] w-96 h-96 bg-cyan-600/10 rounded-full blur-[100px]"></div>
                         </div>
 
-                        <div className="relative z-10 max-w-xl">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-cyan-400 text-xs font-bold tracking-[2px] mb-6 shadow-lg backdrop-blur-sm">
-                                <span>✦</span> MEET THE FOUNDER
+                        <div className="relative z-10 max-w-2xl mx-auto lg:mx-0">
+                            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold tracking-[3px] mb-8 uppercase shadow-lg backdrop-blur-md">
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                                </span>
+                                Meet The Founder
                             </div>
 
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">
-                                Chetan <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Sharma</span>
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight tracking-tight drop-shadow-lg">
+                                Chetan <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">Sharma</span>
                             </h2>
 
-                            <div className="space-y-6 text-gray-300 text-lg leading-relaxed font-light">
+                            <div className="text-gray-300 space-y-6 font-light leading-relaxed text-lg lg:text-xl">
                                 <p>
-                                    <strong className="text-white font-semibold">13+ years.</strong> That's how long I spent managing complex payroll operations for Fortune 500s. The work was prestigious, but the reality was 60-hour weeks buried in spreadsheets.
+                                    <strong className="text-white font-semibold text-2xl block mb-2">13+ years.</strong>
+                                    That's how long I spent managing complex payroll operations for Fortune 500s. High stakes, prestigious clients, but 60-hour weeks buried in spreadsheets.
                                 </p>
                                 <p>
-                                    Then I found <strong className="text-cyan-400">Automation</strong>.
+                                    Then I discovered <span className="text-cyan-400 font-medium">Automation</span>. Not the complex code kind, but smart tools anyone can use.
+                                </p>
+                                <p className="border-l-4 border-blue-500/50 pl-4 py-1 italic text-white/90 bg-white/5 rounded-r-lg">
+                                    "In months, I automated 15 hours of my weekly workload, reclaimed my time, and skyrocketed my career."
                                 </p>
                                 <p>
-                                    Not the complex code kind, but the tools anyone can use. In months, I automated 15 hours of my weekly workload and skyrocketed my career. I realized these skills are the new superpower.
-                                </p>
-                                <p>
-                                    I founded <span className="text-white font-medium">AI Gravity Academy</span> to pass this torch. No fluff. No jargon. Just the practical skills that define the future of work.
+                                    I founded <span className="text-white font-medium">AI Gravity Academy</span> with one mission: To pass this torch. No fluff. No jargon. Just practical, career-defining skills.
                                 </p>
                             </div>
 
-                            <div className="mt-10 pt-8 border-t border-white/10 flex items-center gap-6">
-                                <div>
-                                    <div className="text-3xl font-bold text-white">5K+</div>
-                                    <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Students</div>
+                            {/* Enhanced Stats Row */}
+                            <div className="mt-12 flex flex-wrap gap-6 border-t border-white/10 pt-8">
+                                <div className="flex-1 min-w-[140px] p-5 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors group">
+                                    <div className="text-3xl lg:text-4xl font-bold text-white mb-1 group-hover:scale-105 transition-transform origin-left">
+                                        <CountUpStats end={5000} suffix="+" />
+                                    </div>
+                                    <div className="text-xs text-gray-400 uppercase tracking-widest font-semibold">Active Students</div>
                                 </div>
-                                <div className="h-10 w-px bg-white/10"></div>
-                                <div>
-                                    <div className="text-3xl font-bold text-white">Top 1%</div>
-                                    <div className="text-xs text-gray-500 uppercase tracking-wider mt-1">Instructor</div>
+                                <div className="flex-1 min-w-[140px] p-5 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm hover:bg-white/10 transition-colors group">
+                                    <div className="text-3xl lg:text-4xl font-bold text-white mb-1 group-hover:scale-105 transition-transform origin-left">Top 1%</div>
+                                    <div className="text-xs text-gray-400 uppercase tracking-widest font-semibold">Udemy Instructor</div>
                                 </div>
                             </div>
                         </div>

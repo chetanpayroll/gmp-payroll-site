@@ -1,6 +1,19 @@
+
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+
+export const metadata = {
+    title: 'Privacy Policy | AI Gravity Academy',
+    description: 'Learn how AI Gravity Academy collects, uses, and protects your personal information. Our commitment to your privacy and data security.',
+    robots: {
+        index: true,
+        follow: true,
+    },
+    alternates: {
+        canonical: 'https://www.gmppayroll.org/privacy',
+    },
+};
 
 export default function Privacy() {
     return (
