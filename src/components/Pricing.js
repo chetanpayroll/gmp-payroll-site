@@ -170,9 +170,10 @@ const Pricing = () => {
                                     </div>
 
                                     {/* CTA Button */}
-                                    <button
+                                    <Link
+                                        href={`/enroll?course=${encodeURIComponent(plan.name + " Plan")}`}
                                         className={`
-                                            w-full py-4 rounded-xl font-bold text-sm
+                                            w-full py-4 rounded-xl font-bold text-sm block text-center
                                             transition-all duration-300 shadow-lg
                                             ${isPopular
                                                 ? 'bg-[#7C3AED] text-white hover:bg-[#6D28D9] hover:shadow-purple-500/25'
@@ -181,7 +182,7 @@ const Pricing = () => {
                                         `}
                                     >
                                         {plan.cta}
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         );

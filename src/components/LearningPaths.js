@@ -2,97 +2,10 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { courses } from '../data/courses';
 
 const LearningPaths = () => {
     const [activeFilter, setActiveFilter] = useState('All Courses');
-
-    const courses = [
-        {
-            id: 1,
-            icon: '🎓',
-            title: 'AI Foundations Bootcamp',
-            subtitle: 'Learn Artificial Intelligence Basics',
-            description: 'Master ChatGPT, Claude, and prompt engineering. The perfect starting point to learn AI without coding.',
-            level: 'Beginner',
-            levelIcon: '🌱',
-            duration: '4 Weeks',
-            features: [
-                '35 Video Lessons',
-                '20+ Templates',
-                'Certificate',
-                'Community Access',
-            ],
-            originalPrice: 4000,
-            price: 2000,
-            students: 2500,
-            rating: 4.9,
-            category: 'Beginner',
-        },
-        {
-            id: 2,
-            icon: '⚡',
-            title: 'Automation Architect',
-            subtitle: 'AI Course for Professionals',
-            description: 'Build production-ready automations with Make, Zapier, and n8n. Integrate AI into real business processes.',
-            level: 'Intermediate',
-            levelIcon: '🚀',
-            duration: '8 Weeks',
-            features: [
-                '60 Video Lessons',
-                '30+ Workflow Templates',
-                '1:1 Coaching Call',
-                'Priority Support',
-            ],
-            originalPrice: 6000,
-            price: 3000,
-            students: 1800,
-            rating: 4.8,
-            featured: true,
-            category: 'Intermediate',
-        },
-        {
-            id: 3,
-            icon: '💼',
-            title: 'AI Business Mastery',
-            subtitle: 'Launch & Scale with AI',
-            description: 'Launch AI consulting services. Build and sell automation solutions. Create passive income with AI products.',
-            level: 'Advanced',
-            levelIcon: '👑',
-            duration: '12 Weeks',
-            features: [
-                '80 Video Lessons',
-                'Business Templates',
-                'Weekly Group Coaching',
-                'Client Acquisition System',
-            ],
-            originalPrice: 10000,
-            price: 5000,
-            students: 950,
-            rating: 4.9,
-            category: 'Advanced',
-        },
-        {
-            id: 4,
-            icon: '🏢',
-            title: 'Corporate AI Transformation',
-            subtitle: 'Enterprise AI Training',
-            description: 'Custom AI training for organizations. Upskill your workforce on secure AI adoption.',
-            level: 'Enterprise',
-            levelIcon: '🏆',
-            duration: 'Custom',
-            features: [
-                'Custom Curriculum',
-                'Live Workshops',
-                'Implementation Support',
-                'Team Analytics',
-            ],
-            originalPrice: null,
-            price: 'Custom',
-            students: 50,
-            rating: 5.0,
-            category: 'Advanced',
-        },
-    ];
 
     const filteredCourses = activeFilter === 'All Courses'
         ? courses
@@ -119,8 +32,8 @@ const LearningPaths = () => {
                                 key={filter}
                                 onClick={() => setActiveFilter(filter)}
                                 className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${activeFilter === filter
-                                        ? 'bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] text-white shadow-lg transform -translate-y-1'
-                                        : 'bg-white/5 text-gray-400 border border-white/10 hover:bg-white/10 hover:text-white'
+                                    ? 'bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] text-white shadow-lg transform -translate-y-1'
+                                    : 'bg-white/5 text-gray-400 border border-white/10 hover:bg-white/10 hover:text-white'
                                     }`}
                             >
                                 {filter}
@@ -134,8 +47,8 @@ const LearningPaths = () => {
                         <div
                             key={course.id}
                             className={`course-card group relative bg-white/5 backdrop-blur-md border rounded-3xl p-6 overflow-hidden flex flex-col ${course.featured
-                                    ? 'border-purple-500/50 bg-gradient-to-br from-purple-500/10 to-transparent'
-                                    : 'border-white/10 hover:border-purple-500/30'
+                                ? 'border-purple-500/50 bg-gradient-to-br from-purple-500/10 to-transparent'
+                                : 'border-white/10 hover:border-purple-500/30'
                                 }`}
                         >
                             {/* Card Glow */}
@@ -151,9 +64,9 @@ const LearningPaths = () => {
                             {/* Header */}
                             <div className="flex justify-between items-center mb-6 relative z-10">
                                 <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase border flex items-center gap-1 ${course.level === 'Beginner' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
-                                        course.level === 'Intermediate' ? 'bg-purple-500/10 text-purple-400 border-purple-500/20' :
-                                            course.level === 'Advanced' ? 'bg-orange-500/10 text-orange-400 border-orange-500/20' :
-                                                'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
+                                    course.level === 'Intermediate' ? 'bg-purple-500/10 text-purple-400 border-purple-500/20' :
+                                        course.level === 'Advanced' ? 'bg-orange-500/10 text-orange-400 border-orange-500/20' :
+                                            'bg-cyan-500/10 text-cyan-400 border-cyan-500/20'
                                     }`}>
                                     {course.levelIcon} {course.level}
                                 </span>
@@ -179,7 +92,7 @@ const LearningPaths = () => {
 
                                 {/* Features */}
                                 <ul className="space-y-3 mb-6">
-                                    {course.features.map((feature, i) => (
+                                    {course.features.slice(0, 4).map((feature, i) => (
                                         <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
                                             <span className="text-green-400 text-xs">✅</span>
                                             {feature}
@@ -206,9 +119,14 @@ const LearningPaths = () => {
                                     )}
                                 </div>
 
-                                <Link href="/enroll" className="w-full py-3 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] text-white font-bold text-center flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-purple-500/25 transition-all transform hover:-translate-y-1">
-                                    Enroll Now <span>→</span>
-                                </Link>
+                                <div className="grid grid-cols-2 gap-2">
+                                    <Link href={`/course/${course.slug}`} className="py-3 rounded-xl border border-white/20 hover:bg-white/5 text-white font-bold text-center text-sm transition-all">
+                                        Details
+                                    </Link>
+                                    <Link href="/enroll" className="py-3 rounded-xl bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] text-white font-bold text-center text-sm transition-all hover:shadow-lg hover:shadow-purple-500/25">
+                                        Enroll
+                                    </Link>
+                                </div>
 
                                 <div className="flex justify-between items-center mt-4 text-xs text-gray-500 font-medium">
                                     <span className="flex items-center gap-1">👨‍🎓 {course.students}+</span>
