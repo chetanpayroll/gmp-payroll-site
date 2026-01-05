@@ -759,20 +759,102 @@ textarea {
 }
 
 /* Footer Update */
+
+/* Button Aliases */
+.cta-primary {
+  background: var(--gradient-main);
+  color: white;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
+  transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.cta-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-white);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Footer Fixes */
 .footer-links-col h4 {
   margin-bottom: 1.5rem;
   color: white;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.footer-links-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  /* Explicit gap using flex */
 }
 
 .footer-links-col ul li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0;
+  /* Let gap handle it */
+}
+
+.footer-links-col ul li a {
+  color: #94A3B8;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-links-col ul li a:hover {
-  color: var(--color-secondary);
+  color: white;
+  padding-left: 4px;
+  /* Subtle movement */
 }
 
-/* Responsive Updates */
+/* Premium Form Inputs */
+.form-input-premium {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-input-premium:focus {
+  border-color: #7C3AED;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+}
+
+.form-input-premium::placeholder {
+  color: #64748B;
+}
+
+.form-label-premium {
+  display: block;
+  font-size: 0.9rem;
+  color: #94A3B8;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+
+/* Responsive Updates - RESTORED */
 @media (min-width: 768px) {
   .nav-links {
     display: flex;

@@ -105,7 +105,7 @@ const Footer = () => {
                     </div>
 
                     {/* Links Columns */}
-                    <div>
+                    <div className="footer-links-col">
                         <h4 className="text-white font-bold mb-6">Learn</h4>
                         <ul className="space-y-4">
                             {[
@@ -124,7 +124,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="footer-links-col">
                         <h4 className="text-white font-bold mb-6">Resources</h4>
                         <ul className="space-y-4">
                             {[
@@ -143,7 +143,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="footer-links-col">
                         <h4 className="text-white font-bold mb-6">Company</h4>
                         <ul className="space-y-4">
                             {[

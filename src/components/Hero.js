@@ -77,12 +77,12 @@ const Hero = () => {
 
                             {/* 4. CTA Buttons */}
                             <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-                                <Link href="/enroll" className="cta-primary btn-glow px-8 py-4 rounded-2xl bg-gradient-to-r from-[#7C3AED] to-[#06B6D4] text-white font-bold text-lg flex items-center justify-center gap-2">
+                                <Link href="/enroll" className="cta-primary btn-glow px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2">
                                     <span className="cta-shine"></span>
                                     <span>🚀 Start Free AI Journey</span>
                                 </Link>
 
-                                <button onClick={() => setVideoOpen(true)} className="cta-secondary px-8 py-4 rounded-2xl border border-white/20 text-white font-semibold text-lg flex items-center justify-center gap-3 group">
+                                <button onClick={() => setVideoOpen(true)} className="cta-secondary px-8 py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-3 group">
                                     <span className="play-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-[#7C3AED] transition-colors">
                                         ▶
                                     </span>

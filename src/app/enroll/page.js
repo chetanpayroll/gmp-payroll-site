@@ -35,34 +35,34 @@ const EnrollForm = () => {
 
                         <div className="grid grid-cols-2 gap-6">
                             <div>
-                                <label className="text-gray-400 text-sm font-medium block mb-2">First Name *</label>
-                                <input type="text" name="First_Name" required className="w-full px-4 py-3 rounded-xl bg-[#0F172A]/60 border border-white/10 text-white outline-none focus:border-[#7C3AED] transition-colors" placeholder="Jane" />
+                                <label className="form-label-premium">First Name *</label>
+                                <input type="text" name="First_Name" required className="form-input-premium" placeholder="Jane" />
                             </div>
                             <div>
-                                <label className="text-gray-400 text-sm font-medium block mb-2">Last Name *</label>
-                                <input type="text" name="Last_Name" required className="w-full px-4 py-3 rounded-xl bg-[#0F172A]/60 border border-white/10 text-white outline-none focus:border-[#7C3AED] transition-colors" placeholder="Doe" />
+                                <label className="form-label-premium">Last Name *</label>
+                                <input type="text" name="Last_Name" required className="form-input-premium" placeholder="Doe" />
                             </div>
                         </div>
 
                         <div>
-                            <label className="text-gray-400 text-sm font-medium block mb-2">Email Address *</label>
-                            <input type="email" name="Email" required className="w-full px-4 py-3 rounded-xl bg-[#0F172A]/60 border border-white/10 text-white outline-none focus:border-[#7C3AED] transition-colors" placeholder="jane@company.com" />
+                            <label className="form-label-premium">Email Address *</label>
+                            <input type="email" name="Email" required className="form-input-premium" placeholder="jane@company.com" />
                             <p className="text-xs text-gray-500 mt-1">We'll send your login details here.</p>
                         </div>
 
                         <div>
-                            <label className="text-gray-400 text-sm font-medium block mb-2">Phone Number *</label>
-                            <input type="tel" name="Phone" required className="w-full px-4 py-3 rounded-xl bg-[#0F172A]/60 border border-white/10 text-white outline-none focus:border-[#7C3AED] transition-colors" placeholder="+91 98765 43210" />
+                            <label className="form-label-premium">Phone Number *</label>
+                            <input type="tel" name="Phone" required className="form-input-premium" placeholder="+91 98765 43210" />
                         </div>
 
                         <div>
-                            <label className="text-gray-400 text-sm font-medium block mb-2">Current Professional Role</label>
-                            <input type="text" name="Role" className="w-full px-4 py-3 rounded-xl bg-[#0F172A]/60 border border-white/10 text-white outline-none focus:border-[#7C3AED] transition-colors" placeholder="e.g. Operations Manager, Freelancer" />
+                            <label className="form-label-premium">Current Professional Role</label>
+                            <input type="text" name="Role" className="form-input-premium" placeholder="e.g. Operations Manager, Freelancer" />
                         </div>
 
                         <div>
-                            <label className="text-gray-400 text-sm font-medium block mb-2">Primary Goal</label>
-                            <select name="Goal" className="w-full px-4 py-3 rounded-xl bg-[#0F172A]/60 border border-white/10 text-gray-300 outline-none focus:border-[#7C3AED] transition-colors cursor-pointer">
+                            <label className="form-label-premium">Primary Goal</label>
+                            <select name="Goal" className="form-input-premium cursor-pointer">
                                 <option className="bg-[#0F172A]" value="Automate Tasks">I want to automate boring tasks</option>
                                 <option className="bg-[#0F172A]" value="Career Shift">I want to switch to an AI career</option>
                                 <option className="bg-[#0F172A]" value="Freelancing">I want to start freelancing/agency</option>
@@ -84,10 +84,10 @@ const EnrollForm = () => {
                         </div>
                     </form>
                 </div>
-            </div>
+            </div >
 
             {/* RIGHT: Course Summary */}
-            <div className="order-1 lg:order-1">
+            < div className="order-1 lg:order-1" >
                 <div className="sticky top-28 bg-gradient-to-br from-[#7C3AED]/10 to-[#06B6D4]/5 border border-[#7C3AED]/30 rounded-3xl p-8">
                     <h3 className="text-gray-400 uppercase text-sm tracking-widest font-bold mb-6">Order Summary</h3>
 
@@ -124,9 +124,9 @@ const EnrollForm = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div >
 
-        </div>
+        </div >
     );
 };
 
