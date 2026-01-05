@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import Link from 'next/link';
 
 const CityLandingPage = ({ cityData }) => {
